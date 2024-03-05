@@ -1,11 +1,13 @@
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 <h1 id="sommaire" style="display: flex; align-items: center; justify-content: center;">
     <img src="/Assets/eqla.png" style="height:50px">
-    &nbsp;Cours de JavaScript
+    &nbsp;Introduction au JavaScript
 </h1>
 
 
-#  Introduction
+
+## 1. Introduction
+Nous allons rapidement introduire JavaScript via différents points:
 
 - **Création** : JavaScript a été créé en 1995 par Brendan Eich chez Netscape, initialement sous le nom de LiveScript. Son but était de permettre aux développeurs web de rendre les pages HTML interactives et dynamiques, offrant ainsi une expérience utilisateur enrichie sans nécessiter de rechargement complet de la page.
 
@@ -16,6 +18,187 @@
 - **L'avenir de JavaScript** : Avec l'avènement de technologies telles que les WebAssembly, qui permettent d'exécuter du code à des vitesses proches de celles du code natif dans le navigateur, JavaScript continue d'évoluer et de s'adapter aux défis futurs du développement web. Les progrès dans les domaines de l'intelligence artificielle, de l'apprentissage automatique, et de l'Internet des Objets (IoT) ouvrent également de nouvelles avenues pour l'intégration et l'utilisation de JavaScript dans des applications innovantes et interconnectées. Ainsi, JavaScript reste à l'avant-garde de la technologie, s'adaptant continuellement pour répondre aux besoins changeants des développeurs et des utilisateurs dans un monde numérique en évolution rapide.
 
 Cette évolution constante, soutenue par une communauté mondiale active et des mises à jour régulières des standards ECMAScript, assure à JavaScript une place de choix dans l'avenir du développement logiciel, démontrant sa capacité à s'adapter et à innover dans un paysage technologique en perpétuelle mutation.
+
+## 2. Le JavaScript dans le HTML
+Le JavaScript peut être inséré dans le HTML de plusieurs manières.
+
+Voici les trois manières les plus courantes:
+### 2.1 Dans la balise `<script>` du HTML.
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Web</title>
+    </head>
+    <body>
+        <h1>Ma page web</h1>
+        <script>
+            alert("Bonjour!");
+        </script>
+    </body>
+</html>
+```
+Le précédent exemple affiche une boîte de dialogue avec le message "Bonjour!". On dit que ce code est inséré dans le HTML: inline. Ce n'est pas la méthode la plus recommandée. En effet, il est préférable de séparer le code JavaScript du code HTML. Tout comme on sépare le CSS du HTML.
+
+### 2.2 Dans un fichier externe.
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Web</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Ma page web</h1>
+    </body>
+</html>
+```
+Le précédent exemple fait appel à un fichier JavaScript externe. Le fichier `script.js` contient le code JavaScript. Cette méthode est la plus recommandée. En effet, elle permet de séparer le code JavaScript du code HTML. Tout comme on sépare le CSS du HTML.
+Voici le contenu du fichier `script.js`:
+```js
+alert("Bonjour!");
+```
+L'intérêt de cette méthode est que le code JavaScript peut être réutilisé dans plusieurs pages web. Il suffit de faire appel au fichier `script.js` dans chaque page web.
+
+Si par exemple, vous avez créé un ensemble de fonctions utilitaires, vous pourrez les réutiliser dans plusieurs pages web voire dans plusieurs projets.
+
+N'oubliez pas, l'informaticien est paresseux. Il ne veut pas réécrire le même code plusieurs fois. ;-)
+### 2.3 Dans un événement
+Un événement est une action que l'utilisateur effectue sur la page web. Par exemple, un clic sur un bouton, le survol d'une image, appuyer sur une touche du clavier, etc.
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Web</title>
+    </head>
+    <body>
+        <h1>Ma page web</h1>
+        <button onclick="alert('Bonjour!')">Cliquez-moi</button>
+    </body>
+</html>
+```
+Nous allons maintenant reprendre notre code pour qu'il utilise un fichier externe. Voici le contenu du fichier `index.html`:
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Web</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Ma page web</h1>
+        <button onclick="direBonjour()">Cliquez-moi</button>
+    </body>
+</html>
+```
+Voici le contenu du fichier `script.js`:
+```js
+function direBonjour() {
+    alert("Bonjour!");
+}
+```
+De cette manière, le code JavaScript est séparé du code HTML. Il est réutilisable dans plusieurs pages web. Et il est plus facile à maintenir.
+## 3. Où et comment exécuter du JavaScript 
+On aurait tendance à penser que JavaScript ne peut être exécuté que dans un navigateur. C'est vrai, mais ce n'est pas la seule manière d'exécuter du JavaScript.
+
+
+### 3.1 JavaScript dans la console du navigateur
+JavaScript peut être exécuté dans la console de votre navigateur. Pour ouvrir la console, appuyez sur `F12` ou `Ctrl + Shift + I` ou `Cmd + Option + I` sur Mac. Puis cliquez sur l'onglet `Console`.
+
+Vous pouvez taper du code JavaScript dans la console et appuyer sur `Entrée` pour l'exécuter.
+
+Par exemple, tapez `alert("Bonjour!")` dans la console et appuyez sur `Entrée`. Vous verrez une boîte de dialogue avec le message "Bonjour!". Et cela sans toucher au code de la page web.
+
+Vous pouvez aussi par exemple faire une simple addition: 1+1. Vous verrez le résultat dans la console.
+
+Ou encore, faire une boucle for: 
+```js
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+```
+Vous verrez les nombres de 0 à 4 dans la console:
+
+```text
+0
+1
+2
+3
+4
+```
+Attention, ce qui sera écrit dans la console sera perdu si vous rechargez la page. Si vous voulez sauvegarder le code, vous devrez le mettre dans un fichier JavaScript externe.
+
+Alors à quoi sert la console? Elle est très utile pour débugger votre code. Vous pouvez afficher des messages dans la console avec `console.log`. Vous pouvez aussi voir les erreurs de votre code dans la console. Ces messages viendront de vos fonctions ou de votre code. Ils vous aideront à comprendre ce qui ne va pas dans votre code.
+
+### 3.2 NodeJS: Javascript en ligne de commande
+JavaScript peut être exécuté en ligne de commande. Pour cela, vous devez installer Node.js. Node.js est un environnement d'exécution JavaScript côté serveur. Il vous permet d'exécuter du code JavaScript en dehors d'un navigateur.
+
+Pour installer Node.js, rendez-vous sur le site officiel de Node.js: [https://nodejs.org/](https://nodejs.org/)
+
+Une fois Node.js installé, ouvrez un terminal et tapez `node`. Vous pouvez maintenant taper du code JavaScript et appuyer sur `Entrée` pour l'exécuter.
+
+Evidemment, vous ne pourrez pas faire un `alert` en ligne de commande. Vous devrez utiliser `console.log` pour afficher des messages. En effet, `alert` est une fonction qui n'existe que dans les navigateurs.
+
+Si vous avez des fonctions qui retournent des valeurs ou font un traitement, vous pouvez les appeler et voir le résultat dans la console.
+
+Cela peut être utile pour tester des fonctions ou des algorithmes et ne pas perdre de temps à les intégrer dans une page web.
+
+Pour exécuter un fichier JavaScript en ligne de commande, tapez `node nomDuFichier.js` dans le terminal.
+
+Soit le fichier `bonjour.js`:
+```js
+console.log("Bonjour depuis Node.js !");
+console.log("Voici un exemple de boucle for:");
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+```
+Pour l'exécuter, tapez `node bonjour.js` dans le terminal.
+
+Voici le résultat:
+```text
+Bonjour depuis Node.js !
+Voici un exemple de boucle for:
+0
+1
+2
+3
+4
+```
+
+### 3.3 Frameworks et bibliothèques JavaScript
+
+JavaScript s'exécute également au cœur de nombreux frameworks et bibliothèques, augmentant ainsi son utilisation au-delà des navigateurs web et de l'environnement serveur avec Node.js. Ces outils permettent de construire des applications web complexes, des applications mobiles, des applications de bureau, et même des jeux. Parmi les plus connus, on trouve :
+
+- **React** : Une bibliothèque développée par Facebook pour construire des interfaces utilisateur dynamiques et réactives pour le web et le mobile.
+- **Angular** : Un framework complet pour le développement d'applications web modernes, développé par Google.
+- **Vue.js** : Un framework progressif pour construire des interfaces utilisateur, qui se concentre sur la simplicité et la performance.
+- **Electron** : Permet de développer des applications de bureau natives avec des technologies web (HTML, CSS, et JavaScript).
+- **React Native** : Permet de construire des applications mobiles natives en utilisant JavaScript et React.
+- **Three.js** : Une bibliothèque pour créer des graphiques 3D dans un navigateur web à l'aide de WebGL.
+- **D3.js** : Une bibliothèque pour créer des visualisations de données dynamiques et interactives dans un navigateur web.
+- **Babylon.js** : Un framework pour créer des jeux 3D dans un navigateur web à l'aide de WebGL.
+- **Phaser** : Un framework pour créer des jeux en 2D pour le web et le mobile.
+- **TensorFlow.js** : Une bibliothèque pour l'apprentissage automatique et l'intelligence artificielle dans le navigateur web.
+- Et bien d'autres...
+
+Ces outils transforment JavaScript en un langage extrêmement polyvalent, capable de s'adapter à une vaste gamme de projets de développement.
+
+### 3.4 Serveurs Web et API avec JavaScript
+
+JavaScript est également utilisé pour le développement de serveurs et d'APIs grâce à des environnements comme Node.js. Avec des frameworks comme Express.js, vous pouvez créer des serveurs web robustes et des APIs RESTful rapidement et efficacement. Ces serveurs peuvent gérer des requêtes web, interagir avec des bases de données, et servir des applications web à des clients.
+
+### 3.5 Internet des Objets (IoT)
+
+JavaScript s'étend aussi à l'Internet des Objets (IoT). Des plateformes comme Johnny-Five permettent de contrôler du matériel électronique et des dispositifs IoT directement avec JavaScript, ouvrant la voie à des projets d'automatisation domestique, de capteurs intelligents, et bien plus encore.
+
+### 3.6 Tests Automatisés
+
+JavaScript joue un rôle crucial dans le développement de tests automatisés pour des applications web. Des frameworks de test comme Jest (pour les applications React), Mocha, et Jasmine permettent de créer et d'exécuter des tests unitaires et d'intégration, assurant ainsi la fiabilité et la robustesse du code.
+
+### 3.7 Conclusion
+
+JavaScript dépasse largement le cadre des navigateurs web. Son écosystème riche et diversifié, composé de frameworks, de bibliothèques, et d'outils de développement, en fait un langage de choix pour pratiquement tout type de projet de développement logiciel, du front-end au back-end, en passant par le mobile, le bureau, et l'IoT. Son utilisation dans les tests automatisés contribue également à améliorer la qualité et la fiabilité des applications.
 
 
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)

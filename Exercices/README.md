@@ -5,11 +5,42 @@
 </h1>
 
 <br/>
-Voici le sommaire des exercices:<br/>
 
-1.
-2.
-3.
+## Exercice 1 - Hello world! - Code JS Inline
+1. Créez une page HTML nommée Exercice1.html
+2. Positionnez-vous dans le `<head>` de la page et ajoutez le code suivant:
+```html
+<script>
+    alert('Hello les BlindCoders!');
+</script>
+```
+3. Ouvrez la page dans un navigateur et observez le résultat.
+
+## Exercice 2 - Hello world! - Ficher JS Externe via le `<head>`
+1. Créez une page HTML nommée Exercice2.html
+2. Créez un fichier JavaScript nommé Exercice2.js
+3. Positionnez-vous dans le `<head>` de la page et ajoutez le code suivant:
+```html
+<script src="Exercice2.js" defer></script>
+```
+4. Dans le fichier Exercice2.js, ajoutez le code suivant:
+```javascript
+alert('Hello les BlindCoders!');
+```
+5. Ouvrez la page dans un navigateur et observez le résultat.
+
+## Exercice 3 - Hello world! - Ficher JS Externe via le `<body>`
+1. Créez une page HTML nommée Exercice3.html
+2. Créez un fichier JavaScript nommé Exercice3.js
+3. Positionnez-vous juste avant la fermeture de la balise `<body>` de la page et ajoutez le code suivant:
+```html
+<script src="Exercice2.js"></script>
+```
+4. Ouvrez la page dans un navigateur et observez le résultat.
+
+
+
+
 
 
 [:arrow_left:Revenir au menu principal.](../README.md#sommaire)
