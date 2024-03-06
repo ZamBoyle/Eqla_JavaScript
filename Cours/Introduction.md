@@ -290,7 +290,10 @@ JavaScript joue un rôle crucial dans le développement de tests automatisés po
 JavaScript dépasse largement le cadre des navigateurs web. Son écosystème riche et diversifié, composé de frameworks, de bibliothèques, et d'outils de développement, en fait un langage de choix pour pratiquement tout type de projet de développement logiciel, du front-end au back-end, en passant par le mobile, le bureau, et l'IoT. Son utilisation dans les tests automatisés contribue également à améliorer la qualité et la fiabilité des applications.
 
 ## 6. Exercices
-Faites l'exercice suivant: 
+Faites les exercices suivants:
+- [Exercices 1 - inline](../Exercices/README.md#exercice-1---code-js-inline)
+- [Exercices 2 - Ficher JS Externe](../Exercices/README.md#exercice-2---ficher-js-externe)
+- [Exercices 3 - Ficher JS Externe](../Exercices/README.md#exercice-3---ficher-js-externe)
 
 
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)

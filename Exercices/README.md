@@ -6,7 +6,7 @@
 
 <br/>
 
-## Exercice 1 - Hello world! - Code JS Inline
+## Exercice 1 - Code JS Inline
 1. Créez une page HTML nommée Exercice1.html
 2. Positionnez-vous dans le `<head>` de la page et ajoutez le code suivant:
 ```html
@@ -16,7 +16,7 @@
 ```
 3. Ouvrez la page dans un navigateur et observez le résultat.
 
-## Exercice 2 - Hello world! - Ficher JS Externe via le `<head>`
+## Exercice 2 - Ficher JS Externe
 1. Créez une page HTML nommée Exercice2.html
 2. Créez un fichier JavaScript nommé Exercice2.js
 3. Positionnez-vous dans le `<head>` de la page et ajoutez le code suivant:
@@ -29,7 +29,7 @@ alert('Hello les BlindCoders!');
 ```
 5. Ouvrez la page dans un navigateur et observez le résultat.
 
-## Exercice 3 - Hello world! - Ficher JS Externe via le `<body>`
+## Exercice 3 - Ficher JS Externe
 1. Créez une page HTML nommée Exercice3.html
 2. Créez un fichier JavaScript nommé Exercice3.js
 3. Positionnez-vous juste avant la fermeture de la balise `<body>` de la page et ajoutez le code suivant:
