@@ -11,23 +11,27 @@
 <!-- code_chunk_output -->
 
 - [1. Objectif](#1-objectif)
-- [2. Afficher un message](#2-afficher-un-message)
-  - [2.1 la fonction `alert()`](#21-la-fonction-alert)
-  - [2.2 la fonction `console.log()`](#22-la-fonction-consolelog)
-  - [2.3 la propriété `innerHTML`](#23-la-propriété-innerhtml)
-- [2. Types de données](#2-types-de-données)
-- [3. Variables](#3-variables)
-  - [3.1 Naming convention Variables et fonctions](#31-naming-convention-variables-et-fonctions)
-  - [3.2 var, let et const](#32-var-let-et-const)
-  - [3.3 Déclarer plusieurs variables](#33-déclarer-plusieurs-variables)
-  - [3.4 Déclarer une variable sans lui affecter de valeur](#34-déclarer-une-variable-sans-lui-affecter-de-valeur)
-  - [3.5 Résumons](#35-résumons)
-- [4. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)](#4-opérateurs-arithmétiques-daffectation-de-comparaison-logiques)
-  - [4.1 Opérateurs arithmétiques](#41-opérateurs-arithmétiques)
-  - [4.2 Opérateurs d'affectation](#42-opérateurs-daffectation)
-  - [4.3 Opérateurs de Comparaison](#43-opérateurs-de-comparaison)
-  - [4.4 Opérateurs logiques](#44-opérateurs-logiques)
-  - [4.5 Opérateurs de concaténation](#45-opérateurs-de-concaténation)
+- [2. Installation de Node.js](#2-installation-de-nodejs)
+- [3. Afficher un message](#3-afficher-un-message)
+  - [3.1 la fonction alert()](#31-la-fonction-alert)
+  - [3.2 la fonction console.log()](#32-la-fonction-consolelog)
+  - [3.3 la propriété innerHTML](#33-la-propriété-innerhtml)
+- [4. Types de données](#4-types-de-données)
+- [5. Variables](#5-variables)
+  - [5.1 Naming convention Variables et fonctions](#51-naming-convention-variables-et-fonctions)
+  - [5.2 var, let et const](#52-var-let-et-const)
+  - [5.3 Déclarer plusieurs variables](#53-déclarer-plusieurs-variables)
+  - [5.4 Déclarer une variable sans lui affecter de valeur](#54-déclarer-une-variable-sans-lui-affecter-de-valeur)
+  - [5.5 Résumons](#55-résumons)
+- [6. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)](#6-opérateurs-arithmétiques-daffectation-de-comparaison-logiques)
+  - [6.1 Opérateurs arithmétiques](#61-opérateurs-arithmétiques)
+  - [6.2 Opérateurs d'affectation](#62-opérateurs-daffectation)
+  - [6.3 Opérateurs de Comparaison](#63-opérateurs-de-comparaison)
+  - [6.4 Opérateurs logiques](#64-opérateurs-logiques)
+  - [6.5 Opérateurs de concaténation](#65-opérateurs-de-concaténation)
+- [7. Structures de contrôle (if, else, switch, boucles for, while)](#7-structures-de-contrôle-if-else-switch-boucles-for-while)
+- [8. Fonctions : déclaration, expression, fléchées, portée, hoisting](#8-fonctions--déclaration-expression-fléchées-portée-hoisting)
+- [9. Gestion des erreurs et exceptions (try, catch, finally)](#9-gestion-des-erreurs-et-exceptions-try-catch-finally)
 
 <!-- /code_chunk_output -->
 
@@ -35,17 +39,30 @@
 ## 1. Objectif
 Il vise en premier à expliquer comment ajouter du JavaScript à une page web, puis à introduire les concepts de base de JavaScript, permettant aux participants de comprendre les structures fondamentales du langage, telles que les variables, les types de données, les structures de contrôle, et les fonctions. L'accent sera mis sur la pratique avec des exercices d'application pour chaque concept.
 
-## 2. Afficher un message
+## 2. Installation de Node.js
+Au début, je voulais utiliser la console de votre navigateur pour exécuter du code JavaScript, mais je me suis dit que ce serait plus simple d'installer Node.js sur votre ordinateur. Node.js est un environnement d'exécution JavaScript côté serveur. Il vous permet d'exécuter du code JavaScript sur votre ordinateur. Cela vous permettra de tester votre code JavaScript sans avoir à ouvrir votre navigateur. Vous pourrez exécuter votre code JavaScript directement dans votre terminal.
+
+Mais lorsque nous manipulerons le DOM (Document Object Model) nous aurons besoin d'un navigateur. Le DOM est une interface de programmation pour les documents HTML et XML. Il représente la page web, et permet de modifier le contenu, la structure et le style de la page. Nous verrons cela plus tard.
+
+__Pour installer Node.js, suivez les étapes suivantes__:
+1. Allez sur le site officiel de Node.js: [https://nodejs.org/](https://nodejs.org/)
+2. Téléchargez la version `LTS` (Long Term Support) pour votre système d'exploitation.
+3. Installez Node.js sur votre ordinateur.
+4. Ouvrez un terminal et tapez la commande `node -v` pour vérifier que Node.js est bien installé.
+
+
+
+## 3. Afficher un message
 Si on veut afficher un message à l'utilisateur nous avons plusieurs possibilités:
 
-### 2.1 la fonction `alert()`
+### 3.1 la fonction alert()
 La fonction `alert()` affiche une boîte de dialogue avec un message et un bouton "OK". Par exemple:
 ```javascript
 alert('Hello les BlindCoders!');
 ```
 Le problème avec cette fonction c'est qu'elle est bloquante, c'est-à-dire que l'utilisateur ne peut pas faire autre chose tant qu'il n'a pas cliqué sur le bouton "OK". Elle est donc peu utilisée sauf dans l'apprentissage du JavaScript où l'on veut afficher rapidement un message à l'utilisateur. 
 
-### 2.2 la fonction `console.log()`
+### 3.2 la fonction console.log()
 La fonction `console.log()` affiche un message dans la console du navigateur. Par exemple:
 ```javascript
 console.log('Hello les BlindCoders!');
@@ -54,7 +71,7 @@ Ce message écrira "Hello les BlindCoders!" dans la console du navigateur. Pour 
 
 Si vous utilisez node.js, vous pouvez aussi utiliser `console.log()` pour afficher des messages dans la console de votre terminal.
 
-### 2.3 la propriété `innerHTML`
+### 3.3 la propriété innerHTML
 La propriété `innerHTML` permet de modifier le contenu d'un élément HTML. Par exemple:
 ```html
 <!DOCTYPE html>
@@ -76,7 +93,7 @@ Nous allons voir en détail comment modifier le contenu d'un élément HTML plus
 
 Nous aurions bien entendu pu mettre le code js dans un fichier séparé.
 
-## 2. Types de données
+## 4. Types de données
 Les types de données sont les éléments de base de tout langage de programmation. Ils permettent de stocker des informations dans des variables, et de les manipuler. JavaScript possède plusieurs types de données, dont les plus courants sont les suivants:
 - `Les nombres`: entiers et décimaux
 - `Les chaînes de caractères`: texte
@@ -124,7 +141,7 @@ Evidemment, c'est une très mauvaise pratique de changer le type d'une variable,
 
 Rappelez-vous notre lors de notre introduction où nous avons dit que JavaScript est un langage de programmation faiblement typé. Cela signifie que les variables peuvent changer de type. C'est pour cette raison que TypeScript a été créé.
 
-## 3. Variables
+## 5. Variables
 Une variable est un conteneur pour stocker des données. Vous pouvez utiliser une variable pour stocker des données, et vous pouvez les réutiliser. En JavaScript, on utilise le mot-clé `let` pour déclarer une variable. Nous l'avons vu juste avant.
 
 Par exemple:
@@ -134,7 +151,7 @@ console.log(prenom); // Affiche "Johnny"
 ```
 Le code ci-dessus déclare une variable `prenom` et lui affecte la valeur "Johnny". Ensuite, on affiche la valeur de la variable `prenom` dans la console.
 
-### 3.1 Naming convention Variables et fonctions
+### 5.1 Naming convention Variables et fonctions
 Les noms de variables et de fonctions en JavaScript sont sensibles à la casse. Cela signifie que `prenom`, `Prenom` et `PRENOM` sont trois variables différentes. Il est recommandé d'utiliser des noms de variables et de fonctions significatifs, et de les nommer en camelCase. Par exemple:
 ```javascript
 let prenomComplet = "Johnny Piette";
@@ -148,7 +165,7 @@ Le nom de la variable `prenomComplet` est composé de deux mots, et le deuxième
 
 Le nom de la fonction `afficherPrenomComplet` est composé de trois mots, et les deuxième et troisième mots commencent par une majuscule. C'est aussi du camelCase.
 
-### 3.2 var, let et const
+### 5.2 var, let et const
 Avant ES6 (2015), on utilisait le mot-clé `var` pour déclarer une variable. Mais depuis ES6, on utilise le mot-clé `let` pour déclarer une variable. `var` est toujours utilisé, mais il est déconseillé de l'utiliser. Par contre, on utilise le mot-clé `const` pour déclarer une constante. Une constante est une variable dont la valeur ne peut pas être modifiée. Par exemple:
 ```javascript
 const prenom = "Johnny";
@@ -156,7 +173,7 @@ prenom = "Philip"; // Erreur: Assignment to constant variable.
 ```
 Le code ci-dessus déclare une constante `prenom` et lui affecte la valeur "Johnny". Ensuite, on essaie de changer la valeur de la constante `prenom` par "Philip", mais on obtient une erreur car on ne peut pas changer la valeur d'une constante.
 
-### 3.3 Déclarer plusieurs variables
+### 5.3 Déclarer plusieurs variables
 Il est possible de déclarer plusieurs variables en une seule ligne. Par exemple:
 ```javascript
 let prenom = "Johnny", nom = "Piette", age = 30;
@@ -164,7 +181,7 @@ console.log(prenom, nom, age); // Affiche "Johnny Piette 30"
 ```
 Le code ci-dessus déclare trois variables `prenom`, `nom` et `age` et leur affecte respectivement les valeurs "Johnny", "Piette" et 30. Ensuite, on affiche les valeurs des variables `prenom`, `nom` et `age` dans la console.
 
-### 3.4 Déclarer une variable sans lui affecter de valeur
+### 5.4 Déclarer une variable sans lui affecter de valeur
 Il est possible de déclarer une variable sans lui affecter de valeur. Par exemple:
 ```javascript
 let prenom;
@@ -172,7 +189,7 @@ console.log(prenom); // Affiche "undefined"
 ```
 Le code ci-dessus déclare une variable `prenom` sans lui affecter de valeur. Ensuite, on affiche la valeur de la variable `prenom` dans la console. La valeur affichée est "undefined" car la variable `prenom` n'a pas de valeur.
 
-### 3.5 Résumons
+### 5.5 Résumons
 On utilise `let` ou `const` pour déclarer des variables.
 
 On utilise `let` pour déclarer des variables dont la valeur peut être modifiée, et `const` pour déclarer des constantes dont la valeur ne peut pas être modifiée. On utilise le camelCase pour nommer les variables et les fonctions.
@@ -185,9 +202,9 @@ Il est possible de déclarer une variable sans lui affecter de valeur.
 
 On utilise comme naming convention le `camelCase` pour nommer les variables et les fonctions.
 
-## 4. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)
+## 6. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)
 Les opérateurs sont utilisés pour effectuer des opérations sur des variables et des valeurs. JavaScript possède plusieurs types d'opérateurs, dont les plus courants sont les opérateurs arithmétiques, d'affectation, de comparaison et logiques.
-### 4.1 Opérateurs arithmétiques
+### 6.1 Opérateurs arithmétiques
 Les opérateurs arithmétiques sont utilisés pour effectuer des opérations mathématiques.
 
 - **Addition (+)** : Additionne deux valeurs.
@@ -226,7 +243,7 @@ b--;
 console.log(b); // 4
 ```
 
-### 4.2 Opérateurs d'affectation
+### 6.2 Opérateurs d'affectation
 Les opérateurs d'affectation sont utilisés pour attribuer des valeurs à des variables JavaScript.
 
 - **Affectation simple (=)** : Attribue la valeur de droite à l'opérande de gauche.
@@ -258,7 +275,7 @@ c /= a; // c = c / a
 console.log(c); // 11
 ```
 
-### 4.3 Opérateurs de Comparaison
+### 6.3 Opérateurs de Comparaison
 Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.
 
 - **Égal à (==)** : Vérifie si les valeurs de deux opérandes sont égales. Mais attention si vous venez à comparer un nombre et une chaîne de caractères, JavaScript va convertir la chaîne de caractères en nombre parce que l'opérateur == en JavaScript est un opérateur d'égalité faible (ou égalité avec conversion de type). Lorsque vous utilisez ==, JavaScript tente de convertir les types pour les rendre comparables.
@@ -323,7 +340,7 @@ console.log(x > y); // false
 console.log(x >= 5); // true
 console.log(z <= 5); // false
 ```
-Notons que >, <, >= et <= convertissent les chaînes de caractères en nombres pour les comparer. Par exemple, "6" > "5" est vrai car "6" est converti en 6 et "5" est converti en 5.
+Notons que >, <, >= et <= convertissent les chaînes de caractères en nombres pour les comparer à des nombres si c'est possible.
 
 Ce qui poser problème... On peut palier au problème de cette manière:
 ```javascript
@@ -335,9 +352,11 @@ if ((typeof x === typeof y) && x >= y) {
 ```
 Ici, on vérifie d'abord que les types des variables x et y sont les mêmes, et ensuite on compare les valeurs. On sera sûr que les types sont les mêmes et que la comparaison se fera correctement.
 
+Maintenant
+
 Voilà un exemple de code qui montre le problème d'un langage de programmation faiblement typé. C'est pour cela que TypeScript a été créé.
 
-### 4.4 Opérateurs logiques
+### 6.4 Opérateurs logiques
 
 ```javascript
 let condition1 = true;
@@ -353,7 +372,7 @@ console.log(condition1 || condition2); // true
 console.log(!condition1); // false
 ```
 
-### 4.5 Opérateurs de concaténation
+### 6.5 Opérateurs de concaténation
 L'opérateur de concaténation (+) est utilisé pour concaténer (c'est-à-dire joindre) deux chaînes de caractères. Par exemple:
 ```javascript
 let prenom = "Johnny";
@@ -361,6 +380,11 @@ let nom = "Piette";
 console.log(prenom + " " + nom); // Johnny Piette
 ```
 
+## 7. Structures de contrôle (if, else, switch, boucles for, while)
+
+## 8. Fonctions : déclaration, expression, fléchées, portée, hoisting
+
+## 9. Gestion des erreurs et exceptions (try, catch, finally)
 
 
 
