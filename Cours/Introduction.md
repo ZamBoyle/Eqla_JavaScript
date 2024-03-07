@@ -295,6 +295,28 @@ Faites les exercices suivants:
 - [Exercices 2 - Ficher JS Externe](../Exercices/README.md#exercice-2---ficher-js-externe)
 - [Exercices 3 - Ficher JS Externe](../Exercices/README.md#exercice-3---ficher-js-externe)
 
+## 7. Un petit mot sur TypeScript
+TypeScript est un sur-ensemble de JavaScript qui ajoute des fonctionnalités de typage statique au langage. Il est conçu pour le développement d'applications JavaScript de grande taille. TypeScript est développé et maintenu par Microsoft.
+
+Nous n'avons pas le temps avec 18 heures de couvrir TypeScript. Mais si vous voulez en savoir plus, je vous invite à lire la [documentation officielle](https://www.typescriptlang.org/docs/).
+
+### 7.1 Pourquoi TypeScript?
+- **Typage statique** (fortement typé) : TypeScript ajoute des types statiques au JavaScript. Cela permet de détecter les erreurs de typage avant l'exécution du code. JavaScript a un type dynamique, ce qui signifie que vous pouvez affecter n'importe quel type de valeur à une variable sans spécifier son type. Cela peut entraîner des erreurs difficiles à détecter. TypeScript ajoute des types statiques pour détecter ces erreurs avant l'exécution du code. C'est vraiment ce qu'il faut retenir de TypeScript. C'est ce qui fait sa force. C'est ce qui fait que TypeScript est de plus en plus utilisé.
+    > - Le problème de la non existence de typage statique dans JavaScript est à mon sens sa plus grande faiblesse. C'est pour cela que je vous conseille de passer à TypeScript. C'est un investissement pour l'avenir. C'est un investissement pour votre carrière. C'est un investissement pour la qualité de votre code.
+
+    > - Certains vous dirons que le typage dynamique est justement une force. Pour moi, une pomme est une pomme. Si je veux une orange, je veux une orange. Je ne veux pas une pomme qui se prend pour une orange. 
+
+- **Transparent**: Passer de JavaScript à TypeScript est relativement simple/transparent. Il faut partir de votre existant et essayer de l'adapter. C'est encore le plus simple. Vous pouvez commencer par ajouter des types à votre code JavaScript existant. Vous pouvez également utiliser des fichiers de définition pour ajouter des types à des bibliothèques JavaScript existantes. 
+
+- **Open Source** : TypeScript est open source. Vous pouvez contribuer à son développement. Vous pouvez aussi l'utiliser gratuitement.
+
+- **Parfaitement intégré**: Il est parfaitement intégré à Visual Studio Code. Vous pouvez utiliser Visual Studio Code pour écrire du code TypeScript. Vous pouvez aussi utiliser Visual Studio Code pour déboguer du code TypeScript.
+
+- **Moderne**: Permet d'ajouter des fonctionnalités modernes à JavaScript. TypeScript est une sur-ensemble de JavaScript. Par exemple en programmation asynchrone, les async et await étaient des fonctionnalités de TypeScript avant d'être ajoutées à JavaScript.
+
+Je vous invite à aller écouter l'interview en Français de David Catuhe, créateur de Babylon.js où il explique pourquoi il est passé de JS à TypeScript: [Javascript vs Typescript, avec David Catuhe](https://www.youtube.com/watch?v=gfp2eCNaKlk). Il y explique aussi pourquoi TypeScript lui a détecté des erreurs dans son code. Son code ne compilait pas. Le compilateur va compiler Il faut donc le code TypeScript en JavaScript. On dit que le code TypeScript est tranpilé en code JavaScript. Et si le compilateur détecte des erreurs, il ne compilera pas le code. 
+
+Donc, dans votre apprentissage permanent, vous devrez peut-être/sans doute apprendre TypeScript.
 
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 
