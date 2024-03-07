@@ -9,8 +9,8 @@ L'ensemble des points de matière se trouvent dans les documents suivants:<br/>
 
 1. [Indroduction](Introduction.md)
 2. [Module 1: Les fondamentaux de JavaScript](Module1.md)
-3. [Module 2: Les fondamentaux de JavaScript](Module2.md)
-4. [Module 3: Les fondamentaux de JavaScript](Module3.md)
+<!-- 3. [Module 2: Les fondamentaux de JavaScript](Module2.md)
+4. [Module 3: Les fondamentaux de JavaScript](Module3.md) -->
 
 
 
