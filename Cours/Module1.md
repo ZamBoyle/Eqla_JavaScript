@@ -22,6 +22,12 @@
   - [3.3 Déclarer plusieurs variables](#33-déclarer-plusieurs-variables)
   - [3.4 Déclarer une variable sans lui affecter de valeur](#34-déclarer-une-variable-sans-lui-affecter-de-valeur)
   - [3.5 Résumons](#35-résumons)
+- [4. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)](#4-opérateurs-arithmétiques-daffectation-de-comparaison-logiques)
+  - [4.1 Opérateurs arithmétiques](#41-opérateurs-arithmétiques)
+  - [4.2 Opérateurs d'affectation](#42-opérateurs-daffectation)
+  - [4.3 Opérateurs de Comparaison](#43-opérateurs-de-comparaison)
+  - [4.4 Opérateurs logiques](#44-opérateurs-logiques)
+  - [4.5 Opérateurs de concaténation](#45-opérateurs-de-concaténation)
 
 <!-- /code_chunk_output -->
 
@@ -116,6 +122,8 @@ z vaut: true et est de type: string
 ```
 Evidemment, c'est une très mauvaise pratique de changer le type d'une variable, mais c'est pour vous montrer que c'est possible. C'est pour cela qu'il est important de bien nommer ses variables pour que leur contenu soit clair. Par exemple, si on a une variable `age` on sait que c'est un nombre, si on a une variable `prenom` on sait que c'est une chaîne de caractères, etc. Alors que x, y et z ne veulent rien dire.
 
+Rappelez-vous notre lors de notre introduction où nous avons dit que JavaScript est un langage de programmation faiblement typé. Cela signifie que les variables peuvent changer de type. C'est pour cette raison que TypeScript a été créé.
+
 ## 3. Variables
 Une variable est un conteneur pour stocker des données. Vous pouvez utiliser une variable pour stocker des données, et vous pouvez les réutiliser. En JavaScript, on utilise le mot-clé `let` pour déclarer une variable. Nous l'avons vu juste avant.
 
@@ -177,7 +185,181 @@ Il est possible de déclarer une variable sans lui affecter de valeur.
 
 On utilise comme naming convention le `camelCase` pour nommer les variables et les fonctions.
 
+## 4. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)
+Les opérateurs sont utilisés pour effectuer des opérations sur des variables et des valeurs. JavaScript possède plusieurs types d'opérateurs, dont les plus courants sont les opérateurs arithmétiques, d'affectation, de comparaison et logiques.
+### 4.1 Opérateurs arithmétiques
+Les opérateurs arithmétiques sont utilisés pour effectuer des opérations mathématiques.
 
+- **Addition (+)** : Additionne deux valeurs.
+- **Soustraction (-)** : Soustrait la valeur de droite de celle de gauche.
+- **Multiplication (*)** : Multiplie deux valeurs.
+- **Division (/)** : Divise la valeur de gauche par celle de droite.
+- **Modulo (%)** : Renvoie le reste de la division de gauche par droite.
+- **Incrémentation (++)** : Augmente la valeur d'une variable de 1.
+- **Décrémentation (--)** : Diminue la valeur d'une variable de 1.
+
+```javascript
+let a = 10;
+let b = 5;
+
+// Addition
+console.log(a + b); // 15
+
+// Soustraction
+console.log(a - b); // 5
+
+// Multiplication
+console.log(a * b); // 50
+
+// Division
+console.log(a / b); // 2
+
+// Modulo
+console.log(a % b); // 0
+
+// Incrémentation
+a++;
+console.log(a); // 11
+
+// Décrémentation
+b--;
+console.log(b); // 4
+```
+
+### 4.2 Opérateurs d'affectation
+Les opérateurs d'affectation sont utilisés pour attribuer des valeurs à des variables JavaScript.
+
+- **Affectation simple (=)** : Attribue la valeur de droite à l'opérande de gauche.
+- **Addition et affectation (+=)** : Ajoute la valeur de droite à la variable de gauche et assigne le résultat à cette variable.
+- **Soustraction et affectation (-=)** : Soustrait la valeur de droite de la variable de gauche et assigne le résultat.
+- **Multiplication et affectation (*=)** : Multiplie la variable de gauche par la valeur de droite et assigne le résultat.
+- **Division et affectation (/=)** : Divise la variable de gauche par la valeur de droite et assigne le résultat.
+
+```javascript
+let c = 10;
+
+// Affectation simple
+c = b; // c est maintenant 4
+
+// Addition et affectation
+c += a; // c = c + a
+console.log(c); // 15
+
+// Soustraction et affectation
+c -= a; // c = c - a
+console.log(c); // 5
+
+// Multiplication et affectation
+c *= a; // c = c * a
+console.log(c); // 110
+
+// Division et affectation
+c /= a; // c = c / a
+console.log(c); // 11
+```
+
+### 4.3 Opérateurs de Comparaison
+Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.
+
+- **Égal à (==)** : Vérifie si les valeurs de deux opérandes sont égales. Mais attention si vous venez à comparer un nombre et une chaîne de caractères, JavaScript va convertir la chaîne de caractères en nombre parce que l'opérateur == en JavaScript est un opérateur d'égalité faible (ou égalité avec conversion de type). Lorsque vous utilisez ==, JavaScript tente de convertir les types pour les rendre comparables.
+- **Strictement égal à (===)**: Vérifie si les valeurs et les types de deux opérandes sont identiques. Et là, pas de conversion de type: on compare les valeurs et les types.
+- **Différent de (!=)** : Vérifie si les valeurs de deux opérandes ne sont pas égales.
+- **Strictement différent de (!==)** : Vérifie si les valeurs ou les types de deux opérandes ne sont pas identiques.
+- **Supérieur à (>)**: Vérifie si la valeur de l'opérande de gauche est supérieure à celle de droite.
+- **Inférieur à (<)**: Vérifie si la valeur de l'opérande de gauche est inférieure à celle de droite.
+- **Supérieur ou égal à (>=)**: Vérifie si la valeur de l'opérande de gauche est supérieure ou égale à celle de droite.
+- **Inférieur ou égal à (<=)**: Vérifie si la valeur de l'opérande de gauche est inférieure ou égale à celle de droite.
+```javascript
+let x = 5, y = "5", z = 6;
+
+// Égal à
+console.log(x == y); // affichera true, car la valeur est la même après conversion de type (5 == 5) La chaîne de caractères "5" est convertie en nombre
+//Ou encore
+if (x == y) {
+  console.log("x est égal à y");
+} else {
+  console.log("x n'est pas égal à y");
+}
+
+// Strictement égal à
+console.log(x === y); // false, car le type diffère.
+//Ou encore
+if (x === y) {
+  console.log("x est strictement égal à y");
+} else {
+  console.log("x n'est pas strictement égal à y");
+}
+
+// Différent de
+console.log(x != z); // true
+console.log(x != y); // false
+//Ou encore
+if (x != z) {
+  console.log("x est différent de z");
+} else {
+  console.log("x n'est pas différent de z");
+}
+if (x != y) {
+  console.log("x est différent de y");
+} else {
+  console.log("x n'est pas différent de y");
+}
+
+// Strictement différent de
+console.log(x !== y); // true
+//Ou encore
+if (x !== y) {
+  console.log("x est strictement différent de y");
+} else {
+  console.log("x n'est pas strictement différent de y");
+}
+
+// Supérieur à, inférieur à
+console.log(z > x); // true
+console.log(x < z); // true
+console.log(x > y); // false
+
+// Supérieur ou égal à, inférieur ou égal à
+console.log(x >= 5); // true
+console.log(z <= 5); // false
+```
+Notons que >, <, >= et <= convertissent les chaînes de caractères en nombres pour les comparer. Par exemple, "6" > "5" est vrai car "6" est converti en 6 et "5" est converti en 5.
+
+Ce qui poser problème... On peut palier au problème de cette manière:
+```javascript
+if ((typeof x === typeof y) && x >= y) {
+  console.log("x est supérieur ou égal à y");
+} else {
+  console.log("x n'est pas supérieur ou égal à y");
+}
+```
+Ici, on vérifie d'abord que les types des variables x et y sont les mêmes, et ensuite on compare les valeurs. On sera sûr que les types sont les mêmes et que la comparaison se fera correctement.
+
+Voilà un exemple de code qui montre le problème d'un langage de programmation faiblement typé. C'est pour cela que TypeScript a été créé.
+
+### 4.4 Opérateurs logiques
+
+```javascript
+let condition1 = true;
+let condition2 = false;
+
+// ET logique
+console.log(condition1 && condition2); // false
+
+// OU logique
+console.log(condition1 || condition2); // true
+
+// NON logique
+console.log(!condition1); // false
+```
+
+### 4.5 Opérateurs de concaténation
+L'opérateur de concaténation (+) est utilisé pour concaténer (c'est-à-dire joindre) deux chaînes de caractères. Par exemple:
+```javascript
+let prenom = "Johnny";
+let nom = "Piette";
+console.log(prenom + " " + nom); // Johnny Piette
+```
 
 
 

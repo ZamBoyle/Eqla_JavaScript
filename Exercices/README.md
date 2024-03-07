@@ -38,10 +38,17 @@ alert('Hello les BlindCoders!');
 ```
 4. Ouvrez la page dans un navigateur et observez le résultat.
 
-## Exercice 4 - Type de données & variables
+## Exercice 4 - Installation de Node.js
+1. Allez sur le site officiel de Node.js: [https://nodejs.org/](https://nodejs.org/)
+2. Téléchargez la version `LTS` (Long Term Support) pour votre système d'exploitation.
+3. Installez Node.js sur votre ordinateur.
+4. Ouvrez un terminal et tapez la commande `node -v` pour vérifier que Node.js est bien installé.
+
+
+## Exercice 5 - Type de données & variables
 1. Créez une page HTML nommée Exercice4.html
-2. Insérez les balises `<script>` et `</script>` juste avant la fermeture de la balise `<body>` de la page.
-3. Pour le reste vous le ferez à l'intérieur des balises `<script>` et `</script>`.
+2. Insérez les balises `<script src='ex4.js'>` `</script>` juste avant la fermeture de la balise `<body>` de la page.
+3. Créez un fichier JavaScript nommé ex4.js
 4. Vous utiliserez let pour déclarer les variables.
 4. Créez une variable `prenom` et affectez-lui la valeur "Johnny".
 5. Créez une variable `age` et affectez-lui la valeur 25.
@@ -53,6 +60,7 @@ alert('Hello les BlindCoders!');
 11. Vous allez concaténer les variables `prenom`, `age`, `taille`, `poids` et `sexe` pour afficher le message suivant: "Je m'appelle Johnny, j'ai 25 ans, je mesure 1.75m, je pèse 75kg et je suis de sexe 'M'.". Vous utiliserez la commande `console.log()` pour afficher le message dans la console du navigateur.
 12. Il ne manquera plus que la variable `estMajeur` qui indiquera si la personne est majeure ou non. Pour faire simple sans faire de condition, on affichera simplement:"Majeur: true". Vous utiliserez la commande `console.log()` pour afficher le message dans la console du navigateur.
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
+14. Testez aussi via node.js en utilisant la commande `node ex4.js`.
 
 
 
