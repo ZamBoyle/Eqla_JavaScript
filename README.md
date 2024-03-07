@@ -9,7 +9,7 @@ Bienvenue dans ce cours de JavaScript.
 Ce cours est une courte Introduction au JavaScript.
 Vous trouverez ici les ressources nécessaires pour suivre le cours.
 - Une [Introduction](Cours/Introduction.md) au JavaScript.
-- Le [Cours](Cours/Cours.md) sur JavaScript.
+- Le [Cours](Cours/README.md) sur JavaScript.
 - Les [Exercices](Exercices/README.md#exercices) JavaScript.
 
 
