@@ -275,6 +275,7 @@ console.log(c); // 110
 c /= a; // c = c / a
 console.log(c); // 11
 ```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les résultats des opérations s'affichent dans la console.
 
 ### 6.3 Opérateurs de Comparaison
 Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.
@@ -341,6 +342,8 @@ console.log(x > y); // false
 console.log(x >= 5); // true
 console.log(z <= 5); // false
 ```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les résultats des comparaisons s'affichent dans la console sour forme de `true` ou `false`.
+
 Notons que >, <, >= et <= convertissent les chaînes de caractères en nombres pour les comparer à des nombres si c'est possible.
 
 Ce qui poser problème... On peut palier au problème de cette manière:
@@ -372,6 +375,7 @@ console.log(condition1 || condition2); // true
 // NON logique
 console.log(!condition1); // false
 ```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le résultat de chaque opération logique s'affiche dans la console.
 
 ### 6.5 Opérateurs de concaténation
 L'opérateur de concaténation (+) est utilisé pour concaténer (c'est-à-dire joindre) deux chaînes de caractères. Par exemple:
@@ -380,6 +384,8 @@ let prenom = "Johnny";
 let nom = "Piette";
 console.log(prenom + " " + nom); // Johnny Piette
 ```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. 
+
 
 ## 7. Structures de contrôle (if, else, switch, boucles for, while)
 Elles permettent de conditionner l'exécution de code. Par exemple, si une condition est vraie, on exécute un bloc de code, sinon on exécute un autre bloc de code. On peut aussi exécuter un bloc de code plusieurs fois avec une boucle.
