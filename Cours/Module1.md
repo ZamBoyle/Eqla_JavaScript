@@ -30,6 +30,7 @@
   - [6.4 Opérateurs logiques](#64-opérateurs-logiques)
   - [6.5 Opérateurs de concaténation](#65-opérateurs-de-concaténation)
 - [7. Structures de contrôle (if, else, switch, boucles for, while)](#7-structures-de-contrôle-if-else-switch-boucles-for-while)
+  - [7.1 if, else](#71-if-else)
 - [8. Fonctions : déclaration, expression, fléchées, portée, hoisting](#8-fonctions--déclaration-expression-fléchées-portée-hoisting)
 - [9. Gestion des erreurs et exceptions (try, catch, finally)](#9-gestion-des-erreurs-et-exceptions-try-catch-finally)
 
@@ -352,7 +353,7 @@ if ((typeof x === typeof y) && x >= y) {
 ```
 Ici, on vérifie d'abord que les types des variables x et y sont les mêmes, et ensuite on compare les valeurs. On sera sûr que les types sont les mêmes et que la comparaison se fera correctement.
 
-Maintenant
+Maintenant, si on nomme ses variables correctement et qu'on fait attention à ce que l'on fait, on ne devra pas vérifier le type.
 
 Voilà un exemple de code qui montre le problème d'un langage de programmation faiblement typé. C'est pour cela que TypeScript a été créé.
 
@@ -381,6 +382,72 @@ console.log(prenom + " " + nom); // Johnny Piette
 ```
 
 ## 7. Structures de contrôle (if, else, switch, boucles for, while)
+Elles permettent de conditionner l'exécution de code. Par exemple, si une condition est vraie, on exécute un bloc de code, sinon on exécute un autre bloc de code. On peut aussi exécuter un bloc de code plusieurs fois avec une boucle.
+### 7.1 if, else
+La structure de contrôle `if` permet d'exécuter un bloc de code si une condition est vraie. Par exemple:
+```javascript
+let age = 18;
+if (age >= 18) {
+  console.log("Vous êtes majeur");
+}
+```
+Le code ci-dessus affiche "Vous êtes majeur" si la variable `age` est supérieure ou égale à 18.
+
+A contrario, la structure de contrôle `else` permet d'exécuter un bloc de code si la condition de `if` est fausse. Par exemple:
+```javascript
+let age = 15;
+if (age >= 18) {
+  console.log("Vous êtes majeur");
+} else {
+  console.log("Vous êtes mineur");
+}
+```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le message "Vous êtes mineur" s'affiche dans la console.
+
+Changez la valeur de la variable `age` à 20 et exécutez le code à nouveau. Vous verrez que le message "Vous êtes majeur" s'affiche dans la console.
+
+Nous pouvons biensûr utiliser des opérateurs de comparaison dans les conditions des structures de contrôle `if` et `else`. Par exemple:
+```javascript
+let age = 15;
+let sexe = "F";
+if (age >= 18 && sexe === "M") {
+  console.log("Vous êtes majeur et vous êtes un homme.");
+} else if (age >= 18 && sexe === "F") {
+  console.log("Vous êtes majeure et vous êtes une femme.");
+} else {
+  console.log("Vous êtes mineur(e).");
+}
+```
+Ajoutez ou modifier le fichier `tests.js` avec le code précédent et exécutez-le avec la commande `node tests.js`.
+- Que donne ce résultat de ce code ?
+- Rendez
+
+Notez que pour ce simple code, on peut aussi le voir écrit sous cette forme:
+```javascript
+let age = 15;
+let sexe = "F";
+
+if (age >= 18) {
+  if(sexe === "M") {
+    console.log("Vous êtes majeur et vous êtes un homme.");
+  } else if (sexe ==="F") {
+    console.log("Vous êtes majeure et vous êtes une femme.");
+  }
+} else {
+  console.log("Vous êtes mineur(e).");
+}
+```
+En pseudo-code ça donne:
+```text
+SI (Majeur >= 18):
+  SI (sexe === "M"):
+    Affiche("Vous êtes majeur et vous êtes un homme.")
+  SINON (SI sexe === "F"):
+    Affiche("Vous êtes majeur et vous êtes une femme.")
+SINON: // Ce sinon porte sur le premier SI
+  Affiche("Vous êtes mineur(e).")
+```
+Le choix de vos conditions dépend de ce que vous voulez faire. Dans le cas présent, les deux codes donnent le même résultat. Je préfère le second code car on montre bien qu'on teste d'abord si la personne est majeure, et ensuite on teste le sexe. Nous avons deux blocs distincts pour les deux tests. C'est plus clair dans certains cas.
 
 ## 8. Fonctions : déclaration, expression, fléchées, portée, hoisting
 
