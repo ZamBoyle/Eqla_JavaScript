@@ -16,35 +16,38 @@
   - [3.2 la fonction console.log()](#32-la-fonction-consolelog)
   - [3.3 la propriété innerHTML](#33-la-propriété-innerhtml)
 - [4. Types de données](#4-types-de-données)
-- [5. Variables](#5-variables)
-  - [5.1 Naming convention Variables et fonctions](#51-naming-convention-variables-et-fonctions)
-  - [5.2 var, let et const](#52-var-let-et-const)
-  - [5.3 Déclarer plusieurs variables](#53-déclarer-plusieurs-variables)
-  - [5.4 Déclarer une variable sans lui affecter de valeur](#54-déclarer-une-variable-sans-lui-affecter-de-valeur)
-  - [5.5 Résumons](#55-résumons)
-- [6. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)](#6-opérateurs-arithmétiques-daffectation-de-comparaison-logiques)
-  - [6.1 Opérateurs arithmétiques](#61-opérateurs-arithmétiques)
-  - [6.2 Opérateurs d'affectation](#62-opérateurs-daffectation)
-  - [6.3 Opérateurs de Comparaison](#63-opérateurs-de-comparaison)
-  - [6.4 Opérateurs logiques](#64-opérateurs-logiques)
-  - [6.5 Opérateurs de concaténation](#65-opérateurs-de-concaténation)
-- [7. Structures de contrôle (if, else, switch, boucles for, while)](#7-structures-de-contrôle-if-else-switch-boucles-for-while)
-  - [7.1 if, else](#71-if-else)
-    - [7.1.1 Syntaxe](#711-syntaxe)
-    - [7.1.2 if](#712-if)
-    - [7.1.3 else](#713-else)
-    - [7.1.4 Opérateurs logiques dans les conditions](#714-opérateurs-logiques-dans-les-conditions)
-    - [7.1.5 Exemple avec les années bissextiles](#715-exemple-avec-les-années-bissextiles)
-  - [7.2 switch](#72-switch)
-- [8. Les Fonctions](#8-les-fonctions)
-  - [8.1 Déclaration de fonction](#81-déclaration-de-fonction)
-  - [8.2 Fonction qui ne retourne rien](#82-fonction-qui-ne-retourne-rien)
-  - [8.3 Fonction qui retourne une valeur](#83-fonction-qui-retourne-une-valeur)
-  - [8.2 Les early return](#82-les-early-return)
-- [9. Portée des variables](#9-portée-des-variables)
-  - [9.1 Portée globale](#91-portée-globale)
-  - [9.2 Portée locale](#92-portée-locale)
-- [10. Gestion des erreurs et exceptions (try, catch, finally)](#10-gestion-des-erreurs-et-exceptions-try-catch-finally)
+- [5. Blocs de code](#5-blocs-de-code)
+- [6. Variables](#6-variables)
+  - [6.1 Naming convention Variables et fonctions](#61-naming-convention-variables-et-fonctions)
+  - [6.2 var, let et const](#62-var-let-et-const)
+  - [6.3 Déclarer plusieurs variables](#63-déclarer-plusieurs-variables)
+  - [6.4 Déclarer une variable sans lui affecter de valeur](#64-déclarer-une-variable-sans-lui-affecter-de-valeur)
+  - [6.5 Résumons](#65-résumons)
+- [7. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)](#7-opérateurs-arithmétiques-daffectation-de-comparaison-logiques)
+  - [7.1 Opérateurs arithmétiques](#71-opérateurs-arithmétiques)
+  - [7.2 Opérateurs d'affectation](#72-opérateurs-daffectation)
+  - [7.3 Opérateurs de Comparaison](#73-opérateurs-de-comparaison)
+  - [7.4 Opérateurs logiques](#74-opérateurs-logiques)
+  - [7.5 Opérateurs de concaténation](#75-opérateurs-de-concaténation)
+- [8. Structures de contrôle (if, else, switch, boucles for, while)](#8-structures-de-contrôle-if-else-switch-boucles-for-while)
+  - [8.1 if, else](#81-if-else)
+    - [8.1.1 Syntaxe](#811-syntaxe)
+    - [8.1.2 if](#812-if)
+    - [8.1.3 else](#813-else)
+    - [8.1.4 Opérateurs logiques dans les conditions](#814-opérateurs-logiques-dans-les-conditions)
+    - [8.1.5 Exemple avec les années bissextiles](#815-exemple-avec-les-années-bissextiles)
+  - [8.2 switch](#82-switch)
+- [9. Les Fonctions](#9-les-fonctions)
+  - [9.1 Déclaration de fonction](#91-déclaration-de-fonction)
+  - [9.2 Fonction qui ne retourne rien](#92-fonction-qui-ne-retourne-rien)
+  - [9.3 Fonction qui retourne une valeur](#93-fonction-qui-retourne-une-valeur)
+  - [9.2 Les early return](#92-les-early-return)
+  - [9.3 Les fonctions anonymes](#93-les-fonctions-anonymes)
+  - [9.3 Les fonctions fléchées](#93-les-fonctions-fléchées)
+- [10. Portée des variables](#10-portée-des-variables)
+  - [10.1 Portée globale](#101-portée-globale)
+  - [10.2 Portée locale](#102-portée-locale)
+- [11. Gestion des erreurs et exceptions (try, catch, finally)](#11-gestion-des-erreurs-et-exceptions-try-catch-finally)
 
 <!-- /code_chunk_output -->
 
@@ -175,7 +178,45 @@ Evidemment, c'est une très mauvaise pratique de changer le type d'une variable,
 
 Rappelez-vous notre lors de notre introduction où nous avons dit que JavaScript est un langage de programmation faiblement typé. Cela signifie que les variables peuvent changer de type. C'est pour cette raison que TypeScript a été créé.
 
-## 5. Variables
+## 5. Blocs de code
+En JavaScript, les blocs de code sont délimités par des accolades `{}`. Tout ce qui se trouve entre les accolades est considéré comme un bloc de code: une suite d'instructions qui seront exécutées ensemble. C'est comme dans la plupart des langages de programmation.
+
+```javascript
+{
+  console.log("Ceci s'exécute dans un bloc de code");
+}
+{
+  console.log("Ceci s'exécute dans un autre bloc de code");
+}
+```
+Même si les deux blocs de code ci-dessus contiennent la même instruction `console.log()`, ils sont considérés comme deux blocs de code distincts. Le premier bloc de code affiche "Ceci s'exécute dans un bloc de code" dans la console, et le deuxième bloc de code affiche "Ceci s'exécute dans un autre bloc de code" dans la console.
+
+Ils sont utilisés dans les structures de contrôle (if, else, switch, boucles for, while, etc.), les fonctions, les classes, etc.
+
+```javascript
+if (condition) {
+  // Ceci est un bloc de code
+  console.log("Ceci s'exécute si la condition est vraie");
+} else {
+  // Ceci est un autre bloc de code
+  console.log("Ceci s'exécute si la condition est fausse");
+}
+
+function maFonction() {
+  // Ceci est un bloc de code
+  console.log("Ceci s'exécute dans maFonction");
+}
+
+for (let i = 0; i < 5; i++) {
+  // Ceci est un bloc de code
+  console.log("Ceci s'exécute dans une boucle for");
+}
+```
+
+
+Nous verrons plus loin que la portée des variables est définie par les blocs de code. C'est-à-dire que si une variable est déclarée dans un bloc de code, elle ne sera accessible que dans ce bloc de code. C'est ce qu'on appelle la portée locale. Nous verrons cela plus tard.
+
+## 6. Variables
 
 Une variable est un conteneur pour stocker des données. Vous pouvez utiliser une variable pour stocker des données, et vous pouvez les réutiliser. En JavaScript, on utilise le mot-clé `let` pour déclarer une variable. Nous l'avons vu juste avant.
 
@@ -188,7 +229,7 @@ console.log(prenom); // Affiche "Johnny"
 
 Le code ci-dessus déclare une variable `prenom` et lui affecte la valeur "Johnny". Ensuite, on affiche la valeur de la variable `prenom` dans la console.
 
-### 5.1 Naming convention Variables et fonctions
+### 6.1 Naming convention Variables et fonctions
 
 Les noms de variables et de fonctions en JavaScript sont sensibles à la casse. Cela signifie que `prenom`, `Prenom` et `PRENOM` sont trois variables différentes. Il est recommandé d'utiliser des noms de variables et de fonctions significatifs, et de les nommer en camelCase. Par exemple:
 
@@ -207,7 +248,7 @@ Le nom de la fonction `afficherPrenomComplet` est composé de trois mots, et les
 
 
 
-### 5.2 var, let et const
+### 6.2 var, let et const
 
 Avant ES6 (2015), on utilisait le mot-clé `var` pour déclarer une variable. Mais depuis ES6, on utilise le mot-clé `let` pour déclarer une variable. `var` est toujours utilisé, mais il est déconseillé de l'utiliser.
 
@@ -220,7 +261,7 @@ prenom = "Philip"; // Erreur: Assignment to constant variable.
 
 Le code ci-dessus déclare une constante `prenom` et lui affecte la valeur "Johnny". Ensuite, on essaie de changer la valeur de la constante `prenom` par "Philip", mais on obtient une erreur car on ne peut pas changer la valeur d'une constante.
 
-### 5.3 Déclarer plusieurs variables
+### 6.3 Déclarer plusieurs variables
 
 Il est possible de déclarer plusieurs variables en une seule ligne. Par exemple:
 
@@ -235,7 +276,7 @@ Le code ci-dessus déclare trois variables `prenom`, `nom` et `age` et leur affe
 
 Personnellement, je préfère déclarer une variable par ligne, mais c'est une question de goût.
 
-### 5.4 Déclarer une variable sans lui affecter de valeur
+### 6.4 Déclarer une variable sans lui affecter de valeur
 
 Il est possible de déclarer une variable sans lui affecter de valeur. Par exemple:
 
@@ -246,7 +287,7 @@ console.log(prenom); // Affiche "undefined"
 
 Le code ci-dessus déclare une variable `prenom` sans lui affecter de valeur. Ensuite, on affiche la valeur de la variable `prenom` dans la console. La valeur affichée est "undefined" car la variable `prenom` n'a pas de valeur.
 
-### 5.5 Résumons
+### 6.5 Résumons
 
 On utilise `let` ou `const` pour déclarer des variables.
 
@@ -260,11 +301,11 @@ Il est possible de déclarer une variable sans lui affecter de valeur.
 
 On utilise comme naming convention le `camelCase` pour nommer les variables et les fonctions.
 
-## 6. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)
+## 7. Opérateurs (arithmétiques, d'affectation, de comparaison, logiques)
 
 Les opérateurs sont utilisés pour effectuer des opérations sur des variables et des valeurs. JavaScript possède plusieurs types d'opérateurs, dont les plus courants sont les opérateurs arithmétiques, d'affectation, de comparaison et logiques.
 
-### 6.1 Opérateurs arithmétiques
+### 7.1 Opérateurs arithmétiques
 
 Les opérateurs arithmétiques sont utilisés pour effectuer des opérations mathématiques.
 
@@ -304,7 +345,7 @@ b--;
 console.log(b); // 4
 ```
 
-### 6.2 Opérateurs d'affectation
+### 7.2 Opérateurs d'affectation
 
 Les opérateurs d'affectation sont utilisés pour attribuer des valeurs à des variables JavaScript.
 
@@ -340,7 +381,7 @@ console.log(c); // 4
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les résultats des opérations s'affichent dans la console.
 
-### 6.3 Opérateurs de Comparaison
+### 7.3 Opérateurs de Comparaison
 
 Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.
 
@@ -429,7 +470,7 @@ Maintenant
 
 Voilà un exemple de code qui montre le problème d'un langage de programmation faiblement typé. C'est pour cela que TypeScript a été créé.
 
-### 6.4 Opérateurs logiques
+### 7.4 Opérateurs logiques
 
 ```javascript
 let condition1 = 10 > 5; // true
@@ -456,7 +497,7 @@ Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande 
 
 Généralement nous les utilisons dans des conditions, mais on peut les stocker dans des variables mais je reprendrai cet exemple lorsque je verrai les conditions. ;-)
 
-### 6.5 Opérateurs de concaténation
+### 7.5 Opérateurs de concaténation
 
 L'opérateur de concaténation (+) est utilisé pour concaténer (c'est-à-dire joindre) deux chaînes de caractères. Par exemple:
 
@@ -467,11 +508,11 @@ console.log(prenom + " " + nom); // Johnny Piette
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le résultat de chaque opération logique s'affiche dans la console.
 
-## 7. Structures de contrôle (if, else, switch, boucles for, while)
+## 8. Structures de contrôle (if, else, switch, boucles for, while)
 Elles permettent de conditionner l'exécution de code. Par exemple, si une condition est vraie, on exécute un bloc de code, sinon on exécute un autre bloc de code. On peut aussi exécuter un bloc de code plusieurs fois avec une boucle.
-### 7.1 if, else
+### 8.1 if, else
 La structure de contrôle `if` est utilisée pour exécuter un bloc de code si une condition est vraie. Si la condition est fausse, un bloc de code différent peut être exécuté via la structure de contrôle `else`.
-#### 7.1.1 Syntaxe
+#### 8.1.1 Syntaxe
 La syntaxe de la structure de contrôle `if` est la suivante:
 ```javascript
 if (condition) {
@@ -482,7 +523,7 @@ if (condition) {
 ```
 Où `condition` est une expression qui est évaluée. Si la condition est vraie, le bloc de code dans les accolades après `if` est exécuté. Sinon, le bloc de code dans les accolades après `else` est exécuté.
 
-#### 7.1.2 if
+#### 8.1.2 if
 La structure de contrôle `if` permet d'exécuter un bloc de code si une condition est vraie. Par exemple:
 ```javascript
 let age = 18;
@@ -492,7 +533,7 @@ if (age >= 18) {
 ```
 Le code ci-dessus affiche "Vous êtes majeur" si la variable `age` est supérieure ou égale à 18.
 
-#### 7.1.3 else
+#### 8.1.3 else
 A contrario, la structure de contrôle `else` permet d'exécuter un bloc de code si la condition de `if` est fausse. Par exemple:
 ```javascript
 let age = 15;
@@ -506,7 +547,7 @@ Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande 
 
 Changez la valeur de la variable `age` à 20 et exécutez le code à nouveau. Vous verrez que le message "Vous êtes majeur" s'affiche dans la console.
 
-#### 7.1.4 Opérateurs logiques dans les conditions
+#### 8.1.4 Opérateurs logiques dans les conditions
 Nous pouvons biensûr utiliser des opérateurs de comparaison et logiques dans les conditions des structures de contrôle `if` et `else`
 
 Par exemple utilisation de l'opérateur logique `&&` (ET) dans une condition:
@@ -552,7 +593,7 @@ SINON: // Ce sinon porte sur le premier SI
 ```
 Le choix de vos conditions dépend de ce que vous voulez faire. Dans le cas présent, les deux codes donnent le même résultat. Je préfère le second code car on montre bien qu'on teste d'abord si la personne est majeure, et ensuite on teste le sexe. Nous avons deux blocs distincts pour les deux tests. C'est plus clair dans certains cas. Mais on rentre ici dans la subjectivité. C'est à vous de voir ce qui vous convient le mieux.
 
-#### 7.1.5 Exemple avec les années bissextiles
+#### 8.1.5 Exemple avec les années bissextiles
 On va reprendre l'exemple avec les années bissextiles:
 ```javascript
 let annee = 2024;
@@ -585,7 +626,7 @@ Vous pourriez vous poser la question de l'intérêt de stocker le résultat dans
 Mais évidemment, au niveau clareté, on pourrait/devrait aussi faire une fonction pour vérifier si une année est bissextile. On verra cela plus tard. Donc je fais avec ce que vous connaissez déjà. ;-)
 
 
-### 7.2 switch
+### 8.2 switch
 La structure de contrôle `switch` est utilisée pour sélectionner l'une des nombreuses options. Elle est similaire à une série de déclarations `if` sur la même condition. Utilisez `switch` pour sélectionner l'une des nombreuses options.
 
 La syntaxe de la structure de contrôle `switch` est la suivante:
@@ -637,18 +678,18 @@ switch (jour) {
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le message "C'est le premier jour de la semaine" s'affiche dans la console.
 
-## 8. Les Fonctions
+## 9. Les Fonctions
 <!-- déclaration, expression, fléchées, portée, hoisting-->
 Si on reprend le code sur les années bissextiles, on pourrait le transformer en fonction. Cela permettrait de réutiliser le code pour d'autres années et plus pour une année en particulier.
 
-### 8.1 Déclaration de fonction
+### 9.1 Déclaration de fonction
 La déclaration de fonction est la manière la plus courante de déclarer une fonction en JavaScript. Par exemple:
 function nomDeLaFonction(parametre1, parametre2, ...) {
   // Code à exécuter
 }
 Où nomDeLaFonction est le nom de la fonction, et parametre1, parametre2, ... sont les paramètres de la fonction.
 
-### 8.2 Fonction qui ne retourne rien
+### 9.2 Fonction qui ne retourne rien
 Une fonction peut ne pas retourner de valeur. Généralement, on utilise ce type de fonction pour exécuter un bloc de code, faire un traitement, etc. Par exemple:
 
 ```javascript
@@ -658,7 +699,7 @@ function afficherBonjour() {
 ```
 La fonction `afficherBonjour` ne retourne rien. Elle affiche simplement "Bonjour" dans la console.
 
-### 8.3 Fonction qui retourne une valeur
+### 9.3 Fonction qui retourne une valeur
 Une fonction peut retourner une valeur. Généralement, on utilise ce type de fonction pour effectuer un calcul, une opération, un booléen, etc. Par exemple:
 
 ```javascript
@@ -704,7 +745,7 @@ C'est plus court et plus clair (c'est subjectif). On sait tout de suite que la f
 
 On peut se permettre cela car le résultat de la condition est un booléen. Si on avait eu un résultat plus complexe, on aurait utilisé une variable pour stocker le résultat. Et on aurait retourné la variable.
 
-### 8.2 Les early return
+### 9.2 Les early return
 Les early return sont des retours anticipés. C'est à dire qu'on retourne directement le résultat de la condition si on sait que le reste du code ne sera pas exécuté. Par exemple:
 
 ```javascript
@@ -722,21 +763,6 @@ function estBissextile(annee) {
 
 On peut utiliser aussi les early return. C'est à dire qu'on retourne directement le résultat de la condition si on sait que le reste du code ne sera pas exécuté. Par exemple:
 
-
-On peut aussi utiliser les fonctions fléchées. C'est une autre manière d'écrire les fonctions. Elles sont plus courtes et plus claires. Par exemple:
-
-```javascript
-let estBissextile = annee => annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
-let annee = 2024;
-
-if (estBissextile(annee)) {
-  console.log(annee + " est une année bissextile");
-} else {
-  console.log(annee + " n'est pas une année bissextile");
-}
-```
-
-
 Si on repend le code complet de l'année bissextile, on a:
 ```javascript
 function estBissextile(annee) {
@@ -753,13 +779,68 @@ if (estBissextile(annee)) {
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le message "C'est le premier jour de la semaine" s'affiche dans la console.
 
-## 9. Portée des variables
+### 9.3 Les fonctions anonymes
+Cette partie est un peu plus avancée et si vous ne la comprenez pas, ce n'est pas grave. Vous pouvez la sauter. C'est juste pour vous montrer qu'il existe plusieurs manières de déclarer des fonctions en JavaScript. Elles seront fort utilies lorsque vous utiliserez des librairies comme React, Angular, Vue, etc. 
+
+Une fonction anonyme est une fonction sans nom. Elle est stockée dans une variable. Par exemple:
+
+```javascript
+let additionner = function(a, b) {
+  return a + b;
+}
+
+let somme = additionner(5, 3);
+console.log(somme); // 8
+```
+Ou bien notre exemple de l'année bissextile:
+```javascript
+let estBissextile = function(annee) {
+  return annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
+}
+```
+### 9.3 Les fonctions fléchées
+Les fonctions fléchées sont une autre manière de déclarer des fonctions en JavaScript. Elles sont plus courtes et plus claires que les fonctions classiques.
+On va utiliser les symboles `=>` pour déclarer une fonction fléchée. Cette utilisation permettra de gagner en lisibilité du code car déjà on ne doit pas écrire le mot-clé `function`. On peut aussi omettre les accolades si la fonction ne contient qu'une seule instruction.
+
+La syntaxe des fonctions fléchées est la suivante:
+```javascript
+let variable = (param1, param2, ...) => {
+  // Code à exécuter
+}
+
+let variable2 = param => {
+  // Code à exécuter
+}
+
+let variable3 = () => { // () si la fonction ne contient pas de paramètres
+  // Code à exécuter
+}
+
+let variable4 = param => param * 2; // Si la fonction ne contient qu'une seule instruction: pas besoin d'accolades
+```
+Où `variable` est le nom de la variable qui contient la fonction, et `param1, param2, ...` sont les paramètres de la fonction.
+
+Donc, notre variable est une fonction. Bizarre hein ? Mais c'est comme ça en JavaScript. On peut stocker une fonction dans une variable. C'est une fonction anonyme. C'est à dire qu'elle n'a pas de nom. On peut l'appeler avec le nom de la variable.
+
+Notre exemple de l'année bissextile avec une fonction fléchée:
+```javascript
+let estBissextile = annee => annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
+let annee = 2024;
+
+if (estBissextile(annee)) {
+  console.log(annee + " est une année bissextile");
+} else {
+  console.log(annee + " n'est pas une année bissextile");
+}
+```
+
+## 10. Portée des variables
 La portée d'une varible est la portée dans laquelle une variable est accessible. C'est à dire l'endroit où une variable peut être utilisée et connue.
 
 En JavaScript, il existe deux types de portée des variables.
 
-### 9.1 Portée globale
- Une variable déclarée en dehors d'une fonction a une portée globale. Elle est accessible partout dans le script.
+### 10.1 Portée globale
+Une variable déclarée en dehors d'une fonction a une portée globale. Elle est accessible partout dans le script.
 
 ```javascript
 let nom = "Piette"; // Portée globale
@@ -771,7 +852,7 @@ function afficherNomComplet() {
 ```
 On voit donc que les variables nom et prenom sont accessibles dans la fonction `afficherNomComplet`.
 
-### 9.2 Portée locale
+### 10.2 Portée locale
 Une variable déclarée à l'intérieur d'une fonction a une portée locale. Elle n'est accessible qu'à l'intérieur de la fonction.
 
 On pourrait faire de la trucologgie et créer un bloc de code pour limiter la portée d'une variable. C'est possible en JavaScript, mais je ne vais pas vous embêter avec cela. C'est une fonctionnalité qui n'est pas souvent utilisée.
@@ -793,10 +874,7 @@ Dans le code précédent, les variables nom et prenom sont déclarées à l'int�
 
 Le code `console.log(prenom);` génère une erreur car la variable prenom n'est pas accessible en dehors de la fonction `afficherNomComplet`.
 
-
-
-
-## 10. Gestion des erreurs et exceptions (try, catch, finally)
+## 11. Gestion des erreurs et exceptions (try, catch, finally)
 La gestion des erreurs et des exceptions est une partie importante de la programmation. Les erreurs et les exceptions peuvent survenir lors de l'exécution d'un programme, et il est important de les gérer correctement.
 
 
