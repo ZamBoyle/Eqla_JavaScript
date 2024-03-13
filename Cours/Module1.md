@@ -36,7 +36,11 @@
     - [7.1.4 Opérateurs logiques dans les conditions](#714-opérateurs-logiques-dans-les-conditions)
     - [7.1.5 Exemple avec les années bissextiles](#715-exemple-avec-les-années-bissextiles)
   - [7.2 switch](#72-switch)
-- [8. Les Fonctions : déclaration, expression, fléchées, portée, hoisting](#8-les-fonctions--déclaration-expression-fléchées-portée-hoisting)
+- [8. Les Fonctions](#8-les-fonctions)
+  - [8.1 Déclaration de fonction](#81-déclaration-de-fonction)
+  - [8.2 Fonction qui ne retourne rien](#82-fonction-qui-ne-retourne-rien)
+  - [8.3 Fonction qui retourne une valeur](#83-fonction-qui-retourne-une-valeur)
+  - [8.2 Les early return](#82-les-early-return)
 - [9. Portée des variables](#9-portée-des-variables)
   - [9.1 Portée globale](#91-portée-globale)
   - [9.2 Portée locale](#92-portée-locale)
@@ -664,22 +668,38 @@ function additionner(a, b) {
 ```
 La fonction `additionner` retourne la somme des paramètres `a` et `b`.
 
+Reprenons l'exemple de l'année bissextile. On pourrait le transformer en fonction. Cela permettrait de réutiliser le code pour d'autres années et plus pour une année en particulier.
+
 
 ```javascript
 function estBissextile(annee) {
-  let estBissextile = annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
-  return estBissextile;
+  let bissextile = false;
+
+  if (annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0))
+    bissextile = true;
+
+  return bissextile;
+}
+
+let annee = 2024;
+if (estBissextile(annee)) {
+  console.log(annee + " est une année bissextile");
+} else {
+  console.log(annee + " n'est pas une année bissextile");
 }
 ```
-Ici on est passé par une variable pour stocker le résultat de la condition.
-C'est bien, mais on peut aussi retourner directement le résultat de la condition.
+La fonction `estBissextile` prend un paramètre `annee` et retourne `true` si l'année est bissextile, sinon elle retourne `false`.
+
+Notez qu'il n'y a pas de else car bissextile est initialisé à `false`. Si la condition est vraie, on met bissextile à `true` et on retourne `true`. Sinon, on retourne `false` qui est la valeur par d'intialisation de bissextile.
+
+Dans l'exemple précédent on voit qu'il est possible de faire autrement et directement retourner le résultat de la condition. C'est plus court et plus clair. On sait tout de suite que la fonction retourne le résultat de la condition.
 
 ```javascript
 function estBissextile(annee) {
   return annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
 }
 ```
-C'est plus court et plus clair. On sait tout de suite que la fonction retourne le résultat de la condition.
+C'est plus court et plus clair (c'est subjectif). On sait tout de suite que la fonction retourne le résultat de la condition.
 
 On peut se permettre cela car le résultat de la condition est un booléen. Si on avait eu un résultat plus complexe, on aurait utilisé une variable pour stocker le résultat. Et on aurait retourné la variable.
 
@@ -706,7 +726,6 @@ On peut aussi utiliser les fonctions fléchées. C'est une autre manière d'écr
 
 ```javascript
 let estBissextile = annee => annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
-
 let annee = 2024;
 
 if (estBissextile(annee)) {
@@ -724,6 +743,7 @@ function estBissextile(annee) {
 }
 
 let annee = 2024;
+
 if (estBissextile(annee)) {
   console.log(annee + " est une année bissextile");
 } else {
