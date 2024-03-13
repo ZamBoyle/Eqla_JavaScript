@@ -633,8 +633,37 @@ switch (jour) {
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le message "C'est le premier jour de la semaine" s'affiche dans la console.
 
-## 8. Les Fonctions : déclaration, expression, fléchées, portée, hoisting
+## 8. Les Fonctions
+<!-- déclaration, expression, fléchées, portée, hoisting-->
 Si on reprend le code sur les années bissextiles, on pourrait le transformer en fonction. Cela permettrait de réutiliser le code pour d'autres années et plus pour une année en particulier.
+
+### 8.1 Déclaration de fonction
+La déclaration de fonction est la manière la plus courante de déclarer une fonction en JavaScript. Par exemple:
+function nomDeLaFonction(parametre1, parametre2, ...) {
+  // Code à exécuter
+}
+Où nomDeLaFonction est le nom de la fonction, et parametre1, parametre2, ... sont les paramètres de la fonction.
+
+### 8.2 Fonction qui ne retourne rien
+Une fonction peut ne pas retourner de valeur. Généralement, on utilise ce type de fonction pour exécuter un bloc de code, faire un traitement, etc. Par exemple:
+
+```javascript
+function afficherBonjour() {
+  console.log("Bonjour");
+}
+```
+La fonction `afficherBonjour` ne retourne rien. Elle affiche simplement "Bonjour" dans la console.
+
+### 8.3 Fonction qui retourne une valeur
+Une fonction peut retourner une valeur. Généralement, on utilise ce type de fonction pour effectuer un calcul, une opération, un booléen, etc. Par exemple:
+
+```javascript
+function additionner(a, b) {
+  return a + b;
+}
+```
+La fonction `additionner` retourne la somme des paramètres `a` et `b`.
+
 
 ```javascript
 function estBissextile(annee) {
@@ -654,7 +683,39 @@ C'est plus court et plus clair. On sait tout de suite que la fonction retourne l
 
 On peut se permettre cela car le résultat de la condition est un booléen. Si on avait eu un résultat plus complexe, on aurait utilisé une variable pour stocker le résultat. Et on aurait retourné la variable.
 
-Mais, faites comme vous le sentez. C'est une question de goût. ;-)
+### 8.2 Les early return
+Les early return sont des retours anticipés. C'est à dire qu'on retourne directement le résultat de la condition si on sait que le reste du code ne sera pas exécuté. Par exemple:
+
+```javascript
+function estBissextile(annee) {
+  if (annee % 400 === 0) return true;
+  if (annee % 100 === 0) return false;
+  return annee % 4 === 0;
+}
+```
+- Si l'année est divisible par 400, on retourne directement `true`. On sait que le reste du code ne sera pas exécuté.
+- Si l'année est divisible par 100, on retourne directement `false`. On sait que le reste du code ne sera pas exécuté.
+- Si l'année est divisible par 4, on retourne `true` sinon on retourne `false`.
+
+
+
+On peut utiliser aussi les early return. C'est à dire qu'on retourne directement le résultat de la condition si on sait que le reste du code ne sera pas exécuté. Par exemple:
+
+
+On peut aussi utiliser les fonctions fléchées. C'est une autre manière d'écrire les fonctions. Elles sont plus courtes et plus claires. Par exemple:
+
+```javascript
+let estBissextile = annee => annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
+
+let annee = 2024;
+
+if (estBissextile(annee)) {
+  console.log(annee + " est une année bissextile");
+} else {
+  console.log(annee + " n'est pas une année bissextile");
+}
+```
+
 
 Si on repend le code complet de l'année bissextile, on a:
 ```javascript
