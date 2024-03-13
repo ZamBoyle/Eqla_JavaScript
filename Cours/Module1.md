@@ -675,8 +675,9 @@ Reprenons l'exemple de l'année bissextile. On pourrait le transformer en foncti
 function estBissextile(annee) {
   let bissextile = false;
 
-  if (annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0))
+  if (annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0)){
     bissextile = true;
+  }
 
   return bissextile;
 }
@@ -692,7 +693,7 @@ La fonction `estBissextile` prend un paramètre `annee` et retourne `true` si l'
 
 Notez qu'il n'y a pas de else car bissextile est initialisé à `false`. Si la condition est vraie, on met bissextile à `true` et on retourne `true`. Sinon, on retourne `false` qui est la valeur par d'intialisation de bissextile.
 
-Dans l'exemple précédent on voit qu'il est possible de faire autrement et directement retourner le résultat de la condition. C'est plus court et plus clair. On sait tout de suite que la fonction retourne le résultat de la condition.
+Dans l'exemple précédent on voit qu'il est possible de faire autrement et directement retourner le résultat de la condition. 
 
 ```javascript
 function estBissextile(annee) {
