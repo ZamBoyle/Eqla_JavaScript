@@ -126,43 +126,72 @@ Autre exemple pour les casses pieds Thomas & Christian :-)
 ```html
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Démo innerHTML</title>
-  </head>
-  <body>
-    <h1>Hello !</h1>
-    <form>
-      <input type="text" id="prenom" placeholder="Entrez votre prénom" /><br/>
-      <input type="password" id="mdp1" placeholder="Entrez votre mot de passe" /><br/>
-      <input type="password" id="mdp2" placeholder="Confirmez votre mot de passe" /><br/>
-      <button type="button" onclick="CheckPasswords()">Envoyer</button>
-    </form>
-    <div id="info"></div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</head>
 
+<body>
+    <div class="container">
+        <h1 class="text-center">Inscription</h1>
+        <form id="formInscription" method="post" action="http://zamboyle.synology.me:2727/forms/demos/showvars.php">
+            <div class="mb-3">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input id="prenom" name="prenom" type="text" class="form-control" placeholder="Entrez votre prénom" required autocomplete="username"/>
+            </div>
+            <div class="mb-3">
+                <label for="mdp1" class="form-label">Mot de passe</label>
+                <input id="mdp1" name="mdp1" type="password" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="new-password"/>
+            </div>
+            <div class="mb-3">
+                <label for="mdp2" class="form-label">Confirmer mot de passe</label>
+                <input id="mdp2" name="mdp2" type="password" class="form-control" placeholder="Confirmez votre mot de passe" autocomplete="new-password"/>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="checkForm()">Envoyer</button>
+        </form>
+        <div id="info"></div>
+    </div>
     <script>
-      function CheckPasswords() {
-        let password1 = document.getElementById("mdp1");
-        let password2 = document.getElementById("mdp2");
-        let info = document.getElementById("info");
-
-        if (password1.value !== password2.value) {
-          info.innerHTML = "Les mots de passe ne correspondent pas";
-        } else {
-          if(password1.value.length < 8){
-            info.innerHTML = "Le mot de passe doit contenir au moins 8 caractères";
-          }
-          else{
-            info.innerHTML = "Les mots de passe correspondent";
-          }
+        function checkForm() {
+            let passwordsOk = checkPasswords();
+            let formulaire = document.getElementById("formInscription");
+            if (passwordsOk) {
+                formulaire.submit();
+            }
         }
-    }
+        function checkPasswords() {
+            let password1 = document.getElementById("mdp1").value;
+            let password2 = document.getElementById("mdp2").value;
+            let info = document.getElementById("info");
+
+            if (password1.length < 8 || password2.length < 8) {
+                info.innerHTML = "Le mot de passe doit contenir au moins 8 caractères.";
+                info.style.color = "red"; // Indication visuelle pour les erreurs
+            } else if (password1 !== password2) {
+                info.innerHTML = "Les mots de passe ne correspondent pas.";
+                info.style.color = "red"; // Indication visuelle pour les erreurs
+            } else {
+                info.innerHTML = "Les mots de passe correspondent et sont valides.";
+                info.style.color = "green"; // Changement de la couleur pour une validation réussie
+                return true;
+            }
+            return false;
+        }
     </script>
-  </body>
+</body>
+
 </html>
 ```
-Ce code va vérifier si les deux mots de passe entrés dans les champs `mdp1` et `mdp2` correspondent. Si ce n'est pas le cas, il affichera "Les mots de passe ne correspondent pas". Si les mots de passe correspondent, il affichera "Les mots de passe correspondent". Si le mot de passe a moins de 8 caractères, il affichera "Le mot de passe doit contenir au moins 8 caractères".
+Ce code javascript vérifie si les mots de passe entrés par l'utilisateur sont valides et correspondent. Si ce n'est pas le cas, un message d'erreur est affiché en rouge, sinon un message de validation est affiché en vert.
+
+
 
 ## 4. Types de données
 
