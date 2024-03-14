@@ -75,11 +75,11 @@ alert('Hello les BlindCoders!');
 - Si nombre1 est supérieur à nombre2, affichez "nombre1 est supérieur à nombre2".
 - Si nombre1 est inférieur à nombre2, affichez "nombre1 est inférieur à nombre2".
 - Si le reste de la division de nombre1 par nombre2 est égal à 0, affichez "nombre1 est divisible par nombre2". Sinon, affichez "nombre1 n'est pas divisible par nombre2".
-7. Incrémentez nombre1 et nombre2 de 1.
+7. Incrémentez nombre1 et nombre2 de 1 et affichez les nouvelles valeurs.
 8. Affichez si le delta entre nombre1 et nombre2 est positif ou négatif.
 9. Créez les variables a et b et Affectez des valeurs comprises entre 1 et 10.
 10. Créez une variable `resultat` et affectez-lui la valeur de (a + b)².
-11. Vous rappelez-vous de (a + b)² = a + 2 * a * b + b^² ? En JS, on utilise `**` pour élever à la puissance. Par exemple: a^2 = a**2.
+11. Vous rappelez-vous de (a + b)² = a² + 2*a*b + b² ? En JS, on utilise `**` pour élever à la puissance. Par exemple: a² = a**2.
 12. Affichez le résultat. Par exemple: "Le résultat de (a + b)² est 100.". Utilisez l'interpolation de chaînes de caractères ça sera plus simple.
 13. Si le résultat est égale à 400, affichez "valeur maximale atteinte pour (a + b)²". Sinon, affichez "Il manque encore xx pour atteindre la valeur maximale pour (a + b)²". Exemple si le résultat est 300: "Il manque encore 100 pour atteindre la valeur maximale pour (a + b)²".
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
