@@ -29,6 +29,7 @@
   - [7.3 Opérateurs de Comparaison](#73-opérateurs-de-comparaison)
   - [7.4 Opérateurs logiques](#74-opérateurs-logiques)
   - [7.5 Opérateurs de concaténation](#75-opérateurs-de-concaténation)
+  - [7.6 L'interpolation de chaînes de caractères](#76-linterpolation-de-chaînes-de-caractères)
 - [8. Structures de contrôle (if, else, switch, boucles for, while)](#8-structures-de-contrôle-if-else-switch-boucles-for-while)
   - [8.1 if, else](#81-if-else)
     - [8.1.1 Syntaxe](#811-syntaxe)
@@ -507,6 +508,24 @@ let nom = "Piette";
 console.log(prenom + " " + nom); // Johnny Piette
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le résultat de chaque opération logique s'affiche dans la console.
+
+### 7.6 L'interpolation de chaînes de caractères
+Si on veut insérer des variables dans une chaîne de caractères, on peut utiliser l'interpolation de chaînes de caractères. C'est-à-dire qu'on peut insérer des variables dans une chaîne de caractères. Ce qui permet d'éviter d'utiliser l'opérateur de concaténation (+). Par exemple:
+
+```javascript
+let prenom = "Johnny";
+let nom = "Piette";
+let age = 30; //Faut bien trouver des moyens pour se rajeunir ;-)
+
+// Avec l'interpolation de chaînes de caractères
+console.log(`Tu t'appelles ${prenom} ${nom} a ${age} ans.`); // Johnny Piette a 30 ans.
+
+// Avec l'opérateur de concaténation +
+console.log('Tu t\'appelles ' + prenom + ' ' + nom + ' a ' + age + ' ans.'); // Johnny Piette a 30 ans.
+```
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le résultat de chaque opération logique s'affiche dans la console.
+
+Analysons maintenant comment fonctionne l'interpolation de chaînes de caractères. On utilise des backticks (``) pour délimiter la chaîne de caractères. On utilise ensuite ${uneVariable} pour insérer une variable dans la chaîne de caractères. C'est beaucoup plus lisible que l'opérateur de concaténation (+).
 
 ## 8. Structures de contrôle (if, else, switch, boucles for, while)
 Elles permettent de conditionner l'exécution de code. Par exemple, si une condition est vraie, on exécute un bloc de code, sinon on exécute un autre bloc de code. On peut aussi exécuter un bloc de code plusieurs fois avec une boucle.
