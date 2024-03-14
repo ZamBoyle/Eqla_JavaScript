@@ -10,7 +10,7 @@
 1. Créez une page HTML nommée Exercice1.html
 2. Positionnez-vous dans le `<head>` de la page et ajoutez le code suivant:
 ```html
-<script>
+<script defer>
     alert('Hello les BlindCoders!');
 </script>
 ```
