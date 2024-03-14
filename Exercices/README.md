@@ -46,7 +46,7 @@ alert('Hello les BlindCoders!');
 
 
 ## Exercice 5 - Type de données & variables
-1. Créez une page HTML nommée Exercice4.html
+1. Créez une page HTML nommée Exercice5.html
 2. Insérez les balises `<script src='ex4.js'>` `</script>` juste avant la fermeture de la balise `<body>` de la page.
 3. Créez un fichier JavaScript nommé ex4.js
 4. Vous utiliserez let pour déclarer les variables.
