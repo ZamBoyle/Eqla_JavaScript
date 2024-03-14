@@ -122,7 +122,7 @@ Nous allons voir en détail comment modifier le contenu d'un élément HTML plus
 Nous aurions bien entendu pu mettre le code js dans un fichier séparé.
 
 
-Autre exemple pour les casses pieds Thomas & Baptiste :-)
+Autre exemple pour les casses pieds Thomas & Christian :-)
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -137,7 +137,7 @@ Autre exemple pour les casses pieds Thomas & Baptiste :-)
       <input type="text" id="prenom" placeholder="Entrez votre prénom" /><br/>
       <input type="password" id="mdp1" placeholder="Entrez votre mot de passe" /><br/>
       <input type="password" id="mdp2" placeholder="Confirmez votre mot de passe" /><br/>
-      <button type="button" onclick="CheckPasswords()">Changer le prénom</button>
+      <button type="button" onclick="CheckPasswords()">Envoyer</button>
     </form>
     <div id="info"></div>
 
