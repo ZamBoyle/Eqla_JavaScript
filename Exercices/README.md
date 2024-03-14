@@ -23,11 +23,7 @@
 ```html
 <script src="Exercice2.js" defer></script>
 ```
-4. Dans le fichier Exercice2.js, ajoutez le code suivant:
-```javascript
-alert('Hello les BlindCoders!');
-```
-5. Ouvrez la page dans un navigateur et observez le résultat.
+4. Ouvrez la page dans un navigateur et observez le résultat.
 
 ## Exercice 3 - Ficher JS Externe
 1. Créez une page HTML nommée Exercice3.html
