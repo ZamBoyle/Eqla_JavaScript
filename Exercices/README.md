@@ -48,7 +48,7 @@ alert('Hello les BlindCoders!');
 ## Exercice 5 - Type de données & variables
 1. Créez une page HTML nommée Exercice5.html
 2. Insérez les balises `<script src='ex5.js'>` `</script>` juste avant la fermeture de la balise `<body>` de la page.
-3. Créez un fichier JavaScript nommé ex4.js
+3. Créez un fichier JavaScript nommé ex5.js
 4. Vous utiliserez let pour déclarer les variables.
 4. Créez une variable `prenom` et affectez-lui la valeur "Johnny".
 5. Créez une variable `age` et affectez-lui la valeur 25.
@@ -61,12 +61,12 @@ alert('Hello les BlindCoders!');
 12. Idem mais maintenant, vous utiliserez l'interpolations de chaînes de caractères. Vous utiliserez la commande `console.log()` pour afficher le message dans la console du navigateur.
 12. Il ne manquera plus que la variable `estMajeur` qui indiquera si la personne est majeure ou non. Pour faire simple sans faire de condition, on affichera simplement:"Majeur: true". Vous utiliserez la commande `console.log()` pour afficher le message dans la console du navigateur.
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
-14. Testez aussi via node.js en utilisant la commande `node ex4.js`.
+14. Testez aussi via node.js en utilisant la commande `node ex5.js`.
 
 ## Exercice 6 - conditions
-1. Créez une page HTML nommée Exercice5.html
+1. Créez une page HTML nommée Exercice6.html
 2. Insérez les balises `<script src='ex5.js' defer>` `</script>` dans le `<head>` de la page.
-3. Créez un fichier JavaScript nommé ex5.js
+3. Créez un fichier JavaScript nommé ex6.js
 4. Créez deux variables: nombre1 et nombre2.
 5. Affectez-leurs des valeurs.
 6. Le programme affichera plusieurs informations:
@@ -83,7 +83,7 @@ alert('Hello les BlindCoders!');
 12. Affichez le résultat. Par exemple: "Le résultat de (a + b)² est 100.". Utilisez l'interpolation de chaînes de caractères ça sera plus simple.
 13. Si le résultat est égale à 400, affichez "valeur maximale atteinte pour (a + b)²". Sinon, affichez "Il manque encore xx pour atteindre la valeur maximale pour (a + b)²". Exemple si le résultat est 300: "Il manque encore 100 pour atteindre la valeur maximale pour (a + b)²".
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
-14. Testez aussi via node.js en utilisant la commande `node ex5.js`.
+14. Testez aussi via node.js en utilisant la commande `node ex6.js`.
 
 
 
