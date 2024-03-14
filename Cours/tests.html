@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="Fr-BE">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma phantesie</title>
-    <script defer src="tests.js"></script>
-</head>
-<body>
-<h1 id="titre">Ma phantesie</h1>
-<h2>
-    <p>Ca doit se developer encore</p>
-</h2>
-<h2>
-    <p>La suite</p>
-</h2>
-</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo innerHTML</title>
+  </head>
+  <body>
+    <h1>Hello !</h1>
+    <form>
+      <input type="text" id="prenom" placeholder="Entrez votre prénom" /><br/>
+      <input type="password" id="mdp1" placeholder="Entrez votre mot de passe" /><br/>
+      <input type="password" id="mdp2" placeholder="Confirmez votre mot de passe" /><br/>
+      <button type="button" onclick="CheckPasswords()">Changer le prénom</button>
+    </form>
+    <div id="info"></div>
+
+    <script>
+        function CheckPasswords() {
+      let password1 = document.getElementById("mdp1");
+      let password2 = document.getElementById("mdp2");
+      let info = document.getElementById("info");
+
+      if (password1.value !== password2.value) {
+        info.innerHTML = "Les mots de passe ne correspondent pas";
+      } else {
+        if(password1.value.length < 8){
+          info.innerHTML = "Le mot de passe doit contenir au moins 8 caractères";
+        }
+        else{
+          info.innerHTML = "Les mots de passe correspondent";
+        }
+      }
+    }
+    </script>
+  </body>
 </html>

@@ -121,6 +121,49 @@ Nous allons voir en détail comment modifier le contenu d'un élément HTML plus
 
 Nous aurions bien entendu pu mettre le code js dans un fichier séparé.
 
+
+Autre exemple pour les casses pieds Thomas & Baptiste :-)
+```html
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo innerHTML</title>
+  </head>
+  <body>
+    <h1>Hello !</h1>
+    <form>
+      <input type="text" id="prenom" placeholder="Entrez votre prénom" /><br/>
+      <input type="password" id="mdp1" placeholder="Entrez votre mot de passe" /><br/>
+      <input type="password" id="mdp2" placeholder="Confirmez votre mot de passe" /><br/>
+      <button type="button" onclick="CheckPasswords()">Changer le prénom</button>
+    </form>
+    <div id="info"></div>
+
+    <script>
+      function CheckPasswords() {
+        let password1 = document.getElementById("mdp1");
+        let password2 = document.getElementById("mdp2");
+        let info = document.getElementById("info");
+
+        if (password1.value !== password2.value) {
+          info.innerHTML = "Les mots de passe ne correspondent pas";
+        } else {
+          if(password1.value.length < 8){
+            info.innerHTML = "Le mot de passe doit contenir au moins 8 caractères";
+          }
+          else{
+            info.innerHTML = "Les mots de passe correspondent";
+          }
+        }
+    }
+    </script>
+  </body>
+</html>
+```
+Ce code va vérifier si les deux mots de passe entrés dans les champs `mdp1` et `mdp2` correspondent. Si ce n'est pas le cas, il affichera "Les mots de passe ne correspondent pas". Si les mots de passe correspondent, il affichera "Les mots de passe correspondent". Si le mot de passe a moins de 8 caractères, il affichera "Le mot de passe doit contenir au moins 8 caractères".
+
 ## 4. Types de données
 
 Les types de données sont les éléments de base de tout langage de programmation. Ils permettent de stocker des informations dans des variables, et de les manipuler. JavaScript possède plusieurs types de données, dont les plus courants sont les suivants:
