@@ -48,7 +48,6 @@
 - [10. Portée des variables](#10-portée-des-variables)
   - [10.1 Portée globale](#101-portée-globale)
   - [10.2 Portée locale](#102-portée-locale)
-- [11. Gestion des erreurs et exceptions (try, catch, finally)](#11-gestion-des-erreurs-et-exceptions-try-catch-finally)
 
 <!-- /code_chunk_output -->
 
@@ -122,7 +121,7 @@ Nous allons voir en détail comment modifier le contenu d'un élément HTML plus
 Nous aurions bien entendu pu mettre le code js dans un fichier séparé.
 
 
-Autre exemple pour les casses pieds Thomas & Christian :-)
+Autre exemple pour les casses pieds Thomas & Christian fait en live :-)
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -154,11 +153,21 @@ Autre exemple pour les casses pieds Thomas & Christian :-)
                 <label for="mdp2" class="form-label">Confirmer mot de passe</label>
                 <input id="mdp2" name="mdp2" type="password" class="form-control" placeholder="Confirmez votre mot de passe" autocomplete="new-password"/>
             </div>
-            <button type="button" class="btn btn-primary" onclick="checkForm()">Envoyer</button>
+            <!-- Aucun changement nécessaire dans la partie HTML, sauf le type du bouton -->
+            <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
         <div id="info"></div>
     </div>
     <script>
+        //event sur le dom loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            let formulaire = document.getElementById("formInscription");
+            formulaire.addEventListener("submit", function (event) {
+                event.preventDefault();
+                checkForm();
+            });
+        });
+
         function checkForm() {
             let passwordsOk = checkPasswords();
             let formulaire = document.getElementById("formInscription");
@@ -873,7 +882,7 @@ Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande 
 ### 9.3 Les fonctions anonymes
 Cette partie est un peu plus avancée et si vous ne la comprenez pas, ce n'est pas grave. Vous pouvez la sauter. C'est juste pour vous montrer qu'il existe plusieurs manières de déclarer des fonctions en JavaScript. Elles seront fort utilies lorsque vous utiliserez des librairies comme React, Angular, Vue, etc. 
 
-Une fonction anonyme est une fonction sans nom. Elle est stockée dans une variable. Par exemple:
+Une fonction anonyme est une fonction sans nom. Elle peut être stockée dans une variable. Par exemple:
 
 ```javascript
 let additionner = function(a, b) {
@@ -889,6 +898,38 @@ let estBissextile = function(annee) {
   return annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
 }
 ```
+On peut avoir une fonction qui reçoit comme paramètre de fonction une fonction anonyme. C'est ce qu'on appelle les fonctions de callback. Par exemple:
+
+```javascript
+function afficherMessage(callback) {
+  callback();
+}
+
+afficherMessage(function() {
+  console.log("Bonjour");
+});
+
+afficherMessage(function() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+  }
+});
+```
+Prenons un autre exemple avec la fonction map. La fonction map permet de transformer un tableau en un autre tableau. Par exemple, on peut transformer un tableau de nombres en un tableau de nombres multipliés par 2. Par exemple:
+
+```javascript
+let nombres = [1, 2, 3, 4, 5];
+console.log("Valeurs initiales:"+nombres); // [1, 2, 3, 4, 5]
+let nombresMultipliesPar2 = nombres.map(function(nombre) {
+  return nombre * 2;
+});
+console.log("Valeurs multipliées par deux:"+nombresMultipliesPar2); // [2, 4, 6, 8, 10]      
+```
+Dans ce code, la fonction map prend une fonction anonyme en paramètre. Cette fonction anonyme est appelée pour chaque élément du tableau `nombres`. Elle multiplie chaque élément par 2 et retourne le résultat. La fonction map retourne un nouveau tableau avec les valeurs transformées. C'est donc extrèmement puissant.
+
+Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les valeurs initiales et les valeurs multipliées par deux s'affichent dans la console.
+
+
 ### 9.3 Les fonctions fléchées
 Les fonctions fléchées sont une autre manière de déclarer des fonctions en JavaScript. Elles sont plus courtes et plus claires que les fonctions classiques.
 On va utiliser les symboles `=>` pour déclarer une fonction fléchée. Cette utilisation permettra de gagner en lisibilité du code car déjà on ne doit pas écrire le mot-clé `function`. On peut aussi omettre les accolades si la fonction ne contient qu'une seule instruction.
@@ -965,8 +1006,7 @@ Dans le code précédent, les variables nom et prenom sont déclarées à l'int�
 
 Le code `console.log(prenom);` génère une erreur car la variable prenom n'est pas accessible en dehors de la fonction `afficherNomComplet`.
 
-## 11. Gestion des erreurs et exceptions (try, catch, finally)
-La gestion des erreurs et des exceptions est une partie importante de la programmation. Les erreurs et les exceptions peuvent survenir lors de l'exécution d'un programme, et il est important de les gérer correctement.
+
 
 
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)

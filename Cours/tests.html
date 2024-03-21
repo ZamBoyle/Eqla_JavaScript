@@ -4,59 +4,205 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Démo innerHTML</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <title>Démo getElementsByClassName</title>
+    <style>
+        div {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #container {
+            padding: 15px;
+            margin: auto;
+            background-color: #f0f0f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 15px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 5px;
+            background-color: #e7c9c9;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">Inscription</h1>
-        <form id="formInscription" method="post" action="http://zamboyle.synology.me:2727/forms/demos/showvars.php">
-            <div class="mb-3">
-                <label for="prenom" class="form-label">Prenom</label>
-                <input id="prenom" name="prenom" type="text" class="form-control" placeholder="Entrez votre prénom" required autocomplete="username"/>
-            </div>
-            <div class="mb-3">
-                <label for="mdp1" class="form-label">Mot de passe</label>
-                <input id="mdp1" name="mdp1" type="password" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="new-password"/>
-            </div>
-            <div class="mb-3">
-                <label for="mdp2" class="form-label">Confirmer mot de passe</label>
-                <input id="mdp2" name="mdp2" type="password" class="form-control" placeholder="Confirmez votre mot de passe" autocomplete="new-password"/>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="checkForm()">Envoyer</button>
-        </form>
-        <div id="info"></div>
+    <div id="container">
+        <h1>Bienvenue sur mon site web</h1>
+        <p>Sur ce site, vous apprendrez le html.</p>
+
+        <h2>Les paragraphes</h2>
+        <p>Ceci est un paragraphe.</p>
+        <p>Ceci est un autre paragraphe.</p>
+        <p>Et voici un dernier paragraphe.</p>
+        <h2>Les input</h2>
+        <input id="number1" type="text" value="17" size="2" />+<input id="number2" type="text" value="45" size="2" /> =
+        <span id="resultat"></span>
+        <h2>Les divs</h2>
+        <div>Ceci est du texte dans un div mais qui n'est pas dans un paragraphe.</div>
+        <div id="divP">
+            <p>Ceci est un autre div.</p>
+            <p>On peut y ajouter un ensemble d'éléments.</p>
+        </div>
+        <div>
+            <p>Ceci est un paragraphe dans un div.</p>
+        </div>
+        <div>
+            <p>Ceci est un autre paragraphe dans un div.</p>
+        </div>
+        <h2>Les tableaux </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne 1</th>
+                    <th>Colonne 2</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </table><br>
+
+        <button id="btngo" onclick="onclickBtn()">Let's go !</button>
     </div>
     <script>
-        function checkForm() {
-            let passwordsOk = checkPasswords();
-            let formulaire = document.getElementById("formInscription");
-            if (passwordsOk) {
-                formulaire.submit();
+        let alreadyClicked = false;
+        let domComplet = document.documentElement.innerHTML; // Sauvegarde du DOM complet
+        function onclickBtn() {
+            if (alreadyClicked) {
+                document.documentElement.innerHTML = domComplet;
+            }
+            else {
+                centerElements("h1");
+                souligneElements("h1");
+                souligneElements("h2");
+                alternateDivsColor();
+                alternateRowTable();
+                addNumbers();
+                numberedParagraphs();
+                setColorToElements("p", "red");
+                colorP();
+                setBackGroundColorByTag("body", "yellow");
+                setBackGroundColorById("container", "lightgrey");
+                resetBtn();
+
+            }
+            alreadyClicked = !alreadyClicked;
+        }
+
+        function resetBtn() {
+            let btn = document.getElementById("btngo");
+            btn.innerHTML = "Reset";
+        }
+
+        function setBackGroundColorByTag(tagName, color) {
+            let elements = document.getElementsByTagName(tagName);
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = color;
             }
         }
-        function checkPasswords() {
-            let password1 = document.getElementById("mdp1").value;
-            let password2 = document.getElementById("mdp2").value;
-            let info = document.getElementById("info");
 
-            if (password1.length < 8 || password2.length < 8) {
-                info.innerHTML = "Le mot de passe doit contenir au moins 8 caractères.";
-                info.style.color = "red"; // Indication visuelle pour les erreurs
-            } else if (password1 !== password2) {
-                info.innerHTML = "Les mots de passe ne correspondent pas.";
-                info.style.color = "red"; // Indication visuelle pour les erreurs
-            } else {
-                info.innerHTML = "Les mots de passe correspondent et sont valides.";
-                info.style.color = "green"; // Changement de la couleur pour une validation réussie
-                return true;
+        function setBackGroundColorById(id, color) {
+            let element = document.getElementById(id);
+            element.style.backgroundColor = color;
+        }
+
+        function alternateRowTable() {
+            let table = document.getElementsByTagName("table")[0];
+            let rows = table.getElementsByTagName("tr");
+            for (let i = 0; i < rows.length; i++) {
+                if (i % 2 == 0) {
+                    rows[i].style.backgroundColor = "red";
+                } else {
+                    rows[i].style.backgroundColor = "darkgreen";
+                }
             }
-            return false;
+        }
+
+        function numberedParagraphs() {
+            if (!alreadyClicked) {
+                let pElements = document.getElementsByTagName("p");
+                for (let i = 0; i < pElements.length; i++) {
+                    pElements[i].innerHTML = i + 1 + ". " + pElements[i].innerHTML;
+                }
+            }
+        }
+
+        function addNumbers() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let resultat = parseInt(number1) + parseInt(number2);
+            if (isNaN(resultat)) {
+                resultat = "Erreur dans les valeurs saisies";
+            }
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function colorP() {
+            let element = document.getElementById("divP");
+            let pElements = element.getElementsByTagName("p");
+            for (let i = 0; i < pElements.length; i++) {
+                pElements[i].style.color = "blue";
+            }
+        }
+
+        function alternateDivsColor() {
+            let divs = document.getElementsByTagName("div");
+            for (let i = 0; i < divs.length; i++) {
+                if (divs[i].id != "container") {
+                    if (i % 2 == 0) {
+                        divs[i].style.backgroundColor = "lightblue";
+                    } else {
+                        divs[i].style.backgroundColor = "lightgreen";
+                    }
+                }
+            }
+        }
+
+        function setColorToElements(tagName, color) {
+            let elements = document.getElementsByTagName(tagName);
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.color = color;
+            }
+        }
+
+        function centerElements(tagName) {
+            let elements = document.getElementsByTagName(tagName);
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.textAlign = "center";
+            }
+        }
+
+        function souligneElements(tagName) {
+            let elements = document.getElementsByTagName(tagName);
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.textDecoration = "underline";
+            }
         }
     </script>
 </body>
