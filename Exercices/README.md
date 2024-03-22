@@ -137,10 +137,73 @@ alert('Hello les BlindCoders!');
 <div id="info">Informations: </div>
 ```
 5. Modifiez le titre h1 en "Je suis un titre h1 modifié" en utilisant `getElementById`.
-4. Concaténez le texte de la div info avec "Nous sommes en " + new Date().getFullYear() + "."
+6. Concaténez le texte de la div info avec "Nous sommes en " + new Date().getFullYear() + "."
+7. Ouvrez la page dans un navigateur et observez le résultat.
+
+## Exercice 12 - getElementById
+1. Créez une page HTML nommée Exercice12.html
+2. Insérez les balises `<script src='ex12.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex12.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1 id="titreh1">Abracadabra</h1>
+<button id="monBouton" onclick="cacher()">Cacher le titre</button>
+```
+5. Créez une fonction `cacher` qui cache le titre h1 en utilisant `getElementById`.
+6. Cette fonction doit changer la propriété `display` de la propriété `style` de l'élément h1 en "none". Ouille, ça fait beaucoup de propriétés tout ça. En fait, on peut simplifier en utilisant:
+```javascript
+let monElement = document.getElementById("monElement");
+monElement.style.display = "none";
+// ou plus simplement
+document.getElementById("monElement").style.display = "none";
+```
+7. Ouvrez la page dans un navigateur et observez le résultat.
 
 
+## Exercice 13 - getElementById
+1. Créez une page HTML nommée Exercice13.html
+2. Insérez les balises `<script src='ex13.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex13.js
+4. Même principe que l'exercice précédent mais cette fois-ci, on va afficher ou cacher le titre h1 en cliquant sur le bouton.
+5. Contrairement à l'exercice précédent, on va utiliser une seule fonction `toggle` qui va afficher ou cacher le titre h1 en fonction de son état actuel.
+6. Vous pouvez utiliser la propriété `display` de la propriété `style` de l'élément h1 pour afficher ou cacher le titre:
+- Pour afficher le titre, vous utiliserez la valeur "block" pour la propriété `display`.
+- Pour cacher le titre, vous utiliserez la valeur "none" pour la propriété `display`.
+7. Donc vous allez devoir tester si le titre est affiché ou caché pour changer son état.
+5. Le bouton doit changer de texte en fonction de l'état (affiché/montré) du titre h1. Vous pouvez utiliser `innerText` pour changer le texte du bouton si vous ne devez pas le mettre en forme. Sinon, vous pouvez utiliser `innerHTML` pour mettre du HTML dans le bouton et donc mettre du texte en gras par exemple.
+6. Ouvrez la page dans un navigateur et observez le résultat.
 
+## Exercice 14 - getElementsByTagName
+1. Créez une page HTML nommée Exercice14.html
+2. Insérez les balises `<script src='ex14.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex14.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1>Exercice 14 - getElementsByTagName</h1>
+<h2>Titre 2</h2>
+<h3>Titre 3</h3>
+<h4>Titre 4</h4>
+
+<h2>Titre 2</h2>
+<h3>Titre 3</h3>
+<h4>Titre 4</h4>
+
+<h2>Titre 2</h2>
+<h3>Titre 3</h3>
+<h4>Titre 4</h4>
+```
+5. Créez une fonction `modifierTitres` qui va modifier tous les titres de niveau 2 (h2) en leur ajoutant " - modifié" à la fin.
+6. Vu que `getElementsByTagName` retourne une liste d'éléments, vous allez devoir parcourir cette liste pour modifier chaque élément: logique, non?
+7. N'oubliez pas d'appeler la fonction `modifierTitres` pour qu'elle soit exécutée. Sinon, elle ne servira à rien. C'est comme en PHP, si vous ne l'appelez pas, la fonction ne sera pas exécutée.
+7. Ouvrez la page dans un navigateur et observez le résultat.
+
+## Exercice 15 - getElementsByTagName
+1. Créez une page HTML nommée Exercice15.html
+2. Insérez les balises `<script src='ex15.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex15.js
+4. Même principe que l'exercice précédent mais cette fois-ci, on va en plus mettre le texte en rouge pour les titres de niveau 3 (h3).
+5. Pour changer la couleur du texte, vous pouvez utiliser la propriété `color` de la propriété `style` de l'élément h3. Par exemple `monElement.style.color = "red";`.
+6. Ouvrez la page dans un navigateur et observez le résultat.
 
 
 

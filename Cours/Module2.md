@@ -388,6 +388,14 @@ Cela permet de retrouver un élément qui a un attribut `data-id` avec la valeur
 
 
 
+code qui fait disparaitre un élément:
+```javascript
+document.querySelector("#monElement").style.display = "none";
+```
+
+
+---
+Nous vrrons plus tard ce code
 ```html
 <!DOCTYPE html>
 <html lang="fr">

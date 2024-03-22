@@ -48,6 +48,18 @@
 - [10. Portée des variables](#10-portée-des-variables)
   - [10.1 Portée globale](#101-portée-globale)
   - [10.2 Portée locale](#102-portée-locale)
+- [11. Les tableaux](#11-les-tableaux)
+  - [11.1 Déclaration d'un tableau](#111-déclaration-dun-tableau)
+  - [11.2 Accès aux éléments d'un tableau](#112-accès-aux-éléments-dun-tableau)
+  - [11.3 Modifier un élément d'un tableau](#113-modifier-un-élément-dun-tableau)
+  - [11.4 Ajouter un élément à un tableau](#114-ajouter-un-élément-à-un-tableau)
+  - [11.5 Supprimer un élément d'un tableau](#115-supprimer-un-élément-dun-tableau)
+  - [11.6 Parcourir un tableau](#116-parcourir-un-tableau)
+- [12. Les boucles](#12-les-boucles)
+  - [12.1 Boucle for](#121-boucle-for)
+  - [12.2 Boucle while](#122-boucle-while)
+  - [12.3 Boucle do...while](#123-boucle-dowhile)
+  - [12.4 Boucle for...in](#124-boucle-forin)
 
 <!-- /code_chunk_output -->
 
@@ -1006,6 +1018,124 @@ Dans le code précédent, les variables nom et prenom sont déclarées à l'int�
 
 Le code `console.log(prenom);` génère une erreur car la variable prenom n'est pas accessible en dehors de la fonction `afficherNomComplet`.
 
+## 11. Les tableaux
+Un tableau est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable. Les valeurs sont stockées dans des cases. Chaque case a un index qui permet d'accéder à la valeur.
+
+### 11.1 Déclaration d'un tableau
+Un tableau est déclaré en utilisant des crochets `[]`. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+```
+Dans ce code, le tableau `fruits` contient trois éléments: "pomme", "banane" et "orange".
+
+### 11.2 Accès aux éléments d'un tableau
+Les éléments d'un tableau sont accessibles en utilisant leur index. L'index d'un tableau commence à 0. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+console.log(fruits[0]); // Affiche "pomme"
+console.log(fruits[1]); // Affiche "banane"
+console.log(fruits[2]); // Affiche "orange"
+```
+Dans ce code, `fruits[0]` renvoie "pomme", `fruits[1]` renvoie "banane" et `fruits[2]` renvoie "orange".
+
+### 11.3 Modifier un élément d'un tableau
+Pour modifier un élément d'un tableau, on utilise son index. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+fruits[1] = "kiwi";
+console.log(fruits); // Affiche ["pomme", "kiwi", "orange"]
+```
+Dans ce code, `fruits[1]` est modifié pour contenir "kiwi" au lieu de "banane".
+
+### 11.4 Ajouter un élément à un tableau
+Pour ajouter un élément à un tableau, on utilise la méthode `push()`. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+fruits.push("kiwi");
+console.log(fruits); // Affiche ["pomme", "banane", "orange", "kiwi"]
+```
+Dans ce code, la méthode `push()` ajoute l'élément "kiwi" à la fin du tableau `fruits`.
+
+### 11.5 Supprimer un élément d'un tableau
+Pour supprimer un élément d'un tableau, on utilise la méthode `splice()`. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+fruits.splice(1, 1);
+console.log(fruits); // Affiche ["pomme", "orange"]
+```
+Dans ce code, la méthode `splice(1, 1)` supprime un élément à partir de l'index 1. Le deuxième paramètre de `splice()` est le nombre d'éléments à supprimer.
+
+### 11.6 Parcourir un tableau
+Pour parcourir un tableau, on utilise une boucle `for`. Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+```
+Dans ce code, la boucle `for` parcourt le tableau `fruits` et affiche chaque élément.
+
+## 12. Les boucles
+Les boucles sont utilisées pour exécuter un bloc de code plusieurs fois. Il existe plusieurs types de boucles en JavaScript, dont les plus courantes sont les boucles `for` et `while`.
+
+Mais il en existe d'autres comme la boucle `do...while` et la boucle `for...in`. Nous allons voir les boucles `for` et `while`.
+
+foreach est une méthode de parcours des tableaux. On verra cela plus tard.
+
+### 12.1 Boucle for
+La boucle `for` est utilisée pour exécuter un bloc de code un nombre spécifié de fois. Par exemple:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+Dans ce code, la boucle `for` exécute le bloc de code 5 fois. La variable `i` est initialisée à 0. Tant que `i` est inférieur à 5, le bloc de code est exécuté. Après chaque exécution du bloc de code, `i` est incrémenté de 1.
+
+### 12.2 Boucle while
+La boucle `while` est utilisée pour exécuter un bloc de code tant qu'une condition est vraie. Par exemple:
+
+```javascript
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+Dans ce code, la boucle `while` exécute le bloc de code tant que `i` est inférieur à 5. Après chaque exécution du bloc de code, `i` est incrémenté de 1.
+
+### 12.3 Boucle do...while
+La boucle `do...while` est une variante de la boucle `while`. La différence est que la boucle `do...while` exécute le bloc de code une fois avant de vérifier la condition. Par exemple:
+
+```javascript
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+Dans ce code, la boucle `do...while` exécute le bloc de code une fois, puis vérifie la condition. Tant que `i` est inférieur à 5, le bloc de code est exécuté.
+
+### 12.4 Boucle for...in
+La boucle `for...in` est utilisée pour parcourir les propriétés d'un objet. Par exemple:
+
+```javascript
+let personne = {
+  prenom: "Johnny",
+  nom: "Piette",
+  age: 30
+};
+
+for (let propriete in personne) {
+  console.log(propriete + ": " + personne[propriete]);
+}
+```
 
 
 
