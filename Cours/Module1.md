@@ -40,8 +40,8 @@
   - [8.2 switch](#82-switch)
 - [9. Les Fonctions](#9-les-fonctions)
   - [9.1 Déclaration de fonction](#91-déclaration-de-fonction)
-  - [9.2 Fonction qui ne retourne rien](#92-fonction-qui-ne-retourne-rien)
-  - [9.3 Fonction qui retourne une valeur](#93-fonction-qui-retourne-une-valeur)
+  - [9.2 Fonction qui ne retourne rien / void](#92-fonction-qui-ne-retourne-rien--void)
+  - [9.3 Fonction qui retourne une valeur / return](#93-fonction-qui-retourne-une-valeur--return)
   - [9.2 Les early return](#92-les-early-return)
   - [9.3 Les fonctions anonymes](#93-les-fonctions-anonymes)
   - [9.3 Les fonctions fléchées](#93-les-fonctions-fléchées)
@@ -797,12 +797,16 @@ Si on reprend le code sur les années bissextiles, on pourrait le transformer en
 
 ### 9.1 Déclaration de fonction
 La déclaration de fonction est la manière la plus courante de déclarer une fonction en JavaScript. Par exemple:
+
+```javascript
 function nomDeLaFonction(parametre1, parametre2, ...) {
   // Code à exécuter
 }
+```
+
 Où nomDeLaFonction est le nom de la fonction, et parametre1, parametre2, ... sont les paramètres de la fonction.
 
-### 9.2 Fonction qui ne retourne rien
+### 9.2 Fonction qui ne retourne rien / void
 Une fonction peut ne pas retourner de valeur. Généralement, on utilise ce type de fonction pour exécuter un bloc de code, faire un traitement, etc. Par exemple:
 
 ```javascript
@@ -812,7 +816,7 @@ function afficherBonjour() {
 ```
 La fonction `afficherBonjour` ne retourne rien. Elle affiche simplement "Bonjour" dans la console.
 
-### 9.3 Fonction qui retourne une valeur
+### 9.3 Fonction qui retourne une valeur / return
 Une fonction peut retourner une valeur. Généralement, on utilise ce type de fonction pour effectuer un calcul, une opération, un booléen, etc. Par exemple:
 
 ```javascript
@@ -915,7 +919,9 @@ On peut avoir une fonction qui reçoit comme paramètre de fonction une fonction
 
 ```javascript
 function afficherMessage(callback) {
+  console.log("Début du message");
   callback();
+  console.log("Fin du message");
 }
 
 afficherMessage(function() {
