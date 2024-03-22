@@ -13,11 +13,11 @@
 - [1. Le DOM](#1-le-dom)
 - [2. Sélectionner des éléments](#2-sélectionner-des-éléments)
   - [2.1. document.getElementById()](#21-documentgetelementbyid)
-  - [2.3. InnerHTML](#23-innerhtml)
-  - [2.2. document.getElementsByClassName()](#22-documentgetelementsbyclassname)
-  - [2.3. document.getElementsByTagName()](#23-documentgetelementsbytagname)
-  - [2.4 Exemple complet avec getElementById / getElementsByTagName](#24-exemple-complet-avec-getelementbyid--getelementsbytagname)
-  - [2.5. document.querySelector()](#25-documentqueryselector)
+  - [2.2. InnerHTML](#22-innerhtml)
+  - [2.3. document.getElementsByClassName()](#23-documentgetelementsbyclassname)
+  - [2.4. document.getElementsByTagName()](#24-documentgetelementsbytagname)
+  - [2.5 Exemple complet avec getElementById / getElementsByTagName](#25-exemple-complet-avec-getelementbyid--getelementsbytagname)
+  - [2.6. document.querySelector()](#26-documentqueryselector)
 
 <!-- /code_chunk_output -->
 
@@ -58,12 +58,12 @@ La méthode `document.getElementById()` renvoie `null` si aucun élément ne cor
 
 Dans l'exemple ci-dessus, nous avons un div avec l'identifiant `monDiv`. Nous utilisons `document.getElementById("monDiv")` pour sélectionner cet élément, puis nous modifions son contenu en utilisant la propriété `innerHTML`.
 
-### 2.3. InnerHTML
+### 2.2. InnerHTML
 La propriété `innerHTML` permet de modifier le contenu HTML d'un élément. Elle peut être utilisée pour ajouter du contenu, le remplacer ou le supprimer.
 
 Elle est souvent utilisée pour afficher du texte ou des balises HTML dans un élément du DOM.
 
-### 2.2. document.getElementsByClassName()
+### 2.3. document.getElementsByClassName()
 La méthode `document.getElementsByClassName()` permet de sélectionner des éléments du DOM par leur classe. Elle prend en paramètre le nom de la classe à rechercher et renvoie une liste d'éléments correspondant à cette classe.
 
 ```html
@@ -79,10 +79,11 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
 <body>
     <div class="maClasse">Ceci est un div avec la classe maClasse.</div>
     <div class="maClasse">Ceci est un autre div avec la classe maClasse.</div>
+    <div>Un dernier div pour la route avant le we.</div>
     <script>
-        let elements = document.getElementsByClassName("maClasse");
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].innerHTML = i + 1 + ". Ceci est un div modifié via une class.";
+        var elements = document.getElementsByClassName("maClasse");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = i + 1 + ". "+elements[i].innerHTML;//". Ceci est un div modifié via une class.";
         }
     </script>
 </body>
@@ -91,7 +92,7 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
 ```
 La méthode `getElementsByClassName()` renvoie une liste d'éléments correspondant à la classe spécifiée. Dans l'exemple ci-dessus, nous avons deux divs avec la classe `maClasse`. Nous utilisons `getElementsByClassName("maClasse")` pour sélectionner ces éléments, puis nous modifions leur contenu en utilisant la propriété `innerHTML`.
 
-### 2.3. document.getElementsByTagName()
+### 2.4. document.getElementsByTagName()
 La méthode `getElementsByTagName()` permet de sélectionner des éléments du DOM par leur balise. Elle prend en paramètre le nom de la balise à rechercher et renvoie une liste d'éléments correspondant à cette balise.
 
 Exemple:
@@ -134,7 +135,7 @@ Un autre exemple:
 </html>
 ```
 
-### 2.4 Exemple complet avec getElementById / getElementsByTagName
+### 2.5 Exemple complet avec getElementById / getElementsByTagName
 Je vais vous donner un code qui va modifer la page lorsque l'on clique sur le bouton. Nous en discuterons lorsque vous l'aurez exécuté dans un navigateur.
 
 Voici un exemple de page que je vous invite à copier-coller dans un fichier HTML pour voir le résultat:
@@ -377,7 +378,7 @@ Quand on cliquera sur le bouton:
 - Le fond de la balise `body` sera jaune.
 - Le fond de la balise avec l'id `container` sera gris clair.
 
-### 2.5. document.querySelector()
+### 2.6. document.querySelector()
 La méthode `document.querySelector()` permet de sélectionner le premier élément du DOM correspondant à un sélecteur CSS. Elle prend en paramètre un sélecteur CSS et renvoie l'élément correspondant.
 
 ```html
