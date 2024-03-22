@@ -1,21 +1,17 @@
-[:arrow_left:Revenir au menu principal.](../README.md#sommaire)
+[:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 <h1 id="sommaire" style="display: flex; align-items: center; justify-content: center;">
-    <img src="/Assets/eqla.png" style="height:50px">
+    <img src="../Assets/eqla.png" style="height:50px">
     &nbsp;Cours de JavaScript
 </h1>
 
 <br/>
-L'ensemble des points de matière se trouvent dans les documents suivants:<br/>
+L'ensemble des points de matière se trouvent dans les pages suivants:<br/>
 
 1. [Indroduction](Introduction.md)
 2. [Module 1: Les fondamentaux de JavaScript](Module1.md)
 3. [Module 2: Le DOM](Module2.md)
-<!-- 3. [Module 2: Les fondamentaux de JavaScript](Module2.md)
-1. [Module 3: Les fondamentaux de JavaScript](Module3.md) -->
 
-
-
-[:arrow_left:Revenir au menu principal.](../README.md#sommaire)
+[:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 
 --- 
 &copy; 2023 [Johnny Piette](https://github.com/ZamBoyle).  

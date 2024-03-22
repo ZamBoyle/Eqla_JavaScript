@@ -1,6 +1,6 @@
 [:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 <h1 id="sommaire" style="display: flex; align-items: center; justify-content: center;">
-    <img src="/Assets/eqla.png" style="height:50px">
+    <img src="../Assets/eqla.png" style="height:50px">
     &nbsp;Introduction au JavaScript
 </h1>
 

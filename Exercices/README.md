@@ -1,6 +1,6 @@
-[:arrow_left:Revenir au menu principal.](../README.md#sommaire)
+[:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 <h1 id="sommaire" style="display: flex; align-items: center; justify-content: center;">
-    <img src="/Assets/eqla.png" style="height:50px">
+    <img src="../Assets/eqla.png" style="height:50px">
     &nbsp;Exercices
 </h1>
 
@@ -209,7 +209,7 @@ document.getElementById("monElement").style.display = "none";
 
 
 
-[:arrow_left:Revenir au menu principal.](../README.md#sommaire)
+[:arrow_left: Revenir au menu principal.](../README.md#sommaire)
 
 --- 
 &copy; 2024 [Johnny Piette](https://github.com/ZamBoyle).  
