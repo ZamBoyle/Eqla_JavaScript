@@ -12,10 +12,10 @@
 
 - [1. Le DOM](#1-le-dom)
 - [2. Sélectionner des éléments](#2-sélectionner-des-éléments)
-  - [2.1. `document.getElementById()`](#21-documentgetelementbyid)
+  - [2.1. document.getElementById()](#21-documentgetelementbyid)
   - [2.3. InnerHTML](#23-innerhtml)
-  - [2.2. `document.getElementsByClassName()`](#22-documentgetelementsbyclassname)
-  - [2.3. `document.getElementsByTagName()`](#23-documentgetelementsbytagname)
+  - [2.2. document.getElementsByClassName()](#22-documentgetelementsbyclassname)
+  - [2.3. document.getElementsByTagName()](#23-documentgetelementsbytagname)
   - [2.4 Exemple complet avec getElementById / getElementsByTagName](#24-exemple-complet-avec-getelementbyid--getelementsbytagname)
 
 <!-- /code_chunk_output -->
@@ -28,7 +28,7 @@ Il existe plusieurs méthodes pour accéder aux éléments du DOM. Les plus cour
 Nous allons les voir en détail dans les sections suivantes.
 
 ## 2. Sélectionner des éléments
-### 2.1. `document.getElementById()`
+### 2.1. document.getElementById()
 La méthode `document.getElementById()` permet de sélectionner un élément du DOM par son identifiant. Elle prend en paramètre l'identifiant de l'élément à sélectionner et renvoie l'élément correspondant.
 
 ```html
@@ -62,7 +62,7 @@ La propriété `innerHTML` permet de modifier le contenu HTML d'un élément. El
 
 Elle est souvent utilisée pour afficher du texte ou des balises HTML dans un élément du DOM.
 
-### 2.2. `document.getElementsByClassName()`
+### 2.2. document.getElementsByClassName()
 La méthode `document.getElementsByClassName()` permet de sélectionner des éléments du DOM par leur classe. Elle prend en paramètre le nom de la classe à rechercher et renvoie une liste d'éléments correspondant à cette classe.
 
 ```html
@@ -90,7 +90,7 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
 ```
 La méthode `document.getElementsByClassName()` renvoie une liste d'éléments correspondant à la classe spécifiée. Dans l'exemple ci-dessus, nous avons deux divs avec la classe `maClasse`. Nous utilisons `document.getElementsByClassName("maClasse")` pour sélectionner ces éléments, puis nous modifions leur contenu en utilisant la propriété `innerHTML`.
 
-### 2.3. `document.getElementsByTagName()`
+### 2.3. document.getElementsByTagName()
 La méthode `document.getElementsByTagName()` permet de sélectionner des éléments du DOM par leur balise. Elle prend en paramètre le nom de la balise à rechercher et renvoie une liste d'éléments correspondant à cette balise.
 
 Exemple:
