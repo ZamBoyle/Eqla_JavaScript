@@ -129,7 +129,7 @@ Un autre exemple:
 <script>
     let elements = document.getElementsByTagName("p");
     for (let i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = i + 1 + ". Ceci est un div modifié via une balise.";
+        elements[i].innerHTML = i + 1 + ". Ceci est un paragraphe modifié via une balise.";
     }
 </script>
 </body>
