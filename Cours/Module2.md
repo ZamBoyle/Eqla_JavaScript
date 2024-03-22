@@ -58,6 +58,9 @@ La méthode `document.getElementById()` renvoie `null` si aucun élément ne cor
 Dans l'exemple ci-dessus, nous avons un div avec l'identifiant `monDiv`. Nous utilisons `document.getElementById("monDiv")` pour sélectionner cet élément, puis nous modifions son contenu en utilisant la propriété `innerHTML`.
 
 ### 2.3. InnerHTML
+La propriété `innerHTML` permet de modifier le contenu HTML d'un élément. Elle peut être utilisée pour ajouter du contenu, le remplacer ou le supprimer.
+
+Elle est souvent utilisée pour afficher du texte ou des balises HTML dans un élément du DOM.
 
 ### 2.2. `document.getElementsByClassName()`
 La méthode `document.getElementsByClassName()` permet de sélectionner des éléments du DOM par leur classe. Elle prend en paramètre le nom de la classe à rechercher et renvoie une liste d'éléments correspondant à cette classe.
@@ -349,6 +352,41 @@ Quand on cliquera sur le bouton:
 
 ### 2.4. `document.querySelector()`
 La méthode `document.querySelector()` permet de sélectionner le premier élément du DOM correspondant à un sélecteur CSS. Elle prend en paramètre un sélecteur CSS et renvoie l'élément correspondant.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Démo querySelector</title>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Bienvenue sur mon site web</h1>
+            <p>Sur ce site, vous apprendrez le html.</p>
+            <p>Et le CSS.</p>
+            <p>Et le JavaScript.</p>
+        </div>
+        <script>
+            let premierParagraphe = document.querySelector("p");
+            if (premierParagraphe) {
+                premierParagraphe.innerHTML = "Ceci est le premier paragraphe modifié.";
+            }
+        </script>
+    </body>
+</html>
+```
+La méthode `document.querySelector()` renvoie le premier élément correspondant au sélecteur CSS spécifié. Dans l'exemple ci-dessus, nous utilisons `document.querySelector("p")` pour sélectionner le premier paragraphe de la page, puis nous modifions son contenu en utilisant la propriété `innerHTML`.
+
+On peut aussi retrouver un élément en fonction d'un attribut:
+```javascript
+let element = document.querySelector('[data-id="123"]');
+let element2 = document.querySelector('[disabled]');
+```
+Cela permet de retrouver un élément qui a un attribut `data-id` avec la valeur `123` ou un élément qui a l'attribut `disabled`.
+
+
 
 ```html
 <!DOCTYPE html>

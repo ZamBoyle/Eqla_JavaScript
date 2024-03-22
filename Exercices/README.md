@@ -85,6 +85,59 @@ alert('Hello les BlindCoders!');
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
 14. Testez aussi via node.js en utilisant la commande `node ex6.js`.
 
+## Exercice 7 - Boucles
+1. Créez une page HTML nommée Exercice7.html
+2. Insérez les balises `<script src='ex7.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex7.js
+4. Créez une boucle `for` qui affiche les nombres de 1 à 10 dans la console.
+5. Créez une boucle `for` qui affiche les nombres de 10 à 1 dans la console.
+6. Affichez les nombres pairs de 1 à 20 dans la console.
+7. Affichez les nombres impairs de 1 à 20 dans la console.
+8. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
+9. Testez aussi via node.js en utilisant la commande `node ex7.js`.
+
+## Exercice 8 - Fonctions
+1. Créez une page HTML nommée Exercice8.html
+2. Insérez les balises `<script src='ex8.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex8.js
+4. Créez une fonction `addition` qui prend deux paramètres et qui retourne la somme de ces deux paramètres.
+5. Créez une fonction `soustraction` qui prend deux paramètres et qui retourne la différence de ces deux paramètres.
+6. Créez une fonction `multiplication` qui prend deux paramètres et qui retourne le produit de ces deux paramètres.
+7. Testez ces fonctions en affichant les résultats dans la console pour les valeurs suivantes: 5 et 3.
+8. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
+9. Testez aussi via node.js en utilisant la commande `node ex8.js`.
+
+## Exercice 9 - Fonctions anonymes
+1. Créez une page HTML nommée Exercice9.html
+2. Insérez les balises `<script src='ex9.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex9.js
+4. Créez une fonction anonyme qui prend deux paramètres et qui retourne la somme de ces deux paramètres.
+5. Créez une fonction anonyme qui prend deux paramètres et qui retourne la différence de ces deux paramètres.
+6. Créez une fonction anonyme qui concatène deux chaînes de caractères avec un espace entre elles.
+7. Testez ces fonctions en affichant les résultats dans la console pour les valeurs suivantes: 5 et 3, "Hello" et "World".
+8. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
+9. Testez aussi via node.js en utilisant la commande `node ex9.js`.
+
+## Exercice 10 - Fonctions fléchées
+1. Créez une page HTML nommée Exercice10.html
+2. Insérez les balises `<script src='ex10.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex10.js
+4. Reprenez les fonctions de l'exercice précédent et transformez-les en fonctions fléchées.
+5. Testez ces fonctions en affichant les résultats dans la console pour les valeurs suivantes: 5 et 3, "Hello" et "World".
+6. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
+7. Testez aussi via node.js en utilisant la commande `node ex10.js`.
+
+## Exercice 11 - getElementById
+1. Créez une page HTML nommée Exercice11.html
+2. Insérez les balises `<script src='ex11.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex11.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1 id="titre">Je suis un beau titre h1</h1>
+<div id="info">Informations: </div>
+```
+5. Modifiez le titre h1 en "Je suis un titre h1 modifié" en utilisant `getElementById`.
+4. Concaténez le texte de la div info avec "Nous sommes en " + new Date().getFullYear() + "."
 
 
 
