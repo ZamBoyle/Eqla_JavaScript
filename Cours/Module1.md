@@ -42,9 +42,9 @@
   - [9.1 Déclaration de fonction](#91-déclaration-de-fonction)
   - [9.2 Fonction qui ne retourne rien / void](#92-fonction-qui-ne-retourne-rien--void)
   - [9.3 Fonction qui retourne une valeur / return](#93-fonction-qui-retourne-une-valeur--return)
-  - [9.2 Les early return](#92-les-early-return)
-  - [9.3 Les fonctions anonymes](#93-les-fonctions-anonymes)
-  - [9.3 Les fonctions fléchées](#93-les-fonctions-fléchées)
+  - [9.4 Les early return](#94-les-early-return)
+  - [9.5 Les fonctions anonymes](#95-les-fonctions-anonymes)
+  - [9.6 Les fonctions fléchées](#96-les-fonctions-fléchées)
 - [10. Portée des variables](#10-portée-des-variables)
   - [10.1 Portée globale](#101-portée-globale)
   - [10.2 Portée locale](#102-portée-locale)
@@ -862,7 +862,7 @@ C'est plus court et plus clair (c'est subjectif). On sait tout de suite que la f
 
 On peut se permettre cela car le résultat de la condition est un booléen. Si on avait eu un résultat plus complexe, on aurait utilisé une variable pour stocker le résultat. Et on aurait retourné la variable.
 
-### 9.2 Les early return
+### 9.4 Les early return
 Les early return sont des retours anticipés. C'est à dire qu'on retourne directement le résultat de la condition si on sait que le reste du code ne sera pas exécuté. Par exemple:
 
 ```javascript
@@ -896,7 +896,7 @@ if (estBissextile(annee)) {
 ```
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que le message "C'est le premier jour de la semaine" s'affiche dans la console.
 
-### 9.3 Les fonctions anonymes
+### 9.5 Les fonctions anonymes
 Cette partie est un peu plus avancée et si vous ne la comprenez pas, ce n'est pas grave. Vous pouvez la sauter. C'est juste pour vous montrer qu'il existe plusieurs manières de déclarer des fonctions en JavaScript. Elles seront fort utilies lorsque vous utiliserez des librairies comme React, Angular, Vue, etc. 
 
 Une fonction anonyme est une fonction sans nom. Elle peut être stockée dans une variable. Par exemple:
@@ -949,7 +949,7 @@ Dans ce code, la fonction map prend une fonction anonyme en paramètre. Cette fo
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les valeurs initiales et les valeurs multipliées par deux s'affichent dans la console.
 
 
-### 9.3 Les fonctions fléchées
+### 9.6 Les fonctions fléchées
 Les fonctions fléchées sont une autre manière de déclarer des fonctions en JavaScript. Elles sont plus courtes et plus claires que les fonctions classiques.
 On va utiliser les symboles `=>` pour déclarer une fonction fléchée. Cette utilisation permettra de gagner en lisibilité du code car déjà on ne doit pas écrire le mot-clé `function`. On peut aussi omettre les accolades si la fonction ne contient qu'une seule instruction.
 
@@ -998,7 +998,7 @@ let nom = "Piette"; // Portée globale
 let prenom = "Johnny"; // Portée globale
 
 function afficherNomComplet() {
-  console.log(prenom + " " + nom); // Affiche "Philip Piette"
+  console.log(prenom + " " + nom); // Affiche "Johnny Piette"
 }
 ```
 On voit donc que les variables nom et prenom sont accessibles dans la fonction `afficherNomComplet`.
