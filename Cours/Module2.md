@@ -16,7 +16,7 @@
   - [2.3. InnerHTML](#23-innerhtml)
   - [2.2. `document.getElementsByClassName()`](#22-documentgetelementsbyclassname)
   - [2.3. `document.getElementsByTagName()`](#23-documentgetelementsbytagname)
-  - [2.4. `document.querySelector()`](#24-documentqueryselector)
+  - [2.4 Exemple complet avec getElementById / getElementsByTagName](#24-exemple-complet-avec-getelementbyid--getelementsbytagname)
 
 <!-- /code_chunk_output -->
 
@@ -93,6 +93,18 @@ La méthode `document.getElementsByClassName()` renvoie une liste d'éléments c
 ### 2.3. `document.getElementsByTagName()`
 La méthode `document.getElementsByTagName()` permet de sélectionner des éléments du DOM par leur balise. Elle prend en paramètre le nom de la balise à rechercher et renvoie une liste d'éléments correspondant à cette balise.
 
+Exemple:
+```js
+let paragraphs = document.getElementsByTagName("p");
+for (let i=0; i<paragraphs.length; i++) {
+    if(!paragraphs[i].classList.contains("xmass")) {
+        paragraphs[i].classList.add("xmass");
+    }
+}
+```
+Dans cet exemple, nous utilisons `document.getElementsByTagName("p")` pour sélectionner tous les éléments `p` de la page, puis nous ajoutons la classe `xmass` à ces éléments. J'ai testé si la classe n'était pas déjà présente. Normalement, le navigateur ne devrait pas rajouter cette classe plusieurs fois. Mais dans un soucis de performances autant le vérifier car nous sommes codeurs quand même. ;-)
+
+Un autre exemple:
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -121,6 +133,9 @@ La méthode `document.getElementsByTagName()` permet de sélectionner des élém
 </html>
 ```
 
+### 2.4 Exemple complet avec getElementById / getElementsByTagName
+Je vais vous donner un code qui va modifer la page lorsque l'on clique sur le bouton. Nous en discuterons lorsque vous l'aurez exécuté dans un navigateur.
+
 Voici un exemple de page que je vous invite à copier-coller dans un fichier HTML pour voir le résultat:
 ```html
 <!DOCTYPE html>
@@ -136,6 +151,10 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
             border-radius: 5px;
             padding: 5px;
             margin: 5px;
+        }
+
+        #secretDiv {
+            display: none;
         }
 
         #container {
@@ -187,6 +206,10 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
         <div>
             <p>Ceci est un autre paragraphe dans un div.</p>
         </div>
+        <div id="secretDiv">
+            <p>Et un dernier paragraphe dans un div secret. :-)</p>
+            <p>Il était caché par le style css: <span style="color:black; font-weight: bold;"> display: none;</span></p>
+        </div>
         <h2>Les tableaux </h2>
         <table>
             <thead>
@@ -217,11 +240,9 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
     </div>
     <script>
         let alreadyClicked = false;
-        // Sauvegarde du DOM complet
-        let domComplet = document.documentElement.innerHTML; 
+        let domComplet = document.documentElement.innerHTML; // Sauvegarde du DOM complet
         function onclickBtn() {
             if (alreadyClicked) {
-                // Réinitialisation du DOM
                 document.documentElement.innerHTML = domComplet;
             }
             else {
@@ -237,8 +258,14 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
                 setBackGroundColorByTag("body", "yellow");
                 setBackGroundColorById("container", "lightgrey");
                 resetBtn();
+                showSecretDiv();
             }
             alreadyClicked = !alreadyClicked;
+        }
+
+        function showSecretDiv() {
+            let secretDiv = document.getElementById("secretDiv");
+            secretDiv.style.display = "block";
         }
 
         function resetBtn() {
@@ -271,11 +298,9 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
         }
 
         function numberedParagraphs() {
-            if (!alreadyClicked) {
-                let pElements = document.getElementsByTagName("p");
-                for (let i = 0; i < pElements.length; i++) {
-                    pElements[i].innerHTML = i + 1 + ". " + pElements[i].innerHTML;
-                }
+            let pElements = document.getElementsByTagName("p");
+            for (let i = 0; i < pElements.length; i++) {
+                pElements[i].innerHTML = i + 1 + ". " + pElements[i].innerHTML;
             }
         }
 
@@ -332,9 +357,7 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
         }
     </script>
 </body>
-
-</html>
-```
+</html>```
 Pour l'exemple j'ai tout mis dans un seul fichier, mais en général on sépare le code HTML du code JavaScript dans des fichiers séparés.
 
 Lorsqu'on clique sur le bouton "Let's go !", le code JavaScript va modifier le DOM de la page en fonction des fonctions définies. Si on clique une deuxième fois, le DOM est réinitialisé.
@@ -342,6 +365,7 @@ Quand on cliquera sur le bouton:
 - Les titres `h1` seront centrés et soulignés.
 - Les titres `h2` seront soulignés.
 - Les divs auront une couleur de fond alternée: bleu clair et vert clair.
+- Un div secret (caché) est affiché.
 - Les lignes du tableau auront une couleur de fond alternée: rouge et vert foncé.
 - Les nombres saisis dans les champs de texte seront additionnés et le résultat affiché.
 - Les paragraphes seront numérotés.

@@ -13,6 +13,10 @@
             margin: 5px;
         }
 
+        #secretDiv {
+            display: none;
+        }
+
         #container {
             padding: 15px;
             margin: auto;
@@ -62,6 +66,10 @@
         <div>
             <p>Ceci est un autre paragraphe dans un div.</p>
         </div>
+        <div id="secretDiv">
+            <p>Et un dernier paragraphe dans un div secret. :-)</p>
+            <p>Il était caché par le style css: <span style="color:black; font-weight: bold;"> display: none;</span></p>
+        </div>
         <h2>Les tableaux </h2>
         <table>
             <thead>
@@ -110,9 +118,14 @@
                 setBackGroundColorByTag("body", "yellow");
                 setBackGroundColorById("container", "lightgrey");
                 resetBtn();
-
+                showSecretDiv();
             }
             alreadyClicked = !alreadyClicked;
+        }
+
+        function showSecretDiv() {
+            let secretDiv = document.getElementById("secretDiv");
+            secretDiv.style.display = "block";
         }
 
         function resetBtn() {
@@ -145,11 +158,9 @@
         }
 
         function numberedParagraphs() {
-            if (!alreadyClicked) {
-                let pElements = document.getElementsByTagName("p");
-                for (let i = 0; i < pElements.length; i++) {
-                    pElements[i].innerHTML = i + 1 + ". " + pElements[i].innerHTML;
-                }
+            let pElements = document.getElementsByTagName("p");
+            for (let i = 0; i < pElements.length; i++) {
+                pElements[i].innerHTML = i + 1 + ". " + pElements[i].innerHTML;
             }
         }
 
