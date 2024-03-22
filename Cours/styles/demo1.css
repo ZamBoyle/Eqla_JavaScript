@@ -1,0 +1,33 @@
+div {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#secretDiv {
+    display: none;
+}
+
+#container {
+    padding: 15px;
+    margin: auto;
+    background-color: #f0f0f0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 5px;
+    background-color: #e7c9c9;
+}
