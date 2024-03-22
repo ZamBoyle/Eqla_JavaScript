@@ -45,7 +45,7 @@ La méthode `document.getElementById()` permet de sélectionner un élément du 
 <body>
     <div id="monDiv">Ceci est un div.</div>
     <script>
-        var monDiv = document.getElementById("monDiv");
+        let monDiv = document.getElementById("monDiv");
         if (monDiv) { // Si l'élément existe
             // Modifier le contenu du div via la propriété innerHTML
             monDiv.innerHTML = "Ceci est un div modifié.";
@@ -80,8 +80,8 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
     <div class="maClasse">Ceci est un div avec la classe maClasse.</div>
     <div class="maClasse">Ceci est un autre div avec la classe maClasse.</div>
     <script>
-        var elements = document.getElementsByClassName("maClasse");
-        for (var i = 0; i < elements.length; i++) {
+        let elements = document.getElementsByClassName("maClasse");
+        for (let i = 0; i < elements.length; i++) {
             elements[i].innerHTML = i + 1 + ". Ceci est un div modifié via une class.";
         }
     </script>
@@ -89,10 +89,10 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
 
 </html>
 ```
-La méthode `document.getElementsByClassName()` renvoie une liste d'éléments correspondant à la classe spécifiée. Dans l'exemple ci-dessus, nous avons deux divs avec la classe `maClasse`. Nous utilisons `document.getElementsByClassName("maClasse")` pour sélectionner ces éléments, puis nous modifions leur contenu en utilisant la propriété `innerHTML`.
+La méthode `getElementsByClassName()` renvoie une liste d'éléments correspondant à la classe spécifiée. Dans l'exemple ci-dessus, nous avons deux divs avec la classe `maClasse`. Nous utilisons `getElementsByClassName("maClasse")` pour sélectionner ces éléments, puis nous modifions leur contenu en utilisant la propriété `innerHTML`.
 
 ### 2.3. document.getElementsByTagName()
-La méthode `document.getElementsByTagName()` permet de sélectionner des éléments du DOM par leur balise. Elle prend en paramètre le nom de la balise à rechercher et renvoie une liste d'éléments correspondant à cette balise.
+La méthode `getElementsByTagName()` permet de sélectionner des éléments du DOM par leur balise. Elle prend en paramètre le nom de la balise à rechercher et renvoie une liste d'éléments correspondant à cette balise.
 
 Exemple:
 ```js
@@ -103,7 +103,7 @@ for (let i=0; i<paragraphs.length; i++) {
     }
 }
 ```
-Dans cet exemple, nous utilisons `document.getElementsByTagName("p")` pour sélectionner tous les éléments `p` de la page, puis nous ajoutons la classe `xmass` à ces éléments. J'ai testé si la classe n'était pas déjà présente. Normalement, le navigateur ne devrait pas rajouter cette classe plusieurs fois. Mais dans un soucis de performances autant le vérifier car nous sommes codeurs quand même. ;-)
+Dans cet exemple, nous utilisons `getElementsByTagName("p")` pour sélectionner tous les éléments `p` de la page, puis nous ajoutons la classe `xmass` à ces éléments. J'ai testé si la classe n'était pas déjà présente. Normalement, le navigateur ne devrait pas rajouter cette classe plusieurs fois. Mais dans un soucis de performances autant le vérifier car nous sommes codeurs quand même. ;-)
 
 Un autre exemple:
 ```html
