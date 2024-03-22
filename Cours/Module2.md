@@ -17,6 +17,7 @@
   - [2.2. document.getElementsByClassName()](#22-documentgetelementsbyclassname)
   - [2.3. document.getElementsByTagName()](#23-documentgetelementsbytagname)
   - [2.4 Exemple complet avec getElementById / getElementsByTagName](#24-exemple-complet-avec-getelementbyid--getelementsbytagname)
+  - [2.5. document.querySelector()](#25-documentqueryselector)
 
 <!-- /code_chunk_output -->
 
@@ -357,7 +358,9 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
         }
     </script>
 </body>
-</html>```
+</html>
+```
+
 Pour l'exemple j'ai tout mis dans un seul fichier, mais en général on sépare le code HTML du code JavaScript dans des fichiers séparés.
 
 Lorsqu'on clique sur le bouton "Let's go !", le code JavaScript va modifier le DOM de la page en fonction des fonctions définies. Si on clique une deuxième fois, le DOM est réinitialisé.
@@ -374,7 +377,7 @@ Quand on cliquera sur le bouton:
 - Le fond de la balise `body` sera jaune.
 - Le fond de la balise avec l'id `container` sera gris clair.
 
-### 2.4. `document.querySelector()`
+### 2.5. document.querySelector()
 La méthode `document.querySelector()` permet de sélectionner le premier élément du DOM correspondant à un sélecteur CSS. Elle prend en paramètre un sélecteur CSS et renvoie l'élément correspondant.
 
 ```html
