@@ -80,9 +80,10 @@ La méthode `document.getElementsByClassName()` permet de sélectionner des él�
     <div class="maClasse">Ceci est un div avec la classe maClasse.</div>
     <div class="maClasse">Ceci est un autre div avec la classe maClasse.</div>
     <div>Un dernier div pour la route avant le we.</div>
+    <p class="maClasse">Ceci est votre dernier paragraphe préféré.</p>
     <script>
-        var elements = document.getElementsByClassName("maClasse");
-        for (var i = 0; i < elements.length; i++) {
+        let elements = document.getElementsByClassName("maClasse");
+        for (let i = 0; i < elements.length; i++) {
             elements[i].innerHTML = i + 1 + ". "+elements[i].innerHTML;//". Ceci est un div modifié via une class.";
         }
     </script>
