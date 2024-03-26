@@ -18,6 +18,15 @@
   - [2.4. document.getElementsByTagName()](#24-documentgetelementsbytagname)
   - [2.5 Exemple complet avec getElementById / getElementsByTagName](#25-exemple-complet-avec-getelementbyid--getelementsbytagname)
   - [2.6. document.querySelector()](#26-documentqueryselector)
+    - [2.6.1 Sélection par tag](#261-sélection-par-tag)
+    - [2.6.2 Sélection par id](#262-sélection-par-id)
+    - [2.6.3. Sélection par classe](#263-sélection-par-classe)
+    - [2.6.4. Sélection par attribut](#264-sélection-par-attribut)
+    - [2.6.5 Sékectuib par attribut et valeur](#265-sékectuib-par-attribut-et-valeur)
+    - [2.6.6. Sélection par tag et classe](#266-sélection-par-tag-et-classe)
+    - [2.6.7. Sélection par attribut et tag](#267-sélection-par-attribut-et-tag)
+    - [2.6.8. Sélection par id et tag](#268-sélection-par-id-et-tag)
+  - [2.7. document.querySelectorAll()](#27-documentqueryselectorall)
 
 <!-- /code_chunk_output -->
 
@@ -380,8 +389,21 @@ Quand on cliquera sur le bouton:
 - Le fond de la balise avec l'id `container` sera gris clair.
 
 ### 2.6. document.querySelector()
-La méthode `document.querySelector()` permet de sélectionner le premier élément du DOM correspondant à un sélecteur CSS. Elle prend en paramètre un sélecteur CSS et renvoie l'élément correspondant.
+La méthode `document.querySelector()` permet de sélectionner le premier élément du DOM correspondant à un sélecteur CSS.
+Pour rappel, voici la syntaxe d'un sélecteur CSS:
+- `tag` pour sélectionner un élément par sa balise.
+- `#id` pour sélectionner un élément par son identifiant.
+- `.class` pour sélectionner un élément par sa classe.
+- `[attribut=valeur]` pour sélectionner un élément par un attribut.
+- `[attribut]` pour sélectionner un élément qui possède un attribut.
+- `tag.class` pour sélectionner un élément par sa balise et sa classe.
+- `tag[attribut]` pour sélectionner un élément par sa balise et un attribut.
+- `tag[attribut=valeur]` pour sélectionner un élément par sa balise et un attribut.
+- etc...
 
+Elle prend en paramètre un sélecteur CSS et renvoie l'élément correspondant.
+
+#### 2.6.1 Sélection par tag
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -400,7 +422,7 @@ La méthode `document.querySelector()` permet de sélectionner le premier élém
         <script>
             let premierParagraphe = document.querySelector("p");
             if (premierParagraphe) {
-                premierParagraphe.innerHTML = "Ceci est le premier paragraphe modifié.";
+                premierParagraphe.innerHTML = "Ceci est le premier paragraphe que nous venons de modifier.";
             }
         </script>
     </body>
@@ -408,23 +430,10 @@ La méthode `document.querySelector()` permet de sélectionner le premier élém
 ```
 La méthode `document.querySelector()` renvoie le premier élément correspondant au sélecteur CSS spécifié. Dans l'exemple ci-dessus, nous utilisons `document.querySelector("p")` pour sélectionner le premier paragraphe de la page, puis nous modifions son contenu en utilisant la propriété `innerHTML`.
 
-On peut aussi retrouver un élément en fonction d'un attribut:
-```javascript
-let element = document.querySelector('[data-id="123"]');
-let element2 = document.querySelector('[disabled]');
-```
-Cela permet de retrouver un élément qui a un attribut `data-id` avec la valeur `123` ou un élément qui a l'attribut `disabled`.
+#### 2.6.2 Sélection par id
 
+Tout comme `document.getElementById()`, on peut sélectionner un élément par son identifiant avec `document.querySelector()` en utilisant le sélecteur CSS `#id`:
 
-
-code qui fait disparaitre un élément:
-```javascript
-document.querySelector("#monElement").style.display = "none";
-```
-
-
----
-Nous vrrons plus tard ce code
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -439,16 +448,143 @@ Nous vrrons plus tard ce code
             <p>Sur ce site, vous apprendrez le html.</p>
             <p>Et le CSS.</p>
             <p>Et le JavaScript.</p>
+            <p id="monParagraphe">Ceci est un paragraphe avec un identifiant.</p>
         </div>
         <script>
-            var premierParagraphe = document.querySelector("p");
-            if (premierParagraphe) {
-                premierParagraphe.innerHTML = "Ceci est le premier paragraphe modifié.";
+            let container = document.querySelector("#monParagraphe");
+            if (container) {
+                container.innerHTML = "Nous venons de modifier le paragraphe avec l'identifiant monParagraphe.";
             }
         </script>
     </body>
+```
+Dans cet exemple, nous utilisons `document.querySelector("#monParagraphe")` pour sélectionner le paragraphe avec l'identifiant `monParagraphe`, puis nous modifions son contenu en utilisant la propriété `innerHTML`.
+
+Il est important de noter que `document.querySelector()` renvoie le premier élément correspondant au sélecteur CSS spécifié. Si plusieurs éléments correspondent au sélecteur, seul le premier sera sélectionné.
+
+#### 2.6.3. Sélection par classe
+On peut aussi retrouver un élément en fonction de sa classe:
+```javascript
+let element = document.querySelector('.maClasse');
+```
+Cela permet de retrouver un élément qui a la classe `maClasse`.
+
+#### 2.6.4. Sélection par attribut
+Comme je vous ai dit en classe, le développeur peut utiliser une classe qui n'est pas définie dans le CSS. Dans le but d'identifier plusieurs éléments.
+
+Mais nos amis webdesigners pourraient ne pas être contents: ils risquent de ne pas comprendre pourquoi ce style n'est pas défini dans le CSS et le supprimer n'y voyant pas d'utilité.
+
+Généralement, on utilise l'attribut `data-` pour créer des attributs personnalisés. Par exemple, `data-id="123"`. Ici, `id` est l'attribut personnalisé et `123` est la valeur de cet attribut. Ca pourrait être l'id dans une base de données par exemple.
+
+Ces attributs sont utilisés pour stocker des informations supplémentaires sur les éléments, qui peuvent être utilisées par le code JavaScript.
+
+On peut aussi retrouver un élément en fonction d'un attribut:
+```javascript
+let element = document.querySelector('[hidden]');
+
+//supprime l'attribut disabled
+element.removeAttribute('hidden');
+```
+Cela permet de retrouver un élément qui a l'attribut `hidden`.
+
+#### 2.6.5 Sékectuib par attribut et valeur
+On peut aussi retrouver un élément en fonction de son attribut et de sa valeur:
+```javascript
+let element = document.querySelector('[type="text"]');
+```
+Cela permet de retrouver un élément qui a l'attribut `type` et la valeur `text`.
+
+#### 2.6.6. Sélection par tag et classe
+On peut aussi retrouver un élément en fonction de son attribut et de sa classe:
+```javascript
+let element = document.querySelector('p.paragraphe');
+```
+Cela permet de retrouver un élément qui est un paragraphe et qui a la classe `paragraphe`.
+
+#### 2.6.7. Sélection par attribut et tag
+On peut aussi retrouver un élément en fonction de son attribut et de sa balise:
+```javascript
+let element = document.querySelector('input[disabled]');
+```
+Cela permet de retrouver un élément qui est un input et qui a l'attribut `disabled`. C'est à dire un input désactivé.
+
+#### 2.6.8. Sélection par id et tag
+On peut aussi retrouver un élément en fonction de son identifiant et de sa balise:
+
+
+
+### 2.7. document.querySelectorAll()
+Nous venons de voir que `document.querySelector()` renvoie le premier élément correspondant au sélecteur CSS spécifié. Si on veut sélectionner tous les éléments correspondant à un sélecteur CSS, on peut utiliser `document.querySelectorAll()`. Cette méthode renvoie une liste de tous les éléments correspondant au sélecteur CSS spécifié. Cette liste sera stockée dans un objet de type NodeList qui est similaire à un tableau.
+
+Tous les exemples que nous avons vus avec `document.querySelector()` peuvent être adaptés pour utiliser `document.querySelectorAll()`. Mais à la différence de `document.querySelector()`, `document.querySelectorAll()` renvoie tous les éléments correspondant au sélecteur CSS spécifié. Ce qui signifie que si aucun élément ne correspond au sélecteur, la liste sera vide.
+
+Voici un exemple pour sélectionner tous les paragraphes de la page:
+```html
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo querySelectorAll</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h1, h2 {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Démo querySelectorAll</h1>
+        <div id="sectionInteressante">
+            <h2>Titre de la section intéressante</h2>
+            <p>Paragraphe 1 de la section. Cliquez sur moi!</p>
+            <p>Paragraphe 2 de la section. Cliquez sur moi!</p>
+            <p>Paragraphe 3 de la section. Cliquez sur moi!</p>
+        </div>
+        <p>Ce paragraphe ne sera pas affecté car il est en dehors de la section.</p>
+        <hr>
+    </div>
+    <script>
+        let monthToChange = 2;// 0 = janvier, 1 = février, 2 = mars, etc.
+        let today = new Date();
+        let month = today.getMonth();
+
+        document.title = month;
+        if (month === monthToChange) {
+            let paragraphes = document.querySelectorAll("#sectionInteressante p");
+            paragraphes.forEach(paragraphe => {
+                paragraphe.style.color = "white";
+                paragraphe.style.backgroundColor = "red";
+                paragraphe.style.fontWeight = "bold";
+                paragraphe.style.padding = "10px";
+            });
+        }
+    </script>
+</body>
+
 </html>
 ```
+
+
+
+
+
+
+
+
 
 [:arrow_up: Revenir en haut](#sommaire)
 
@@ -474,4 +610,5 @@ Nous vrrons plus tard ce code
 [![Creative Commons Attribution 4.0 International License](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)  
 Ce travail est licencié sous [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).  
 _Vous pouvez copier, modifier, distribuer et représenter ce travail, même à des fins commerciales, à condition de donner le crédit approprié, fournir un lien vers la licence, et indiquer si des modifications ont été effectuées._
+
 
