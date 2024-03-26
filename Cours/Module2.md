@@ -550,19 +550,19 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
         <h1>Démo querySelectorAll</h1>
         <div id="sectionInteressante">
             <h2>Titre de la section intéressante</h2>
-            <p>Paragraphe 1 de la section. Cliquez sur moi!</p>
-            <p>Paragraphe 2 de la section. Cliquez sur moi!</p>
-            <p>Paragraphe 3 de la section. Cliquez sur moi!</p>
+            <p>Paragraphe 1 de la section.</p>
+            <p>Paragraphe 2 de la section.</p>
+            <p>Paragraphe 3 de la section.</p>
         </div>
         <p>Ce paragraphe ne sera pas affecté car il est en dehors de la section.</p>
         <hr>
     </div>
     <script>
+        
         let monthToChange = 2;// 0 = janvier, 1 = février, 2 = mars, etc.
         let today = new Date();
         let month = today.getMonth();
 
-        document.title = month;
         if (month === monthToChange) {
             let paragraphes = document.querySelectorAll("#sectionInteressante p");
             paragraphes.forEach(paragraphe => {
@@ -574,9 +574,13 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
         }
     </script>
 </body>
-
 </html>
 ```
+Dans cet exemple, nous utilisons `document.querySelectorAll("#sectionInteressante p")` pour sélectionner: 
+- tous les paragraphes de la section 
+- avec l'identifiant `sectionInteressante`
+
+Puis nous modifions leur style en utilisant les propriétés `style.color`, `style.backgroundColor`, `style.fontWeight` et `style.padding`.
 
 
 
