@@ -27,6 +27,7 @@
     - [2.6.7. Sélection par attribut et tag](#267-sélection-par-attribut-et-tag)
     - [2.6.8. Sélection par id et tag](#268-sélection-par-id-et-tag)
   - [2.7. document.querySelectorAll()](#27-documentqueryselectorall)
+  - [2.8. Les événements](#28-les-événements)
 
 <!-- /code_chunk_output -->
 
@@ -581,6 +582,104 @@ Dans cet exemple, nous utilisons `document.querySelectorAll("#sectionInteressant
 - avec l'identifiant `sectionInteressante`
 
 Puis nous modifions leur style en utilisant les propriétés `style.color`, `style.backgroundColor`, `style.fontWeight` et `style.padding`.
+
+Testez ce code dans un fichier HTML pour voir le résultat et changez la valeur de `monthToChange` pour voir le changement de style des paragraphes.
+
+### 2.8. Les événements
+Les événements sont des actions qui se produisent dans le navigateur, comme le chargement de la page, le clic sur un bouton, le survol d'un élément, etc. En JavaScript, on peut attacher des gestionnaires d'événements à des éléments du DOM pour exécuter du code en réponse à ces événements.
+
+Voici la syntaxe générale pour ajouter un gestionnaire d'événements à un élément:
+
+> element.addEventListener(event, function);
+
+- `element` est l'élément du DOM auquel on veut ajouter le gestionnaire d'événements.
+- `event` est le nom de l'événement à écouter (par exemple, "click", "mouseover", "change", etc.).
+- `function` est la fonction à exécuter lorsque l'événement se produit. Cette fonction est souvent appelée un "callback". Elle peut être définie en tant que fonction nommée ou fonction anonyme.
+
+
+
+Voici quelques exemples d'événements courants:
+- `click`: se produit lorsqu'un élément est cliqué.
+- `mouseover`: se produit lorsque la souris survole un élément.
+- `mouseout`: se produit lorsque la souris quitte un élément.
+- `change`: se produit lorsqu'une valeur change (par exemple, dans un champ de texte ou une case à cocher).
+- `submit`: se produit lorsqu'un formulaire est soumis.
+- `load`: se produit lorsque la page est entièrement chargée.
+- `keydown`: se produit lorsqu'une touche du clavier est enfoncée.
+- `keyup`: se produit lorsqu'une touche du clavier est relâchée.
+- etc...
+
+Pour attacher un gestionnaire d'événements à un élément, on utilise la méthode `addEventListener()`. Cette méthode prend en paramètre le nom de l'événement à écouter et une fonction qui sera exécutée lorsque l'événement se produit.
+
+Nous avons vu que nous pouvions ajouter dans le code html l'event `onclick` pour déclencher une action lorsqu'on clique sur un élément. Mais il est préférable d'utiliser `addEventListener()` pour ajouter des événements.
+
+Voici un exemple pour ajouter un gestionnaire d'événements `click` à un bouton:
+```html
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Démo addEventListener</title>
+        <style>
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 10px;
+                border: 1px solid black;
+            }
+            button {
+                padding: 10px;
+                font-size: 1.2em;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: rgb(210, 196, 245);
+            }
+            #messageClickBtn, #textTyped {
+                margin-top: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Démo addEventListener</h1>
+        <p>Dans cette démo, vous pouvez cliquer sur un bouton et taper du texte.</p>
+        <button id="monBouton">Cliquez ici</button>
+        <div id="messageClickBtn"></div>
+        <div id="textTyped"></div>
+        </div>
+        <script>
+            let bouton = document.getElementById("monBouton");
+            bouton.addEventListener("click", function() {
+                let message = document.getElementById("messageClickBtn");
+                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
+                message.style.backgroundColor = "lightblue";
+                bouton.style.display = "none";
+            });
+            document.addEventListener("keydown", function(event) {
+                let textTyped = document.getElementById("textTyped");
+                textTyped.style.backgroundColor = "lightgreen";
+                //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
+                if(event.key === "Backspace"){
+                    textTyped.textContent = textTyped.textContent.slice(0, -1);
+                }
+                //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
+                //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
+                if (event.key.length === 1)
+                {
+                    textTyped.textContent +=  event.key;
+                }
+            });
+        </script>
+    </body>
+</html>
+```
+
+
+
+
 
 
 
