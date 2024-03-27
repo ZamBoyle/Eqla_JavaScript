@@ -132,10 +132,12 @@ alert('Hello les BlindCoders!');
 2. Insérez les balises `<script src='ex11.js' defer>` `</script>` dans le `<head>` de la page.
 3. Créez un fichier JavaScript nommé ex11.js
 4. Dans le `<body>` de la page ajoutez:
+
 ```html
 <h1 id="titre">Je suis un beau titre h1</h1>
 <div id="info">Informations: </div>
 ```
+
 5. Modifiez le titre h1 en "Je suis un titre h1 modifié" en utilisant `getElementById`.
 6. Concaténez le texte de la div info avec "Nous sommes en " + new Date().getFullYear() + "."
 7. Ouvrez la page dans un navigateur et observez le résultat.
@@ -178,6 +180,7 @@ document.getElementById("monElement").style.display = "none";
 2. Insérez les balises `<script src='ex14.js' defer>` `</script>` dans le `<head>` de la page.
 3. Créez un fichier JavaScript nommé ex14.js
 4. Dans le `<body>` de la page ajoutez:
+
 ```html
 <h1>Exercice 14 - getElementsByTagName</h1>
 <h2>Titre 2</h2>
