@@ -11,17 +11,15 @@
             font-family: Arial, sans-serif;
             font-size: 16px;
             line-height: 1.5;
-            margin-inline: 20px;
-            margin-top: 2%;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
         }
 
         button {
-            position: fixed; /* ou 'absolute', selon le besoin */
-            right: 30px; /* Distance du bord droit de la fenêtre */
-            top: 20px; /* Distance du bord supérieur de la fenêtre */
             font-size: 24px;
             background: none;
             border: none;
@@ -40,11 +38,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <button id="btnContrast" aria-label="Changer le mode de contraste">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-    </button>
-    <div id="container">
-        <h1>Exemple d'un bouton Contraste Élevé</h1>
+    <div class="button-container">
+        <button id="btnContrast" aria-label="Changer le mode de contraste">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+    <div class="container mt-10 pt-10" >       
+        <h1 class="text-center">Exemple d'un bouton Contraste Élevé</h1>
         <p>Cette page est un exemple de comment utiliser <a href="https://fontawesome.com/search?o=r&m=free">Font Awesome</a> et le JavaScript pour améliorer l'accessibilité pour les personnes malvoyantes.</p>
         <p>En cliquant sur l'icône ci-dessus, vous pouvez changer le contraste de la page pour faciliter la lecture.</p>
         <p>L'accessibilité web est essentielle pour permettre à tous les utilisateurs, y compris ceux ayant des limitations visuelles, de naviguer et d'interagir avec le contenu en ligne.</p>
