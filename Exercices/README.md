@@ -4,7 +4,30 @@
     &nbsp;Exercices
 </h1>
 
-<br/>
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Exercice 1 - Code JS Inline](#exercice-1---code-js-inline)
+- [Exercice 2 - Ficher JS Externe](#exercice-2---ficher-js-externe)
+- [Exercice 3 - Ficher JS Externe](#exercice-3---ficher-js-externe)
+- [Exercice 4 - Installation de Node.js](#exercice-4---installation-de-nodejs)
+- [Exercice 5 - Type de données & variables](#exercice-5---type-de-données--variables)
+- [Exercice 6 - Conditions](#exercice-6---conditions)
+- [Exercice 7 - Boucles](#exercice-7---boucles)
+- [Exercice 8 - Fonctions](#exercice-8---fonctions)
+- [Exercice 9 - Fonctions anonymes](#exercice-9---fonctions-anonymes)
+- [Exercice 10 - Fonctions fléchées](#exercice-10---fonctions-fléchées)
+- [Exercice 11 - getElementById](#exercice-11---getelementbyid)
+- [Exercice 12 - getElementById](#exercice-12---getelementbyid)
+- [Exercice 13 - getElementById](#exercice-13---getelementbyid)
+- [Exercice 14 - getElementsByTagName](#exercice-14---getelementsbytagname)
+- [Exercice 15 - getElementsByTagName](#exercice-15---getelementsbytagname)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Exercice 1 - Code JS Inline
 1. Créez une page HTML nommée Exercice1.html
@@ -63,7 +86,7 @@ alert('Hello les BlindCoders!');
 13. Ouvrez la page dans un navigateur et observez le résultat et consultez la console du navigateur.
 14. Testez aussi via node.js en utilisant la commande `node ex5.js`.
 
-## Exercice 6 - conditions
+## Exercice 6 - Conditions
 1. Créez une page HTML nommée Exercice6.html
 2. Insérez les balises `<script src='ex5.js' defer>` `</script>` dans le `<head>` de la page.
 3. Créez un fichier JavaScript nommé ex6.js
