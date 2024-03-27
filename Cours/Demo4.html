@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraste Élevé pour Malvoyants avec Font Awesome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10%;
+
+        }
+
+        button {
+            position: fixed; /* ou 'absolute', selon le besoin */
+            right: 20px; /* Distance du bord droit de la fenêtre */
+            top: 20px; /* Distance du bord supérieur de la fenêtre */
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .highContrast {
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .highContrast button {
+            color: white;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <button id="btnContrast" aria-label="Changer le mode de contraste">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+    <div id="container">
+        <h1>Accessibilité Web pour les Malvoyants</h1>
+        <p>Cette page est un exemple de comment utiliser <a href="https://fontawesome.com/search?o=r&m=free">Font Awesome</a> et le JavaScript pour améliorer l'accessibilité pour les personnes malvoyantes.</p>
+        <p>En cliquant sur l'icône ci-dessus, vous pouvez changer le contraste de la page pour faciliter la lecture.</p>
+        <p>L'accessibilité web est essentielle pour permettre à tous les utilisateurs, y compris ceux ayant des limitations visuelles, de naviguer et d'interagir avec le contenu en ligne.</p>
+        <p>J'ai utilisé Font Awesome pour l'icône du bouton de contraste. Vous pouvez trouver plus d'informations sur Font Awesome sur leur site web.</p>
+        <p>Font Awesome est une bibliothèque d'icônes vectorielles qui peut être utilisée pour améliorer l'accessibilité et l'expérience utilisateur sur les sites web.</p>
+        <p>Il y a une version gratuite de Font Awesome qui peut être utilisée pour ajouter des icônes à votre site web et une version payantes avec beaucoup plus d'icônes.</p>
+        <p>Pour l'intégration le plus simple est d'aller sur le site <a href="https://cdnjs.com/libraries/font-awesome">&lt;cdnjs&gt;</a> et de sélectionner la version de Font Awesome que vous voulez utiliser.</p>
+        <p>Par exemple pour la version 6.5.1 et si on veut toutes les icones on ajoutera la balise script suivante: </p>
+        <p><b>&lt;link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"&gt;</b></p>
+    </div>
+    <script>
+        let btnContrast = document.querySelector('#btnContrast');//On aurait pu utiliser getElementById sans utiliser le #
+        //On ajoute un écouteur d'événement pour le clic sur le bouton
+        btnContrast.addEventListener('click', function() {
+            document.body.classList.toggle('highContrast');
+        });
+    </script>
+
+</body>
+</html>

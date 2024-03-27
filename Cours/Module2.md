@@ -652,30 +652,118 @@ Voici un exemple pour ajouter un gestionnaire d'événements `click` à un bouto
         </div>
         <script>
             let bouton = document.getElementById("monBouton");
-            bouton.addEventListener("click", function() {
-                let message = document.getElementById("messageClickBtn");
-                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
-                message.style.backgroundColor = "lightblue";
-                bouton.style.display = "none";
-            });
+            //Appel d'une fonction nommée onClickButton mais on peut aussi utiliser une fonction anonyme
+            bouton.addEventListener("click", onClickButton);
+
+            //Appel d'une fonction anonyme mais on peut aussi utiliser une fonction nommée
             document.addEventListener("keydown", function(event) {
                 let textTyped = document.getElementById("textTyped");
                 textTyped.style.backgroundColor = "lightgreen";
                 //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
                 if(event.key === "Backspace"){
-                    textTyped.textContent = textTyped.textContent.slice(0, -1);
+                    textTyped.textContent = textTyped.innerHTML.slice(0, -1);
                 }
                 //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
                 //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
                 if (event.key.length === 1)
                 {
+                    //en css prendre une couleur random
                     textTyped.textContent +=  event.key;
                 }
             });
+
+            function onClickButton() {
+                let message = document.getElementById("messageClickBtn");
+                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
+                message.style.backgroundColor = "lightblue";
+                bouton.style.display = "none";
+            }
         </script>
     </body>
 </html>
 ```
+Testez ce code dans un fichier HTML pour voir le résultat.
+
+Dans cet exemple, nous ajoutons un gestionnaire d'événements `click` à un bouton avec `addEventListener("click", onClickButton)`. Lorsque le bouton est cliqué, la fonction `onClickButton` est appelée et affiche un message dans un élément `div`.
+
+Nous avons appelé une fonction nommée `onClickButton` pour gérer l'événement `click`. Mais on aurait pu utiliser une fonction anonyme à la place. C'est pour vous montrer que les deux sont possibles.
+
+Nous ajoutons également un gestionnaire d'événements `keydown` à la page entière avec `document.addEventListener("keydown", function(event))`. Lorsqu'une touche du clavier est enfoncée, la fonction anonyme est appelée et affiche le caractère tapé dans un élément `div`.
+
+Si on analyse l'événement `keydown`, on voit on constate que notre fonction anonyme prend un paramètre `event`. Cet objet contient des informations sur l'événement, comme la touche du clavier qui a été enfoncée. Nous utilisons `event.key` pour obtenir le caractère tapé.
+
+Nous avons aussi utilisé `textContent` pour afficher le message dans l'élément `div` au lieu de `innerHTML`. C'est une bonne pratique car `textContent` est plus sûr que `innerHTML` car il ne traite pas le contenu comme du HTML. Si vous n'avez pas besoin de traiter du HTML, utilisez `textContent`.
+
+Dans l'exemple suivant, nous allons avoir un bouton qui lorsqu'il est cliqué change le contraste de page pour les personnes malvoyantes. C'est un exemple de ce que l'on peut faire avec les événements.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Démo addEventListener</title>
+        <style>
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 10px;
+                border: 1px solid black;
+            }
+            button {
+                padding: 10px;
+                font-size: 1.2em;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: rgb(210, 196, 245);
+            }
+            #messageClickBtn, #textTyped {
+                margin-top: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Démo addEventListener</h1>
+        <p>Dans cette démo, vous pouvez cliquer sur un bouton et taper du texte.</p>
+        <button id="monBouton">Cliquez ici</button>
+        <div id="messageClickBtn"></div>
+        <div id="textTyped"></div>
+        </div>
+        <script>
+            let bouton = document.getElementById("monBouton");
+            //Appel d'une fonction nommée onClickButton mais on peut aussi utiliser une fonction anonyme
+            bouton.addEventListener("click", onClickButton);
+
+            //Appel d'une fonction anonyme mais on peut aussi utiliser une fonction nommée
+            document.addEventListener("keydown", function(event) {
+                let textTyped = document.getElementById("textTyped");
+                textTyped.style.backgroundColor = "lightgreen";
+                //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
+                if(event.key === "Backspace"){
+                    textTyped.textContent = textTyped.innerHTML.slice(0, -1);
+                }
+                //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
+                //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
+                if (event.key.length === 1)
+                {
+                    //en css prendre une couleur random
+                    textTyped.textContent +=  event.key;
+                }
+            });
+
+             
+
+
+
+
+
+
+
+
+
 
 
 

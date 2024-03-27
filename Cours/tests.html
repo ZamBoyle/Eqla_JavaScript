@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Démo addEventListener</title>
-        <style>
-            .container {
-                width: 80%;
-                margin: 0 auto;
-                padding: 10px;
-                border: 1px solid black;
-            }
-            button {
-                padding: 10px;
-                font-size: 1.2em;
-                border-radius: 5px;
-            }
-            button:hover {
-                background-color: rgb(210, 196, 245);
-            }
-            #messageClickBtn, #textTyped {
-                margin-top: 10px;
-                padding: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-        <h1>Démo addEventListener</h1>
-        <p>Dans cette démo, vous pouvez cliquer sur un bouton et taper du texte.</p>
-        <button id="monBouton">Cliquez ici</button>
-        <div id="messageClickBtn"></div>
-        <div id="textTyped"></div>
-        </div>
-        <script>
-            let bouton = document.getElementById("monBouton");
-            bouton.addEventListener("click", function() {
-                let message = document.getElementById("messageClickBtn");
-                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
-                message.style.backgroundColor = "lightblue";
-                bouton.style.display = "none";
-            });
-            document.addEventListener("keydown", function(event) {
-                let textTyped = document.getElementById("textTyped");
-                textTyped.style.backgroundColor = "lightgreen";
-                //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
-                if(event.key === "Backspace"){
-                    textTyped.textContent = textTyped.textContent.slice(0, -1);
-                }
-                //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
-                //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
-                if (event.key.length === 1)
-                {
-                    textTyped.textContent +=  event.key;
-                }
-            });
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnalisation des Couleurs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        button {
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .highContrast button {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button aria-label="Changer le mode de contraste" onclick="toggleContrast()">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <input type="color" id="textColorPicker" title="Choisir la couleur du texte">
+        <input type="color" id="bgColorPicker" title="Choisir la couleur de fond">
+    </div>
+    <div id="content">
+        <h1>Personnalisation de l'Accessibilité</h1>
+        <p>Utilisez les sélecteurs ci-dessus pour ajuster les couleurs du texte et de l'arrière-plan selon vos préférences. Cela peut aider à améliorer la lisibilité pour les utilisateurs avec différents besoins d'accessibilité.</p>
+    </div>
+    <script>
+        function toggleContrast() {
+            document.body.classList.toggle('highContrast');
+        }
+
+        document.getElementById('textColorPicker').addEventListener('input', function() {
+            document.body.style.color = this.value;
+        });
+
+        document.getElementById('bgColorPicker').addEventListener('input', function() {
+            document.body.style.backgroundColor = this.value;
+        });
+    </script>
+</body>
 </html>

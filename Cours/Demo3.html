@@ -35,26 +35,32 @@
         </div>
         <script>
             let bouton = document.getElementById("monBouton");
-            bouton.addEventListener("click", function() {
-                let message = document.getElementById("messageClickBtn");
-                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
-                message.style.backgroundColor = "lightblue";
-                bouton.style.display = "none";
-            });
+            //Appel d'une fonction nommée onClickButton mais on peut aussi utiliser une fonction anonyme
+            bouton.addEventListener("click", onClickButton);
+
+            //Appel d'une fonction anonyme mais on peut aussi utiliser une fonction nommée
             document.addEventListener("keydown", function(event) {
                 let textTyped = document.getElementById("textTyped");
                 textTyped.style.backgroundColor = "lightgreen";
                 //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
                 if(event.key === "Backspace"){
-                    textTyped.textContent = textTyped.textContent.slice(0, -1);
+                    textTyped.innerHTML = textTyped.innerHTML.slice(0, -1);
                 }
                 //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
                 //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
                 if (event.key.length === 1)
                 {
-                    textTyped.textContent +=  event.key;
+                    //en css prendre une couleur random
+                    textTyped.innerHTML +=  event.key;
                 }
             });
+
+            function onClickButton() {
+                let message = document.getElementById("messageClickBtn");
+                message.textContent = "Vous avez cliqué sur le bouton et il a disparu.";
+                message.style.backgroundColor = "lightblue";
+                bouton.style.display = "none";
+            }
         </script>
     </body>
 </html>
