@@ -147,18 +147,22 @@ alert('Hello les BlindCoders!');
 2. Insérez les balises `<script src='ex12.js' defer>` `</script>` dans le `<head>` de la page.
 3. Créez un fichier JavaScript nommé ex12.js
 4. Dans le `<body>` de la page ajoutez:
+
 ```html
 <h1 id="titreh1">Abracadabra</h1>
 <button id="monBouton" onclick="cacher()">Cacher le titre</button>
 ```
+
 5. Créez une fonction `cacher` qui cache le titre h1 en utilisant `getElementById`.
 6. Cette fonction doit changer la propriété `display` de la propriété `style` de l'élément h1 en "none". Ouille, ça fait beaucoup de propriétés tout ça. En fait, on peut simplifier en utilisant:
+
 ```javascript
 let monElement = document.getElementById("monElement");
 monElement.style.display = "none";
 // ou plus simplement
 document.getElementById("monElement").style.display = "none";
 ```
+
 7. Ouvrez la page dans un navigateur et observez le résultat.
 
 
