@@ -699,60 +699,76 @@ Dans l'exemple suivant, nous allons avoir un bouton qui lorsqu'il est cliqué ch
 ```html
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Démo addEventListener</title>
-        <style>
-            .container {
-                width: 80%;
-                margin: 0 auto;
-                padding: 10px;
-                border: 1px solid black;
-            }
-            button {
-                padding: 10px;
-                font-size: 1.2em;
-                border-radius: 5px;
-            }
-            button:hover {
-                background-color: rgb(210, 196, 245);
-            }
-            #messageClickBtn, #textTyped {
-                margin-top: 10px;
-                padding: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-        <h1>Démo addEventListener</h1>
-        <p>Dans cette démo, vous pouvez cliquer sur un bouton et taper du texte.</p>
-        <button id="monBouton">Cliquez ici</button>
-        <div id="messageClickBtn"></div>
-        <div id="textTyped"></div>
-        </div>
-        <script>
-            let bouton = document.getElementById("monBouton");
-            //Appel d'une fonction nommée onClickButton mais on peut aussi utiliser une fonction anonyme
-            bouton.addEventListener("click", onClickButton);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraste Élevé pour Malvoyants avec Font Awesome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10%;
 
-            //Appel d'une fonction anonyme mais on peut aussi utiliser une fonction nommée
-            document.addEventListener("keydown", function(event) {
-                let textTyped = document.getElementById("textTyped");
-                textTyped.style.backgroundColor = "lightgreen";
-                //C'est quand même sympa de pouvoir effacer le texte avec la touche backspace :-)
-                if(event.key === "Backspace"){
-                    textTyped.textContent = textTyped.innerHTML.slice(0, -1);
-                }
-                //ignorer les caractères de contrôle: shift, control, alt, backspace, etc.
-                //Il suffit de vérifier si la longueur de la chaîne est de 1 car les caractères de contrôle ont une longueur supérieure à 1
-                if (event.key.length === 1)
-                {
-                    //en css prendre une couleur random
-                    textTyped.textContent +=  event.key;
-                }
-            });
+        }
+
+        button {
+            position: fixed; /* ou 'absolute', selon le besoin */
+            right: 20px; /* Distance du bord droit de la fenêtre */
+            top: 20px; /* Distance du bord supérieur de la fenêtre */
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .highContrast {
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .highContrast button {
+            color: white;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <button id="btnContrast" aria-label="Changer le mode de contraste">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+    <div id="container">
+        <h1>Accessibilité Web pour les Malvoyants</h1>
+        <p>Cette page est un exemple de comment utiliser <a href="https://fontawesome.com/search?o=r&m=free">Font Awesome</a> et le JavaScript pour améliorer l'accessibilité pour les personnes malvoyantes.</p>
+        <p>En cliquant sur l'icône ci-dessus, vous pouvez changer le contraste de la page pour faciliter la lecture.</p>
+        <p>L'accessibilité web est essentielle pour permettre à tous les utilisateurs, y compris ceux ayant des limitations visuelles, de naviguer et d'interagir avec le contenu en ligne.</p>
+        <p>J'ai utilisé Font Awesome pour l'icône du bouton de contraste. Vous pouvez trouver plus d'informations sur Font Awesome sur leur site web.</p>
+        <p>Font Awesome est une bibliothèque d'icônes vectorielles qui peut être utilisée pour améliorer l'accessibilité et l'expérience utilisateur sur les sites web.</p>
+        <p>Il y a une version gratuite de Font Awesome (2037  icônes) qui peut être utilisée pour ajouter des icônes à votre site web et une version payantes (30013 icônes) avec beaucoup plus d'icônes.</p>
+        <p>Pour l'intégration le plus simple est d'aller sur le site <a href="https://cdnjs.com/libraries/font-awesome">&lt;cdnjs&gt;</a> et de sélectionner la version de Font Awesome que vous voulez utiliser.</p>
+        <p>Par exemple pour la version 6.5.1 et si on veut toutes les icones on ajoutera la balise script suivante: </p>
+        <p><b>&lt;link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"&gt;</b></p>
+    </div>
+    <script>
+        let btnContrast = document.querySelector('#btnContrast');//On aurait pu utiliser getElementById sans utiliser le #
+        //On ajoute un écouteur d'événement pour le clic sur le bouton
+        btnContrast.addEventListener('click', function() {
+            document.body.classList.toggle('highContrast');
+        });
+    </script>
+
+</body>
+</html>
+```
+Testez ce code dans un fichier HTML pour voir le résultat.
+
+Dans cet exemple, nous avons un bouton avec l'icône `fa-circle-half-stroke` de Font Awesome. Lorsque le bouton est cliqué, la classe `highContrast` est ajoutée ou supprimée du corps de la page. Cette classe modifie le contraste de la page pour faciliter la lecture pour les personnes malvoyantes.
+
+Nous utilisons `document.querySelector('#btnContrast')` pour sélectionner le bouton, puis nous ajoutons un gestionnaire d'événements `click` pour changer le contraste de la page lorsque le bouton est cliqué.
+
+La méthode (fonction si vous préférez) `toggle()` ajoute la classe si elle n'est pas présente et la supprime si elle est déjà présente. C'est une façon simple de basculer entre deux états. Donc, `toggle()` ajoute la classe `highContrast` si elle n'est pas présente et la supprime si elle est déjà présente. C'est sympa hein ? :-)    
 
              
 
