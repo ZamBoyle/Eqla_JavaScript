@@ -9,21 +9,27 @@
 
 <!-- code_chunk_output -->
 
-- [Exercice 1 - Code JS Inline](#exercice-1---code-js-inline)
-- [Exercice 2 - Ficher JS Externe](#exercice-2---ficher-js-externe)
-- [Exercice 3 - Ficher JS Externe](#exercice-3---ficher-js-externe)
-- [Exercice 4 - Installation de Node.js](#exercice-4---installation-de-nodejs)
-- [Exercice 5 - Type de données & variables](#exercice-5---type-de-données--variables)
-- [Exercice 6 - Conditions](#exercice-6---conditions)
-- [Exercice 7 - Boucles](#exercice-7---boucles)
-- [Exercice 8 - Fonctions](#exercice-8---fonctions)
-- [Exercice 9 - Fonctions anonymes](#exercice-9---fonctions-anonymes)
-- [Exercice 10 - Fonctions fléchées](#exercice-10---fonctions-fléchées)
-- [Exercice 11 - getElementById](#exercice-11---getelementbyid)
-- [Exercice 12 - getElementById](#exercice-12---getelementbyid)
-- [Exercice 13 - getElementById](#exercice-13---getelementbyid)
-- [Exercice 14 - getElementsByTagName](#exercice-14---getelementsbytagname)
-- [Exercice 15 - getElementsByTagName](#exercice-15---getelementsbytagname)
+  - [Exercice 1 - Code JS Inline](#exercice-1---code-js-inline)
+  - [Exercice 2 - Ficher JS Externe](#exercice-2---ficher-js-externe)
+  - [Exercice 3 - Ficher JS Externe](#exercice-3---ficher-js-externe)
+  - [Exercice 4 - Installation de Node.js](#exercice-4---installation-de-nodejs)
+  - [Exercice 5 - Type de données & variables](#exercice-5---type-de-données--variables)
+  - [Exercice 6 - Conditions](#exercice-6---conditions)
+  - [Exercice 7 - Boucles](#exercice-7---boucles)
+  - [Exercice 8 - Fonctions](#exercice-8---fonctions)
+  - [Exercice 9 - Fonctions anonymes](#exercice-9---fonctions-anonymes)
+  - [Exercice 10 - Fonctions fléchées](#exercice-10---fonctions-fléchées)
+  - [Exercice 11 - getElementById](#exercice-11---getelementbyid)
+  - [Exercice 12 - getElementById](#exercice-12---getelementbyid)
+  - [Exercice 13 - getElementById](#exercice-13---getelementbyid)
+  - [Exercice 14 - getElementsByTagName](#exercice-14---getelementsbytagname)
+  - [Exercice 15 - getElementsByTagName](#exercice-15---getelementsbytagname)
+  - [Exercice 16 - getElementsByClassName](#exercice-16---getelementsbyclassname)
+    - [Exercice 17 - querySelector](#exercice-17---queryselector)
+    - [Exercice 18 - querySelectorAll](#exercice-18---queryselectorall)
+- [Exercice 19 - addEventListener - fonction nommée](#exercice-19---addeventlistener---fonction-nommée)
+- [Exercice 20 - addEventListener - fonction anonyme](#exercice-20---addeventlistener---fonction-anonyme)
+- [Exercice 21 - un peu de tout](#exercice-21---un-peu-de-tout)
 
 <!-- /code_chunk_output -->
 
@@ -234,6 +240,119 @@ document.getElementById("monElement").style.display = "none";
 4. Même principe que l'exercice précédent mais cette fois-ci, on va en plus mettre le texte en rouge pour les titres de niveau 3 (h3).
 5. Pour changer la couleur du texte, vous pouvez utiliser la propriété `color` de la propriété `style` de l'élément h3. Par exemple `monElement.style.color = "red";`.
 6. Ouvrez la page dans un navigateur et observez le résultat.
+
+## Exercice 16 - getElementsByClassName
+1. Créez une page HTML nommée Exercice16.html
+2. Insérez les balises `<script src='ex16.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex16.js
+4. Dans le `<body>` de la page ajoutez:
+
+```html
+<h1 class="titre">Exercie 16 - getElementsByClassName</h1>
+
+<h2 class="titre titre2">1. Premier titre 2</h2>
+<h2 class="titre titre2">2. Deuxième titre 2</h2>
+<h2 class="titre titre2">3. Troisième titre 2</h2>
+
+<h3 class="titre titre3">1. Premier titre 3</h3>
+<h3 class="titre titre3">2. Deuxième titre 3</h3>
+<h3 class="titre titre3">3. Troisième titre 3</h3>
+```
+5. Modifier tous les éléments de classe "titre" en souligant le texte.
+6. Utilisez la propriété `textDecoration` de la propriété `style` de l'élément pour souligner le texte. Par exemple `monElement.style.textDecoration = "underline";`.
+7. Modifier tous les éléments de classe "titre2" en mettant le texte en rouge.
+8. Modifier tous les éléments de classe "titre3" en mettant le texte en blanc et le fond en rouge. Vous pouvez utiliser la propriété `backgroundColor` de la propriété `style` de l'élément pour changer la couleur de fond. Par exemple `monElement.style.backgroundColor = "red";`.
+9. Ouvrez la page dans un navigateur et observez le résultat.
+
+### Exercice 17 - querySelector
+Pour rappel, `querySelector` permet de sélectionner **un seul élément** en fonction de son sélecteur CSS. Par exemple, pour sélectionner un élément par son id, on utilise `#id` et pour sélectionner un élément par sa classe, on utilise `.classe`.
+
+1. Créez une page HTML nommée Exercice17.html
+2. Insérez les balises `<script src='ex17.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex17.js
+4. Dans le `<body>` de la page ajoutez:
+
+```html
+<h1 class="titre">Exercice 17 - querySelector</h1>
+<div id="id1">1. Premier élément avec id1</div>
+<div hidden>2. Deuxième élément avec un attribut hidden</div>
+<div class="zoulou">3. Troisième élément avec une classe zoulou</div>
+```
+5. Utilisez `querySelector` pour sélectionner l'élément avec l'id "id1" et affichez son texte dans la console.
+6. Utilisez `querySelector` pour sélectionner l'élément avec la classe "zoulou" et mettez le texte en gras. Pour mettre le texte en gras, vous pouvez utiliser la propriété `fontWeight` de la propriété `style` de l'élément. Par exemple `monElement.style.fontWeight = "bold";`.
+7. Utilisez `querySelector` pour sélectionner l'élément avec l'attribut hidden. Supprimez cet attribut pour afficher l'élément. En js, pour supprimer un attribut, on utilise `removeAttribute`. Par exemple: `monElement.removeAttribute("hidden");`.
+
+### Exercice 18 - querySelectorAll
+Pour rappel, `querySelectorAll` permet de sélectionner **tous les éléments** en fonction de leur sélecteur CSS. Par exemple, pour sélectionner tous les éléments par leur classe, on utilise `.classe`. `querySelectorAll` retourne une liste d'éléments donc il faudra parcourir cette liste pour modifier chaque élément.
+
+1. Créez une page HTML nommée Exercice18.html
+2. Insérez les balises `<script src='ex18.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex18.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1 class="titre">Exercice 18 - querySelectorAll</h1>
+<div class="zoulou">1. Premier élément avec une classe zoulou</div>
+<div hidden>2. Troisième élément avec une classe zoulou</div>
+
+<div class="zoulou">3. Deuxième élément avec une classe zoulou</div>
+<div hidden>4. Troisième élément avec une classe zoulou</div>
+<div class="timide">5. Quatrième élément avec une classe timide</div>
+<div class="timide">6. Cinquième élément avec une classe timide</div>
+```
+5. Si vous visualisez cette page dans un navigateur,  vous verrez les div 1, 3, 5 et 6. Les div 2 et 4 sont cachées.
+6. Utilisez `querySelectorAll` pour sélectionner tous les éléments avec la classe "zoulou" et mettez le texte en gras.
+7. Utilisez `querySelectorAll` pour sélectionner tous les éléments avec l'attribut hidden. Supprimez cet attribut pour afficher les éléments.
+8. Utilisez `querySelectorAll` pour sélectionner tous les éléments avec la classe "timide" en les cachant. Nous avons déjà vu qu'on pouvait cacher un élément en utilisant la propriété `display` de la propriété `style` de l'élément. Par exemple `monElement.style.display = "none";`. Mais nous utiliserons le ferons autrement en ajoutant l'attribut hidden à l'élément. Pour ajouter un attribut, on utilise `setAttribute`. Par exemple: `monElement.setAttribute("hidden", "");`.
+9. Ouvrez la page dans un navigateur et observez le résultat.
+
+# Exercice 19 - addEventListener - fonction nommée
+Pour rappel, `addEventListener` permet d'ajouter un écouteur d'événement sur un élément. Cet écouteur va attendre un événement pour exécuter une fonction. Par exemple, on peut ajouter un écouteur d'événement sur un bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction sera exécutée.
+
+1. Créez une page HTML nommée Exercice19.html
+2. Insérez les balises `<script src='ex19.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex19.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1 class="titre">Exercice 19 - addEventListener</h1>
+<button id="monBouton">Pas cliqué</button>
+```
+5. Créez une fonction `clic` qui affiche si "Cliqué" ou "Pas cliqué" en fonction du texte du bouton. Si le texte est "Pas cliqué", il doit être changé en "Cliqué". Sinon, il doit être changé en "Pas cliqué". Et cela, indéfiniment.
+6. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction `clic` doit être exécutée.
+7. Ouvrez la page dans un navigateur et observez le résultat.
+
+# Exercice 20 - addEventListener - fonction anonyme
+Une fonction anonyme est une fonction qui n'a pas de nom. Elle est déclarée directement. Elle est souvent utilisée comme paramètre d'une autre fonction. Par exemple, on peut utiliser une fonction anonyme comme paramètre d'une fonction `addEventListener` au lieu d'utiliser une fonction nommée.
+
+1. Créez une page HTML nommée Exercice20.html
+2. Insérez les balises `<script src='ex20.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex20.js
+4. Dans le `<body>` de la page ajoutez:
+```html
+<h1 class="titre">Exercice 20 - addEventListener</h1>
+<p> Cliquez sur un des deux boutons pour déterminer si vous êtes une personne gentille ou méchante.</p>
+<button id="btn_mean">Je suis méchant</button> <button id="btn_kind">Je suis gentil</button><br/><br/>
+<b><div id="info"></div></b>
+```
+5. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton "Je suis gentil" pour écouter le mouseover de la souris. Lorsque la souris passe sur le bouton, Changez l'opacité du bouton à 0 pour le rendre invisible. Pour ce faire, vous pouvez utiliser la propriété `opacity` de la propriété `style` de l'élément. Par exemple `monElement.style.opacity = 0;`.
+6. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton "Je suis gentil" pour écouter le mouseout de la souris. Lorsque la souris quitte le bouton, Changez l'opacité du bouton à 1 pour le rendre visible.
+8. Nous avons dû utiliser opacity pour rendre le bouton invisible ou visible. Car le fait de changer la propriété display à none provoque un mouseout et donc le bouton redevient visible et donne un effet de clignotement. C'est pour cela qu'on utilise opacity à 0 qui ne provoque pas de mouseout. C'est de la trucologie mais ça fonctionne :-)
+7. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton "Je suis méchant" pour écouter le clic de la souris. Lorsque le bouton est cliqué, affichez "Je suis vraiment méchant apparemment :-)" dans la div info.
+8. Ouvrez la page dans un navigateur et observez le résultat.
+
+# Exercice 21 - un peu de tout
+1. Créez une page HTML nommée Exercice21.html
+2. Insérez les balises `<script src='ex21.js' defer>` `</script>` dans le `<head>` de la page.
+3. Créez un fichier JavaScript nommé ex21.js
+4. Vous allez créer une page web qui va afficher un formulaire de contact avec les champs suivants:
+- Nom (required)
+- Prénom (required)
+- Email (required)
+- Message (required & textarea)
+- Envoyer
+5. N'oubliez pas de mettre un label pour chaque champ.
+6. Vous allez ajouter un écouteur d'événement sur le bouton "Envoyer" pour écouter le clic de la souris. Lorsque le bouton est cliqué, vous allez afficher les informations du formulaire dans un div dédié. Vous saluerez l'utilisateur en utilisant son prénom et son nom. Vous lui direz que vous avez bien reçu son message et que vous lui répondrez à l'adresse email indiquée. Vous afficherez aussi le message qu'il a envoyé.
+7. Quand survolez le bouton "Envoyer", changez la couleur de fond du bouton en rouge. Quand la souris quitte le bouton, remettez la couleur de fond du bouton en blanc.
+8. Quand un champ du formulaire est en focus, changez la couleur de fond du champ en jaune. Quand le champ perd le focus, remettez la couleur de fond du champ en blanc.
 
 
 
