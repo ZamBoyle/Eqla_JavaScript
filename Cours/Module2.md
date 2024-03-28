@@ -30,6 +30,7 @@
     - [2.8.1. Exemple - addEventListener](#281-exemple---addeventlistener)
     - [2.8.2. Exemple - Contraste Élevé](#282-exemple---contraste-élevé)
     - [2.8.3. Exemple - mouseover et mouseout](#283-exemple---mouseover-et-mouseout)
+    - [2.8.4. DOMContentLoaded](#284-domcontentloaded)
 
 <!-- /code_chunk_output -->
 
@@ -395,7 +396,8 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
   </body>
 </html>
 ```
-Testez ce code dans un fichier HTML pour voir le résultat. Vous pouvez voir le résultat à l'adresse suivante: [Démo getElementById / getElementsByTagName](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo1.html)
+- Copiez et testez ce code dans un fichier HTML pour voir le résultat pour pouvoir comprendre et le modifier.
+- Vous pouvez voir le résultat à l'adresse suivante: [Démo getElementById / getElementsByTagName](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo1.html)
 
 Pour l'exemple j'ai tout mis dans un seul fichier, mais en général on sépare le code HTML du code JavaScript dans des fichiers séparés.
 
@@ -626,8 +628,8 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
   </body>
 </html>
 ```
-Testez ce code dans un fichier HTML pour voir le résultat.
-Vous pouvez voir le résultat à l'adresse suivante: [Démo querySelectorAll](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo2.html)
+- Copiez et testez ce code dans un fichier HTML pour voir le résultat pour pouvoir comprendre et le modifier.
+- Vous pouvez voir le résultat à l'adresse suivante: [Démo querySelectorAll](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo2.html)
 
 Dans cet exemple, nous utilisons `document.querySelectorAll("#sectionInteressante p")` pour sélectionner:
 
@@ -742,9 +744,6 @@ Voici un exemple pour ajouter un gestionnaire d'événements `click` à un bouto
   </body>
 </html>
 ```
-Testez ce code dans un fichier HTML pour voir le résultat.
-Vous pouvez voir le résultat à l'adresse suivante: [Démo addEventListener](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)
-
 - Copiez et testez ce code dans un fichier HTML pour voir le résultat pour pouvoir comprendre et le modifier.
 - Vous pouvez voir le résultat à l'adresse suivante: [Démo addEventListener](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)
 
@@ -988,6 +987,31 @@ On a ajouté deux écouteurs d'événements `mouseover` et `mouseout` à deux im
 Nous avons deux images. Lorsque l'utilisateur passe la souris sur la première image, elle est retournée horizontalement. Cela est réalisé en modifiant la propriété `transform` de l'image avec `scaleX(-1)` pour la retourner horizontalement. Lorsque la souris quitte l'image, la propriété `transform` est réinitialisée à `scaleX(1)` pour la remettre à l'endroit.
 
 Pour la deuxième image, lorsque l'utilisateur passe la souris sur l'image, elle est agrandie en fonction du facteur de zoom sélectionné. Cela est réalisé en modifiant la propriété `transform` de l'image avec `scale(zoomFactor)` pour agrandir l'image. Lorsque la souris quitte l'image, la propriété `transform` est réinitialisée à `scale(1)` pour la remettre à sa taille normale.
+
+#### 2.8.4. DOMContentLoaded
+L'événement `DOMContentLoaded` se produit lorsque le document HTML a été complètement chargé et analysé, sans attendre le chargement des feuilles de style, des images et des sous-documents. 
+On aura donc notre code JavaScript qui sera exécuté après le chargement de la page.
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple de l'événement onload</title>
+  </head>
+  <body>
+    <h1>Exemple de l'événement onload</h1>
+    <p>Ce paragraphe est affiché après le chargement de la page.</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("La page est entièrement chargée.");
+        alert("La page est entièrement chargée.");
+      });
+    </script>
+  </body>
+</html>
+```
 
 [:arrow_up: Revenir en haut](#sommaire)
 
