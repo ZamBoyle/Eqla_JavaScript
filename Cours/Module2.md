@@ -29,7 +29,7 @@
   - [2.8. Les événements](#28-les-événements)
     - [2.8.1. Exemple - addEventListener](#281-exemple---addeventlistener)
     - [2.8.2. Exemple - Contraste Élevé](#282-exemple---contraste-élevé)
-    - [2.8.3. Exemple - Hover](#283-exemple---hover)
+    - [2.8.3. Exemple - mouseover et mouseout](#283-exemple---mouseover-et-mouseout)
 
 <!-- /code_chunk_output -->
 
@@ -395,6 +395,7 @@ Voici un exemple de page que je vous invite à copier-coller dans un fichier HTM
   </body>
 </html>
 ```
+Testez ce code dans un fichier HTML pour voir le résultat. Vous pouvez voir le résultat à l'adresse suivante: [Démo getElementById / getElementsByTagName](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo1.html)
 
 Pour l'exemple j'ai tout mis dans un seul fichier, mais en général on sépare le code HTML du code JavaScript dans des fichiers séparés.
 
@@ -625,6 +626,8 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
   </body>
 </html>
 ```
+Testez ce code dans un fichier HTML pour voir le résultat.
+Vous pouvez voir le résultat à l'adresse suivante: [Démo querySelectorAll](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo2.html)
 
 Dans cet exemple, nous utilisons `document.querySelectorAll("#sectionInteressante p")` pour sélectionner:
 
@@ -739,6 +742,8 @@ Voici un exemple pour ajouter un gestionnaire d'événements `click` à un bouto
   </body>
 </html>
 ```
+Testez ce code dans un fichier HTML pour voir le résultat.
+Vous pouvez voir le résultat à l'adresse suivante: [Démo addEventListener](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)
 
 - Copiez et testez ce code dans un fichier HTML pour voir le résultat pour pouvoir comprendre et le modifier.
 - Vous pouvez voir le résultat à l'adresse suivante: [Démo addEventListener](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)
@@ -868,7 +873,7 @@ Dans l'exemple suivant, nous allons avoir un bouton qui lorsqu'il est cliqué ch
 ```
 
 - Copiez et Testez ce code dans un fichier HTML pour voir le résultat.
-- Vous pouvez voir le résultat à l'adresse suivante: [Exemple d'un bouton Contraste Élevé](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)
+- Vous pouvez voir le résultat à l'adresse suivante: [Exemple d'un bouton Contraste Élevé](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo4.html)
 
 Dans cet exemple, nous avons un bouton avec l'icône `fa-circle-half-stroke` de Font Awesome. Lorsque le bouton est cliqué, la classe `highContrast` est ajoutée ou supprimée du corps de la page. Cette classe modifie le contraste de la page pour faciliter la lecture pour les personnes malvoyantes.
 
