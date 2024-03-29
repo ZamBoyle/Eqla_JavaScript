@@ -344,15 +344,35 @@ Une fonction anonyme est une fonction qui n'a pas de nom. Elle est déclarée di
 2. Insérez les balises `<script src='ex21.js' defer>` `</script>` dans le `<head>` de la page.
 3. Créez un fichier JavaScript nommé ex21.js
 4. Vous allez créer une page web qui va afficher un formulaire de contact avec les champs suivants:
-- Nom (required)
-- Prénom (required)
-- Email (required)
-- Message (required & textarea)
+- Nom
+- Prénom 
+- Email 
+- Message (textarea)
 - Envoyer
-5. N'oubliez pas de mettre un label pour chaque champ.
-6. Vous allez ajouter un écouteur d'événement sur le bouton "Envoyer" pour écouter le clic de la souris. Lorsque le bouton est cliqué, vous allez afficher les informations du formulaire dans un div dédié. Vous saluerez l'utilisateur en utilisant son prénom et son nom. Vous lui direz que vous avez bien reçu son message et que vous lui répondrez à l'adresse email indiquée. Vous afficherez aussi le message qu'il a envoyé.
-7. Quand survolez le bouton "Envoyer", changez la couleur de fond du bouton en rouge. Quand la souris quitte le bouton, remettez la couleur de fond du bouton en blanc.
-8. Quand un champ du formulaire est en focus, changez la couleur de fond du champ en jaune. Quand le champ perd le focus, remettez la couleur de fond du champ en blanc.
+1. N'oubliez pas de mettre un label pour chaque champ: c'est plus sympa ! :-)
+2. Vous allez créer un tableau d'adresses emails.
+3. Vous allez ajouter un écouteur d'événement sur le bouton "Envoyer" pour écouter le clic de la souris.
+4. Lorsque le bouton est cliqué, vous allez afficher les informations du formulaire dans un div dédié. Si l'adresse email ne figure pas dans le tableau, vous afficherez dans le suivant dans un div dédié:
+```text
+Bonjour Johnny Piette,
+
+Nous vous remercions pour de nous avoir contacté et nous répondrons à votre adresse (johnny.piette@eqla.be) aussi vite que possible.
+
+Votre message:"Je vous remercie pour le service de qualité que vous avez fourni pour la réparation de mon OnePlus 8 Pro. Quel plaisir d'acheter chez vous !"
+```
+Si l'adresse email figure dans le tableau d'emails, vous afficherez:
+```text
+BonjourJohnny Piette !
+
+Nous sommes contents d'avoir à nouveau de vos nouvelles.
+
+Nous vous remercions pour de nous avoir contacté et nous répondrons à votre adresse (johnny.piette@eqla.be) aussi vite que possible.
+
+Votre message:"Je vous remercie pour le service de qualité que vous avez fourni pour la réparation de mon OnePlus 8 Pro. Quel plaisir d'acheter chez vous !"
+``` 
+9. Quand survolez le bouton "Envoyer", changez la couleur de fond du bouton en rouge. Quand la souris quitte le bouton, remettez la couleur de fond du bouton en blanc.
+10. Quand un champ du formulaire est en focus, changez la couleur de fond du champ en jaune. Quand le champ perd le focus, remettez la couleur de fond du champ en blanc. Cherchez sur le net comment on détecte si un élément a le focus (on mettra le champ en jaune) et quand il perd le focus (on remet le champ en blanc).
+11. Ouvrez la page dans un navigateur et observez le résultat.
 
 
 

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Exercice 21</title>
 </head>
+
 <body>
     <h1>Formulaire de Contact</h1>
     <form id="contactForm">
@@ -28,44 +30,61 @@
     <div id="feedback"></div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-    const btnEnvoyer = document.getElementById('envoyer');
-    const formFields = document.querySelectorAll('#contactForm input, #contactForm textarea');
-    const feedback = document.getElementById('feedback');
+            const btnEnvoyer = document.getElementById('envoyer');
+            const formFields = document.querySelectorAll('#contactForm input, #contactForm textarea');
+            const feedback = document.getElementById('feedback');
 
-    // Changement de couleur de fond du bouton lors du survol
-    btnEnvoyer.addEventListener('mouseover', function() {
-        this.style.backgroundColor = 'red';
-    });
+            // Changement de couleur de fond du bouton lors du survol
+            btnEnvoyer.addEventListener('mouseover', function () {
+                this.style.backgroundColor = 'red';
+            });
 
-    btnEnvoyer.addEventListener('mouseout', function() {
-        this.style.backgroundColor = 'white';
-    });
+            btnEnvoyer.addEventListener('mouseout', function () {
+                this.style.backgroundColor = 'white';
+            });
 
-    // Changement de couleur de fond des champs lors du focus
-    formFields.forEach(field => {
-        field.addEventListener('focus', function() {
-            this.style.backgroundColor = 'yellow';
+            // Changement de couleur de fond des champs lors du focus
+            formFields.forEach(field => {
+                field.addEventListener('focus', function () {
+                    this.style.backgroundColor = 'yellow';
+                });
+
+                field.addEventListener('blur', function () {
+                    this.style.backgroundColor = 'white';
+                });
+            });
+
+            // Affichage des informations du formulaire
+            btnEnvoyer.addEventListener('click', function () {
+                const nom = document.getElementById('nom').value.trim();
+                const prenom = document.getElementById('prenom').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const formulaire = document.getElementById('contactForm');
+                const feedback = document.getElementById('feedback');
+                let emails = ["johnny.piette@gmail.com", "philip.dupont@eqla.be"];
+
+                let welcome_message =
+                    `<p>Bonjour <b>${prenom} ${nom}</b>,</p><br>
+            <p>Nous vous remercions pour de nous avoir contacté et nous répondrons à votre adresse (<b>${email}</b>) aussi vite que possible.</p><br>
+            <p>Votre message:"<b>${message}</b>"</p>`;
+
+                let welcomeback_message =
+                    `<p>Bonjour <b>${prenom} ${nom}</b>,</p><br>
+        <p>Nous sommes contents d'avoir à nouveau de vos nouvelles.</p><br>        
+            <p>Nous vous remercions pour de nous avoir contacté et nous répondrons à votre adresse (<b>${email}</b>) aussi vite que possible.</p><br>
+            <p>Votre message:"<b>${message}</b>"</p>`;
+
+                if (!emails.includes(email)) {
+                    feedback.innerHTML = welcome_message;
+                } else {
+                    feedback.innerHTML = welcomeback_message;
+                }
+                formulaire.style.display = "none";
+            });
         });
-
-        field.addEventListener('blur', function() {
-            this.style.backgroundColor = 'white';
-        });
-    });
-
-    // Affichage des informations du formulaire
-    btnEnvoyer.addEventListener('click', function() {
-        const nom = document.getElementById('nom').value.trim();
-        const prenom = document.getElementById('prenom').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        feedback.innerHTML = `<p>Bonjour ${prenom} ${nom},</p>
-                              <p>Nous avons bien reçu votre message :</p>
-                              <blockquote>${message}</blockquote>
-                              <p>Nous vous répondrons à l'adresse <a href='mailto:${email}'>${email}</a>.</p>`;
-    });
-});
 
     </script>
 </body>
+
 </html>
