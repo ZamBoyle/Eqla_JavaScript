@@ -44,6 +44,9 @@
   - [9.3 Fonction qui retourne une valeur / return](#93-fonction-qui-retourne-une-valeur--return)
   - [9.4 Les early return](#94-les-early-return)
   - [9.5 Les fonctions anonymes](#95-les-fonctions-anonymes)
+    - [9.5.1 Fonction anonyme dans une variable](#951-fonction-anonyme-dans-une-variable)
+    - [9.5.2 Fonction anonyme en paramètre de fonction](#952-fonction-anonyme-en-paramètre-de-fonction)
+    - [9.5.3 Conclusion](#953-conclusion)
   - [9.6 Les fonctions fléchées](#96-les-fonctions-fléchées)
 - [10. Portée des variables](#10-portée-des-variables)
   - [10.1 Portée globale](#101-portée-globale)
@@ -899,6 +902,7 @@ Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande 
 ### 9.5 Les fonctions anonymes
 Cette partie est un peu plus avancée et si vous ne la comprenez pas, ce n'est pas grave. Vous pouvez la sauter. C'est juste pour vous montrer qu'il existe plusieurs manières de déclarer des fonctions en JavaScript. Elles seront fort utilies lorsque vous utiliserez des librairies comme React, Angular, Vue, etc. 
 
+#### 9.5.1 Fonction anonyme dans une variable
 Une fonction anonyme est une fonction sans nom. Elle peut être stockée dans une variable. Par exemple:
 
 ```javascript
@@ -915,8 +919,11 @@ let estBissextile = function(annee) {
   return annee % 4 === 0 && (annee % 100 !== 0 || annee % 400 === 0);
 }
 ```
-On peut avoir une fonction qui reçoit comme paramètre de fonction une fonction anonyme. C'est ce qu'on appelle les fonctions de callback. Par exemple:
 
+#### 9.5.2 Fonction anonyme en paramètre de fonction
+On peut avoir une fonction qui reçoit comme paramètre de fonction une fonction. Cette fonction peut être une fonction nommée ou anonyme. C'est ce qu'on appelle les fonctions de callback si elle est utilisée dans la fonction.
+
+Par exemple:
 ```javascript
 function afficherMessage(callback) {
   console.log("Début du message");
@@ -934,6 +941,25 @@ afficherMessage(function() {
   }
 });
 ```
+Ce code va d'abord appeler la fonction `afficherMessage` avec une fonction anonyme qui affiche "Bonjour".
+Dans l'ordre, le code affichera:
+```text
+Début du message
+Bonjour
+Fin du message
+```
+Puis, le code va appeler la fonction `afficherMessage` avec une fonction anonyme qui affiche les nombres de 0 à 4.
+Dans l'ordre, le code affichera:
+```text
+Début du message
+0
+1
+2
+3
+4
+Fin du message
+```
+
 Prenons un autre exemple avec la fonction map. La fonction map permet de transformer un tableau en un autre tableau. Par exemple, on peut transformer un tableau de nombres en un tableau de nombres multipliés par 2. Par exemple:
 
 ```javascript
@@ -944,9 +970,44 @@ let nombresMultipliesPar2 = nombres.map(function(nombre) {
 });
 console.log("Valeurs multipliées par deux:"+nombresMultipliesPar2); // [2, 4, 6, 8, 10]      
 ```
-Dans ce code, la fonction map prend une fonction anonyme en paramètre. Cette fonction anonyme est appelée pour chaque élément du tableau `nombres`. Elle multiplie chaque élément par 2 et retourne le résultat. La fonction map retourne un nouveau tableau avec les valeurs transformées. C'est donc extrèmement puissant.
+Dans ce code, la fonction map prend une fonction anonyme en paramètre. Cette fonction anonyme est appelée pour chaque élément du tableau `nombres`. Elle reçoit de map, le paramètre `nombre` qui est un élément du tableau `nombres`. Elle multiplie chaque élément par 2 et retourne le résultat. La fonction map retourne un nouveau tableau avec les valeurs transformées. C'est donc extrèmement puissant.
+
+Nous aurions pu écrire la fonction anonyme en dehors de la fonction map et en faire une fonction nommée. Par exemple:
+
+```javascript
+function multiplierPar2(nombre) {
+  return nombre * 2;
+}
+
+let nombres = [1, 2, 3, 4, 5];
+console.log("Valeurs initiales:"+nombres); // [1, 2, 3, 4, 5]
+
+let nombresMultipliesPar2 = nombres.map(multiplierPar2);
+console.log("Valeurs multipliées par deux:"+nombresMultipliesPar2); // [2, 4, 6, 8, 10]      ```
+```
 
 Enregistrez ce code dans un fichier `tests.js` et exécutez-le avec la commande `node tests.js`. Vous verrez que les valeurs initiales et les valeurs multipliées par deux s'affichent dans la console.
+
+#### 9.5.3 Conclusion
+Les fonctions anonymes sont très utilisées en JavaScript. Elles permettent de passer des fonctions en paramètres d'autres fonctions. C'est très pratique pour les fonctions de callback. Les fonctions de callback sont des fonctions qui sont appelées par d'autres fonctions. Par exemple, la fonction `map` utilise une fonction de callback pour transformer un tableau en un autre tableau.
+
+Les fonctions anonymes sont aussi utilisées pour les événements dans les pages web. Par exemple, on peut attacher une fonction anonyme à un bouton pour exécuter un bloc de code lorsqu'on clique sur le bouton.
+
+Les fonctions anonymes sont aussi utilisées pour les librairies comme React, Angular, Vue, etc. On peut passer des fonctions anonymes en paramètres de fonctions pour effectuer des traitements.
+
+
+L'asynchronisme est un concept qui permet d'exécuter plusieurs tâches en même temps. C'est à dire que le code ne bloque pas l'exécution du reste du code. Par exemple, on peut appeler une API pour récupérer des données. On utilise des fonctions de callback pour traiter les données une fois qu'elles sont récupérées. De cette manière, le code ne bloque pas l'exécution du reste du code. C'est ce qu'on appelle le non-blocage de l'exécution du code.
+
+Bref, les fonctions anonymes sont très utilisées en JavaScript mais pas que. En PHP, Python, Java, C#, etc. on utilise aussi des fonctions anonymes. Nous les verrons plus tard dans le cours de Laravel pour créer nos routes.
+
+Petit sneak preview:
+```php
+Route::get('/', function () {
+    return "Salut ! Bienvenue sur ce site !";
+});
+```
+Ce code est en PHP et plus précisément dans le framework Laravel. On voit bien qu'on utilise une fonction anonyme pour définir la route `/`. Cette route retourne "Salut ! Bienvenue sur ce site !". C'est un exemple de fonction anonyme en PHP.
+
 
 
 ### 9.6 Les fonctions fléchées
