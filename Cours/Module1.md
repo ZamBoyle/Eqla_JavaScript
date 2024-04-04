@@ -993,10 +993,9 @@ Les fonctions anonymes sont très utilisées en JavaScript. Elles permettent de 
 
 Les fonctions anonymes sont aussi utilisées pour les événements dans les pages web. Par exemple, on peut attacher une fonction anonyme à un bouton pour exécuter un bloc de code lorsqu'on clique sur le bouton.
 
-Les fonctions anonymes sont aussi utilisées pour les librairies comme React, Angular, Vue, etc. On peut passer des fonctions anonymes en paramètres de fonctions pour effectuer des traitements.
+On les utilise au dans les librairies comme React, Angular, Vue, etc. On peut passer des fonctions anonymes en paramètres de fonctions pour effectuer des traitements.
 
-
-L'asynchronisme est un concept qui permet d'exécuter plusieurs tâches en même temps. C'est à dire que le code ne bloque pas l'exécution du reste du code. Par exemple, on peut appeler une API pour récupérer des données. On utilise des fonctions de callback pour traiter les données une fois qu'elles sont récupérées. De cette manière, le code ne bloque pas l'exécution du reste du code. C'est ce qu'on appelle le non-blocage de l'exécution du code.
+L'asynchronisme est un concept qui permet d'exécuter plusieurs tâches en même temps. C'est à dire que le code ne bloque pas l'exécution du reste du code. Par exemple, on peut appeler une API (Une API est un moyen pour les logiciels de se parler et de s'échanger des informations) pour récupérer des données. On utilise des fonctions de callback pour traiter les données une fois qu'elles sont récupérées. De cette manière, le code ne bloque pas l'exécution du reste du code. C'est ce qu'on appelle le non-blocage de l'exécution du code.
 
 Bref, les fonctions anonymes sont très utilisées en JavaScript mais pas que. En PHP, Python, Java, C#, etc. on utilise aussi des fonctions anonymes. Nous les verrons plus tard dans le cours de Laravel pour créer nos routes.
 
