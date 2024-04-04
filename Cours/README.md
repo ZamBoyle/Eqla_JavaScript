@@ -10,7 +10,7 @@ L'ensemble des points de matière se trouvent dans les pages suivants:<br/>
 1. [Indroduction](Introduction.md)
 2. [Module 1: Les fondamentaux de JavaScript](Module1.md)
 3. [Module 2: Le DOM](Module2.md)
-4. Quelques Démos
+4. Quelques Démos  
 4.1 [Démo 1: "On change tout: à tester :-)" getElementById / getElementsByTagName](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo1.html)  
 4.2 [Démo 2: "Changement de couleurs en fonction du mois de l'année" querySelectorAll](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo2.html)  
 4.3 [Démo 3: "Bouton cliqué disparait et fait apparaître un div et on peut taper du texte sans zone de texte :-)" addEventListener: click, keydown](https://zamboyle.github.io/Eqla_JavaScript/Cours/Demo3.html)  
