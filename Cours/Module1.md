@@ -972,7 +972,7 @@ console.log("Valeurs multipliées par deux:"+nombresMultipliesPar2); // [2, 4, 6
 ```
 Dans ce code, la fonction map prend une fonction anonyme en paramètre. Cette fonction anonyme est appelée pour chaque élément du tableau `nombres`. Elle reçoit de map, le paramètre `nombre` qui est un élément du tableau `nombres`. Elle multiplie chaque élément par 2 et retourne le résultat. La fonction map retourne un nouveau tableau avec les valeurs transformées. C'est donc extrèmement puissant.
 
-Nous aurions pu écrire la fonction anonyme en dehors de la fonction map et en faire une fonction nommée. Par exemple:
+Nous aurions pu écrire sorir la fonction anonyme de la fonction map et en faire une fonction nommée. Par exemple:
 
 ```javascript
 function multiplierPar2(nombre) {
