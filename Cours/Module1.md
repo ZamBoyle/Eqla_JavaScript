@@ -63,7 +63,8 @@
   - [12.2 Boucle while](#122-boucle-while)
   - [12.3 Boucle do...while](#123-boucle-dowhile)
   - [12.4 Boucle for...in](#124-boucle-forin)
-  - [12.5 Boucles foreach](#125-boucles-foreach)
+  - [12.5 Boucles for...of](#125-boucles-forof)
+  - [12.5 Boucles foreach sur les tableaux](#125-boucles-foreach-sur-les-tableaux)
 
 <!-- /code_chunk_output -->
 
@@ -1204,8 +1205,19 @@ for (let propriete in personne) {
 }
 ```
 
-### 12.5 Boucles foreach
-Pour parcourir un tableau on peut utiliser une boucle for. Cependant, js propose une autre méthode élégante pour le parcourir la méthode forEach.
+### 12.5 Boucles for...of
+La boucle `for...of` est utilisée pour parcourir les éléments d'un objet itérable (comme un tableau). Par exemple:
+
+```javascript
+let fruits = ["pomme", "banane", "orange"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+Dans ce code, la boucle `for...of` parcourt le tableau `fruits` et affiche chaque élément. Cette boucle est fort semblable à la boucle `foreach` en PHP/Java/C#.
+
+### 12.5 Boucles foreach sur les tableaux
+Pour parcourir un tableau on peut utiliser une boucle for/for...of. Cependant, js propose une autre méthode élégante pour le parcourir via la méthode forEach.
 
 ```js
 var nombres = [1, 2, 3, 4, 5];
