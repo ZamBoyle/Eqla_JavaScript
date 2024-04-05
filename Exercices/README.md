@@ -25,10 +25,10 @@
   - [Exercice 14 - getElementsByTagName](#exercice-14---getelementsbytagname)
   - [Exercice 15 - getElementsByTagName](#exercice-15---getelementsbytagname)
   - [Exercice 16 - getElementsByClassName](#exercice-16---getelementsbyclassname)
-    - [Exercice 17 - querySelector](#exercice-17---queryselector)
-    - [Exercice 18 - querySelectorAll](#exercice-18---queryselectorall)
-- [Exercice 19 - addEventListener - fonction nommée](#exercice-19---addeventlistener---fonction-nommée)
-- [Exercice 20 - addEventListener - fonction anonyme](#exercice-20---addeventlistener---fonction-anonyme)
+  - [Exercice 17 - querySelector](#exercice-17---queryselector)
+  - [Exercice 18 - querySelectorAll](#exercice-18---queryselectorall)
+  - [Exercice 19 - addEventListener - fonction nommée](#exercice-19---addeventlistener---fonction-nommée)
+  - [Exercice 20 - addEventListener - fonction anonyme](#exercice-20---addeventlistener---fonction-anonyme)
 - [Exercice 21 - un peu de tout](#exercice-21---un-peu-de-tout)
 
 <!-- /code_chunk_output -->
@@ -264,7 +264,7 @@ document.getElementById("monElement").style.display = "none";
 8. Modifier tous les éléments de classe "titre3" en mettant le texte en blanc et le fond en rouge. Vous pouvez utiliser la propriété `backgroundColor` de la propriété `style` de l'élément pour changer la couleur de fond. Par exemple `monElement.style.backgroundColor = "red";`.
 9. Ouvrez la page dans un navigateur et observez le résultat.
 
-### Exercice 17 - querySelector
+## Exercice 17 - querySelector
 Pour rappel, `querySelector` permet de sélectionner **un seul élément** en fonction de son sélecteur CSS. Par exemple, pour sélectionner un élément par son id, on utilise `#id` et pour sélectionner un élément par sa classe, on utilise `.classe`.
 
 1. Créez une page HTML nommée Exercice17.html
@@ -282,7 +282,7 @@ Pour rappel, `querySelector` permet de sélectionner **un seul élément** en fo
 6. Utilisez `querySelector` pour sélectionner l'élément avec la classe "zoulou" et mettez le texte en gras. Pour mettre le texte en gras, vous pouvez utiliser la propriété `fontWeight` de la propriété `style` de l'élément. Par exemple `monElement.style.fontWeight = "bold";`.
 7. Utilisez `querySelector` pour sélectionner l'élément avec l'attribut hidden. Supprimez cet attribut pour afficher l'élément. En js, pour supprimer un attribut, on utilise `removeAttribute`. Par exemple: `monElement.removeAttribute("hidden");`.
 
-### Exercice 18 - querySelectorAll
+## Exercice 18 - querySelectorAll
 Pour rappel, `querySelectorAll` permet de sélectionner **tous les éléments** en fonction de leur sélecteur CSS. Par exemple, pour sélectionner tous les éléments par leur classe, on utilise `.classe`. `querySelectorAll` retourne une liste d'éléments donc il faudra parcourir cette liste pour modifier chaque élément.
 
 1. Créez une page HTML nommée Exercice18.html
@@ -305,7 +305,7 @@ Pour rappel, `querySelectorAll` permet de sélectionner **tous les éléments** 
 8. Utilisez `querySelectorAll` pour sélectionner tous les éléments avec la classe "timide" en les cachant. Nous avons déjà vu qu'on pouvait cacher un élément en utilisant la propriété `display` de la propriété `style` de l'élément. Par exemple `monElement.style.display = "none";`. Mais nous utiliserons le ferons autrement en ajoutant l'attribut hidden à l'élément. Pour ajouter un attribut, on utilise `setAttribute`. Par exemple: `monElement.setAttribute("hidden", "");`.
 9. Ouvrez la page dans un navigateur et observez le résultat.
 
-# Exercice 19 - addEventListener - fonction nommée
+## Exercice 19 - addEventListener - fonction nommée
 Pour rappel, `addEventListener` permet d'ajouter un écouteur d'événement sur un élément. Cet écouteur va attendre un événement pour exécuter une fonction. Par exemple, on peut ajouter un écouteur d'événement sur un bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction sera exécutée.
 
 1. Créez une page HTML nommée Exercice19.html
@@ -320,7 +320,7 @@ Pour rappel, `addEventListener` permet d'ajouter un écouteur d'événement sur 
 6. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction `clic` doit être exécutée.
 7. Ouvrez la page dans un navigateur et observez le résultat.
 
-# Exercice 20 - addEventListener - fonction anonyme
+## Exercice 20 - addEventListener - fonction anonyme
 Une fonction anonyme est une fonction qui n'a pas de nom. Elle est déclarée directement. Elle est souvent utilisée comme paramètre d'une autre fonction. Par exemple, on peut utiliser une fonction anonyme comme paramètre d'une fonction `addEventListener` au lieu d'utiliser une fonction nommée.
 
 1. Créez une page HTML nommée Exercice20.html

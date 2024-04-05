@@ -21,7 +21,7 @@
     - [2.6.2 Sélection par id](#262-sélection-par-id)
     - [2.6.3. Sélection par classe](#263-sélection-par-classe)
     - [2.6.4. Sélection par attribut](#264-sélection-par-attribut)
-    - [2.6.5 Sékectuib par attribut et valeur](#265-sékectuib-par-attribut-et-valeur)
+    - [2.6.5 Sélection par attribut et valeur](#265-sélection-par-attribut-et-valeur)
     - [2.6.6. Sélection par tag et classe](#266-sélection-par-tag-et-classe)
     - [2.6.7. Sélection par attribut et tag](#267-sélection-par-attribut-et-tag)
     - [2.6.8. Sélection par id et tag](#268-sélection-par-id-et-tag)
@@ -529,7 +529,7 @@ element.removeAttribute("hidden");
 
 Cela permet de retrouver un élément qui a l'attribut `hidden`.
 
-#### 2.6.5 Sékectuib par attribut et valeur
+#### 2.6.5 Sélection par attribut et valeur
 
 On peut aussi retrouver un élément en fonction de son attribut et de sa valeur:
 
@@ -611,13 +611,13 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
       <hr />
     </div>
     <script>
-      let monthToChange = 2; // 0 = janvier, 1 = février, 2 = mars, etc.
+      let monthToChange = 3; // 0 = janvier, 1 = février, 2 = mars, etc.
       let today = new Date();
       let month = today.getMonth();
 
       if (month === monthToChange) {
         let paragraphes = document.querySelectorAll("#sectionInteressante p");
-        paragraphes.forEach((paragraphe) => {
+        paragraphes.forEach(function(paragraphe) {
           paragraphe.style.color = "white";
           paragraphe.style.backgroundColor = "red";
           paragraphe.style.fontWeight = "bold";
