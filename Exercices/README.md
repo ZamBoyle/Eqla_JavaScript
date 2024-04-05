@@ -295,7 +295,7 @@ Pour rappel, `querySelectorAll` permet de sélectionner **tous les éléments** 
 <div hidden>2. Deuxième élément avec un attribut hidden</div>
 
 <div class="zoulou">3. Troisième élément avec une classe zoulou</div>
-<div hidden>4. Quatrième un autre élément avec un attrubut hidden</div>
+<div hidden>4. Quatrième un autre élément avec un attribut hidden</div>
 <div class="timide">5. Cinquième élément avec une classe timide</div>
 <div class="timide">6. Sixième élément avec une classe timide</div>
 ```
