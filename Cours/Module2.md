@@ -623,6 +623,13 @@ Voici un exemple pour sélectionner tous les paragraphes de la page:
           paragraphe.style.fontWeight = "bold";
           paragraphe.style.padding = "10px";
         });
+
+      //exemple avec un for classique et non un foreach
+      for (let i = 0; i < paragraphes.length; i++) {
+        paragraphes[i].style.color = "white";
+        paragraphes[i].style.backgroundColor = "red";
+        paragraphes[i].style.fontWeight = "bold";
+        paragraphes[i].style.padding = "10px";
       }
     </script>
   </body>
