@@ -316,8 +316,8 @@ Pour rappel, `addEventListener` permet d'ajouter un écouteur d'événement sur 
 <h1 class="titre">Exercice 19 - addEventListener</h1>
 <button id="monBouton">Pas cliqué</button>
 ```
-5. Créez une fonction `clic` qui affiche si "Cliqué" ou "Pas cliqué" en fonction du texte du bouton. Si le texte est "Pas cliqué", il doit être changé en "Cliqué". Sinon, il doit être changé en "Pas cliqué". Et cela, indéfiniment.
-6. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction `clic` doit être exécutée.
+5. Créez une fonction `buttonClicked` qui affiche si "Cliqué" ou "Pas cliqué" en fonction du texte du bouton. Si le texte est "Pas cliqué", il doit être changé en "Cliqué". Sinon, il doit être changé en "Pas cliqué". Et cela, indéfiniment.
+6. Utilisez `addEventListener` pour ajouter un écouteur d'événement sur le bouton pour écouter le clic de la souris. Lorsque le bouton est cliqué, la fonction `buttonClicked` doit être exécutée.
 7. Ouvrez la page dans un navigateur et observez le résultat.
 
 ## Exercice 20 - addEventListener - fonction anonyme
