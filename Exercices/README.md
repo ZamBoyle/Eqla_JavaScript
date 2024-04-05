@@ -292,12 +292,12 @@ Pour rappel, `querySelectorAll` permet de sélectionner **tous les éléments** 
 ```html
 <h1 class="titre">Exercice 18 - querySelectorAll</h1>
 <div class="zoulou">1. Premier élément avec une classe zoulou</div>
-<div hidden>2. Troisième élément avec une classe zoulou</div>
+<div hidden>2. Deuxième élément avec un attribut hidden</div>
 
-<div class="zoulou">3. Deuxième élément avec une classe zoulou</div>
-<div hidden>4. Troisième élément avec une classe zoulou</div>
-<div class="timide">5. Quatrième élément avec une classe timide</div>
-<div class="timide">6. Cinquième élément avec une classe timide</div>
+<div class="zoulou">3. Troisième élément avec une classe zoulou</div>
+<div hidden>4. Quatrième un autre élément avec un attrubut hidden</div>
+<div class="timide">5. Cinquième élément avec une classe timide</div>
+<div class="timide">6. Sixième élément avec une classe timide</div>
 ```
 5. Si vous visualisez cette page dans un navigateur,  vous verrez les div 1, 3, 5 et 6. Les div 2 et 4 sont cachées.
 6. Utilisez `querySelectorAll` pour sélectionner tous les éléments avec la classe "zoulou" et mettez le texte en gras.
